@@ -1,12 +1,14 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import Comment from "./Comment.jsx";
-import io from "socket.io-client";
+import { io } from "socket.io-client";
 
 const Card = ({ post }) => {
   const [commentText, setCommentText] = useState("");
   const [comments, setComments] = useState([]);
-  const socket = io(import.meta.env.VITE_APP_URL);
+  const socket = io(import.meta.env.VITE_APP_URL, {
+    transports: ["websocket", "polling"],
+  });
 
   const handleCommentSubmit = (event) => {
     event.preventDefault();
