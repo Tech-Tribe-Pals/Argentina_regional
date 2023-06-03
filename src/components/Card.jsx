@@ -1,14 +1,10 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import Comment from "./Comment.jsx";
-import { io } from "socket.io-client";
 
 const Card = ({ post }) => {
   const [commentText, setCommentText] = useState("");
   const [comments, setComments] = useState([]);
-  const socket = io(import.meta.env.VITE_APP_URL, {
-    transports: ["websocket", "polling"],
-  });
 
   const handleCommentSubmit = (event) => {
     event.preventDefault();
@@ -29,24 +25,24 @@ const Card = ({ post }) => {
     }
   };
 
-  useEffect(() => {
-    axios
-      .get(`${import.meta.env.VITE_APP_URL}/api/posts/${post._id}/comments`)
-      .then((response) => {
-        setComments(response.data);
-      })
-      .catch((error) => {
-        console.error("Error al obtener los comentarios", error);
-      });
+  const fetchComments = async () => {
+    try {
+      const response = await axios.get(
+        `${import.meta.env.VITE_APP_URL}/api/posts/${post._id}/comments`
+      );
+      setComments(response.data);
+    } catch (error) {
+      console.error("Error al obtener los comentarios", error);
+    }
+  };
 
-    socket.on("newComment", (comment) => {
-      setComments([...comments, comment]);
-    });
+  useEffect(() => {
+    const interval = setInterval(fetchComments, 1000); // Realizar la solicitud cada 5 segundos
 
     return () => {
-      socket.disconnect(); // Desconectar la conexión de WebSocket cuando el componente se desmonte
+      clearInterval(interval); // Limpiar el intervalo al desmontar el componente
     };
-  }, [post._id, comments, socket]);
+  }, [post._id]);
 
   return (
     <section>
@@ -61,7 +57,7 @@ const Card = ({ post }) => {
             <Comment key={comment._id} comment={comment} />
           ))
         ) : (
-          'Cargando...'
+          "Cargando..."
         )}
         <form onSubmit={handleCommentSubmit}>
           <textarea
