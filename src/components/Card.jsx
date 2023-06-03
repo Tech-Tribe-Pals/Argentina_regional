@@ -1,17 +1,19 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import Comment from "./Comment.jsx";
+import io from "socket.io-client";
 
 const Card = ({ post }) => {
   const [commentText, setCommentText] = useState("");
   const [comments, setComments] = useState([]);
+  const socket = io(import.meta.env.VITE_APP_URL);
 
   const handleCommentSubmit = (event) => {
     event.preventDefault();
 
     if (commentText.trim() !== "") {
       axios
-        .post("http://localhost:8080/api/comments", {
+        .post(`${import.meta.env.VITE_APP_URL}/api/comments`, {
           postId: post._id,
           text: commentText,
         })
@@ -27,14 +29,22 @@ const Card = ({ post }) => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:8080/api/posts/${post._id}/comments`)
+      .get(`${import.meta.env.VITE_APP_URL}/api/posts/${post._id}/comments`)
       .then((response) => {
         setComments(response.data);
       })
       .catch((error) => {
         console.error("Error al obtener los comentarios", error);
       });
-  }, [post._id]);
+
+    socket.on("newComment", (comment) => {
+      setComments([...comments, comment]);
+    });
+
+    return () => {
+      socket.disconnect(); // Desconectar la conexión de WebSocket cuando el componente se desmonte
+    };
+  }, [post._id, comments, socket]);
 
   return (
     <section>
@@ -44,9 +54,13 @@ const Card = ({ post }) => {
       ></div>
       <div className="comment">
         <h3>Comentarios</h3>
-        {comments.map((comment) => (
-          <Comment key={comment._id} comment={comment} />
-        ))}
+        {comments.length !== 0 ? (
+          comments.map((comment) => (
+            <Comment key={comment._id} comment={comment} />
+          ))
+        ) : (
+          'Cargando...'
+        )}
         <form onSubmit={handleCommentSubmit}>
           <textarea
             name="commentText"

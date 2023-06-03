@@ -7,7 +7,7 @@ const Forum = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:8080/api/posts")
+      .get(`${import.meta.env.VITE_APP_URL}/api/posts`)
       .then((response) => {
         setPosts(response.data);
       })

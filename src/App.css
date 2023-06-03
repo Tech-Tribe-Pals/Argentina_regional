@@ -1,3 +1,7 @@
 * {
     font-family: sans-serif
 }
+
+.card-body img {
+    max-height: 250px;
+}

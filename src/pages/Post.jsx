@@ -33,7 +33,7 @@ const Post = () => {
     const editorContent = reactQuillRef.current.getEditor().root.innerHTML;
   
     axios
-      .post('http://localhost:8080/api/posts', { content: editorContent })
+      .post(`${import.meta.env.VITE_APP_URL}/api/posts`, { content: editorContent })
       .then((response) => {
         console.log(response.data);
         toast.success('Publicación guardada con éxito');
@@ -62,7 +62,7 @@ const Post = () => {
       formData.append('image', file);
 
       try {
-        const response = await axios.post('http://localhost:8080/api/upload', formData, {
+        const response = await axios.post(`${import.meta.env.VITE_APP_URL}/api/upload`, formData, {
           headers: {
             'Content-Type': 'multipart/form-data',
           },
@@ -116,7 +116,7 @@ const Post = () => {
                 formData.append('image', file);
 
                 return axios
-                  .post('http://localhost:8080/api/upload', formData, {
+                  .post(`${import.meta.env.URL}/api/upload`, formData, {
                     headers: {
                       'Content-Type': 'multipart/form-data',
                     },
