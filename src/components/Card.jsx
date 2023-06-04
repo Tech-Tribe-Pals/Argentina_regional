@@ -1,48 +1,33 @@
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 import axios from "axios";
 import Comment from "./Comment.jsx";
 
 const Card = ({ post }) => {
   const [commentText, setCommentText] = useState("");
-  const [comments, setComments] = useState([]);
+  const [comments, setComments] = useState(post.comments || []);
 
-  const handleCommentSubmit = (event) => {
+  const handleCommentSubmit = async (event) => {
     event.preventDefault();
 
     if (commentText.trim() !== "") {
-      axios
-        .post(`${import.meta.env.VITE_APP_URL}/api/comments`, {
+      try {
+        const response = await axios.post(`${import.meta.env.VITE_APP_URL}/api/comments`, {
           postId: post._id,
           text: commentText,
-        })
-        .then((response) => {
-          setComments([...comments, response.data]);
-          setCommentText("");
-        })
-        .catch((error) => {
-          console.error("Error al agregar el comentario", error);
         });
-    }
-  };
+        const newComment = response.data;
 
-  const fetchComments = async () => {
-    try {
-      const response = await axios.get(
-        `${import.meta.env.VITE_APP_URL}/api/posts/${post._id}/comments`
-      );
-      setComments(response.data);
-    } catch (error) {
-      console.error("Error al obtener los comentarios", error);
+        setComments((prevComments) => [...prevComments, newComment]);
+        setCommentText("");
+      } catch (error) {
+        console.error("Error al agregar el comentario", error);
+      }
     }
   };
 
   useEffect(() => {
-    const interval = setInterval(fetchComments, 1000); // Realizar la solicitud cada 5 segundos
-
-    return () => {
-      clearInterval(interval); // Limpiar el intervalo al desmontar el componente
-    };
-  }, [post._id]);
+    setComments(post.comments)
+  }, [post])
 
   return (
     <section>
@@ -57,7 +42,7 @@ const Card = ({ post }) => {
             <Comment key={comment._id} comment={comment} />
           ))
         ) : (
-          "Cargando..."
+          "Sin comentarios"
         )}
         <form onSubmit={handleCommentSubmit}>
           <textarea

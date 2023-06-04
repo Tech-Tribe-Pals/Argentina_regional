@@ -21,7 +21,7 @@ const Post = () => {
       quill.on('editor-change', (eventName, ...args) => {
         if (eventName === 'text-change') {
           const [delta] = args;
-          const content = quill.clipboard.convert(delta);
+          quill.clipboard.convert(delta);
           const html = editorContainer.innerHTML;
           setEditorContent(html);
         }
@@ -31,7 +31,7 @@ const Post = () => {
 
   const handleSave = () => {
     const editorContent = reactQuillRef.current.getEditor().root.innerHTML;
-  
+
     axios
       .post(`${import.meta.env.VITE_APP_URL}/api/posts`, { content: editorContent })
       .then((response) => {
@@ -42,42 +42,8 @@ const Post = () => {
         console.error('Error al guardar la publicación', error);
         toast.error('Error al guardar la publicación');
       });
-  
+
       setEditorContent('');
-  };
-  
-  
-
-  const imageHandler = () => {
-    const input = document.createElement('input');
-
-    input.setAttribute('type', 'file');
-    input.setAttribute('accept', 'image/*');
-    input.click();
-
-    input.onchange = async () => {
-      const file = input.files[0];
-      const formData = new FormData();
-
-      formData.append('image', file);
-
-      try {
-        const response = await axios.post(`${import.meta.env.VITE_APP_URL}/api/upload`, formData, {
-          headers: {
-            'Content-Type': 'multipart/form-data',
-          },
-        });
-
-        const imageUrl = response.data.imageUrl;
-
-        // Insertar la imagen en el editor
-        const quill = reactQuillRef.current.getEditor();
-        const range = quill.getSelection();
-        quill.insertEmbed(range.index, 'image', imageUrl);
-      } catch (error) {
-        console.error('Error al subir la imagen', error);
-      }
-    };
   };
 
   // Configurar el módulo ImageUploader
@@ -116,7 +82,7 @@ const Post = () => {
                 formData.append('image', file);
 
                 return axios
-                  .post(`${import.meta.env.URL}/api/upload`, formData, {
+                  .post(`${import.meta.env.VITE_APP_URL}/api/posts/upload`, formData, {
                     headers: {
                       'Content-Type': 'multipart/form-data',
                     },

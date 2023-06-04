@@ -6,14 +6,22 @@ const Forum = () => {
   const [posts, setPosts] = useState([]);
 
   useEffect(() => {
-    axios
-      .get(`${import.meta.env.VITE_APP_URL}/api/posts`)
-      .then((response) => {
+    const fetchPosts = async () => {
+      try {
+        const response = await axios.get(`${import.meta.env.VITE_APP_URL}/api/posts`);
         setPosts(response.data);
-      })
-      .catch((error) => {
+      } catch (error) {
         console.error("Error al obtener las publicaciones", error);
-      });
+      }
+    };
+
+    fetchPosts();
+
+    const interval = setInterval(fetchPosts, 5000); // Realizar la solicitud cada 5 segundos
+
+    return () => {
+      clearInterval(interval); // Limpiar el intervalo al desmontar el componente
+    };
   }, []);
 
   return (
