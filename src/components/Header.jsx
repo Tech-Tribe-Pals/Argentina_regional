@@ -3,15 +3,47 @@ import styled from "styled-components";
 import Footer from "./Footer";
 
 const HeaderStyle = styled.header`
-  background-color: #223;
+width:100%;
+  background-color: #4e6247;
   color: #fff;
+  border-bottom: solid #1a1919  9px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding:1.5rem;
+  justify-content: space-between;
+  position: sticky;
+  top:0;
+  picture {
+    display:flex;
+    align-items: flex-end;
+    
+    img { max-width:30px; }
+
+    span {margin-left: 10px}
+  }
+
+
+
   nav {
     ul {
+      display: flex;
+      flex-direction: row;
+
       li {
         list-style: none;
+        margin-left: 10px;
         a {
           color: #fff;
           text-decoration-line: none;
+        }
+
+        a:hover {
+
+          
+
+
+
         }
       }
     }
@@ -19,11 +51,12 @@ const HeaderStyle = styled.header`
 `;
 
 const Header = () => {
-  
   return (
     <HeaderStyle>
+      <picture>
       <img src="./logo.svg" alt="Logo" />
-      Geografia Regional
+     <span>Geografia Regional</span>
+      </picture>
       <nav>
         <ul>
           <li>
