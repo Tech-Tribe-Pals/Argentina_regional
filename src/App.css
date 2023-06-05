@@ -1,7 +1,16 @@
+@import url("https://fonts.googleapis.com/css2?family=Niramit:wght@600&display=swap");
+
 * {
-    font-family: sans-serif
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Niramit", sans-serif;
+}
+
+a {
+  text-decoration: none;
 }
 
 .card-body img {
-    max-height: 250px;
+  max-height: 250px;
 }
