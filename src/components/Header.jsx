@@ -3,6 +3,7 @@ import styled from "styled-components";
 import Footer from "./Footer";
 
 const HeaderStyle = styled.header`
+
   width: 100%;
   background-color: #4e6247;
   color: #fff;
@@ -25,6 +26,7 @@ const HeaderStyle = styled.header`
     }
   }
 
+
   nav {
     ul {
       display: flex;
@@ -32,13 +34,17 @@ const HeaderStyle = styled.header`
 
       li {
         list-style: none;
+
         margin-left: 1rem;
+
         a {
           color: #fff;
           text-decoration-line: none;
         }
 
         a:hover {
+
+
         }
       }
     }
@@ -49,8 +55,10 @@ const Header = () => {
   return (
     <HeaderStyle>
       <picture>
+
         <img src="./logo.svg" alt="Logo" />
         <span>Geografia Regional</span>
+
       </picture>
       <nav>
         <ul>
