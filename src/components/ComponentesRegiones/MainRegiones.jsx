@@ -7,7 +7,7 @@ const ContenidoInfo = styled.section `
     border-left: solid #D9D9D9 11px;
     border-radius: 0.3rem;
     height: 200vh;
-    width:95%;
+    width:90%;
     
   p{
 
