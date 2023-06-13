@@ -12,6 +12,10 @@ const HeaderStyle = styled.header`
   align-items: center;
   padding: 1.5rem;
   justify-content: space-between;
+  position: sticky;
+  top:0;
+
+
   picture {
     display: flex;
     align-items: flex-end;

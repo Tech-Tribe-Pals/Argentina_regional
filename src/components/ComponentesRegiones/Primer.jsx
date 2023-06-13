@@ -217,15 +217,15 @@ const Carouselin = () => {
       <div className="navegation">
         {arr.map((item, i) => (
           <button key={i} onClick={() => handleClick(i)}>
-            <img className="Selector" src={item.img} alt="" srcset="" />
+            <img className="Selector" src={item.img} alt="" />
           </button>
         ))}
         <img className="madera" src="./Tronco.svg" />
-        <img  className="bird" src="./bird.svg" alt="" srcset="" />
+        <img  className="bird" src="./bird.svg" alt=""  />
       </div>
-      <img className="sun" src="./sun.svg" alt="" srcset="" />
+      <img className="sun" src="./sun.svg" alt=""  />
       <img className="mountain" src="./MountainRegionFondo.svg" alt="" />
-      <img className="arbol" src="./arbol.svg" alt="" srcset="" />
+      <img className="arbol" src="./arbol.svg" alt="" />
     <img width={75} className="nube" src="./cloud.svg" alt="" />
             
 
