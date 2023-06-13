@@ -3,6 +3,7 @@ import styled from "styled-components";
 import BotonStyle from "../components/BotonStyle";
 import { Link } from "react-router-dom";
 
+
 const HomeIndex = styled.section`
   height: 100vh;
   width: 100%;
@@ -93,12 +94,14 @@ const HomeIndex = styled.section`
     li {
       margin-top: 1rem;
     }
+
   }
 `;
 
 export default function Home() {
   return (
     <HomeIndex>
+
       <video autoPlay loop muted src="./Inicio.mp4" type="video/mp4" />
 
       <div className="unicen">
@@ -132,6 +135,7 @@ export default function Home() {
           </div>
         </div>
       </nav>
+
     </HomeIndex>
   );
 }

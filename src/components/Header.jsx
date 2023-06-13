@@ -13,9 +13,9 @@ const HeaderStyle = styled.header`
   align-items: center;
   padding: 1.5rem;
   justify-content: space-between;
+  z-index:10;
   position: sticky;
   top:0;
-
 
   picture {
     display: flex;
