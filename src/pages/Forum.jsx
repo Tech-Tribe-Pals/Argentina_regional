@@ -8,7 +8,7 @@ const ForoStyled = styled.main`
   display: flex;
   flex-direction: row-reverse;
   justify-content: space-between;
-
+  margin-bottom:20rem;
   aside {
     div {
       position: fixed;

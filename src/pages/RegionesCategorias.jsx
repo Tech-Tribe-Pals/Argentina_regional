@@ -1,7 +1,7 @@
 import React, { useRef, useState } from "react";
-import Header from "../../components/Header";
+import Header from "../components/Header";
 import styled from "styled-components";
-import arr from "../../components/ComponentesRegiones/array"
+import arr from "../components/ComponentesRegiones/array"
 
 
 const PaginaRegiones = styled.main`

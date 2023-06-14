@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import PresentacionRegiones from '../components/ComponentesRegiones/PresentacionRegiones'
 import MainRegiones from '../components/ComponentesRegiones/MainRegiones'
-import Footer from '../components/Footer'
+
 
 const TandilStyle = styled.main `
     background-color: #45673E;
@@ -22,6 +22,6 @@ export default function Tandil() {
     
 
 
-    <Footer />
+   
   </TandilStyle>)
 }
