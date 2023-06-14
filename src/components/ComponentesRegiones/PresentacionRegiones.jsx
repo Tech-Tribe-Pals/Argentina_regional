@@ -19,7 +19,6 @@ export default function PresentacionRegiones({fondo}) {
   console.log(fondo)
 
   return (
-
     <HeaderStyle style={{ background: `url(${fondo})`, backgroundRepeat: `no-repeat`, backgroundSize: "cover", backgroundPosition: "center"}}> 
 
 
