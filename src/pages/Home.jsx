@@ -3,7 +3,6 @@ import styled from "styled-components";
 import BotonStyle from "../components/BotonStyle";
 import { Link } from "react-router-dom";
 
-
 const HomeIndex = styled.section`
   height: 100vh;
   width: 100%;
@@ -57,15 +56,22 @@ const HomeIndex = styled.section`
     z-index: 1;
     width: 20%;
     height: 100%;
+    
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+
+    img {
+      width: 50%;
+      margin-bottom: 1rem;
+    }
   }
   picture {
     display: flex;
     flex-direction: column;
     align-items: center;
+
 
     img {
       width: 50%;

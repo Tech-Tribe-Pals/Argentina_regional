@@ -19,6 +19,9 @@ export default function Tandil() {
     <TandilStyle>
     <PresentacionRegiones fondo={"./Fondo.jpg"}  />
     <MainRegiones />
+    
+
+
     <Footer />
   </TandilStyle>)
 }
