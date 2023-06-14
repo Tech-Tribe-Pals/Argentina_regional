@@ -32,5 +32,7 @@ const Boton = styled.button`
 `;
 
 export default function BotonStyle({ info, icon}) {
+
   return <Boton>{info} <img width={20} src={icon} alt="" /></Boton>;
+
 }

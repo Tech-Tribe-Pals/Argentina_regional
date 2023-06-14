@@ -1,3 +1,4 @@
+
 import { Route, Routes, BrowserRouter } from 'react-router-dom';
 import Header from './components/Header';
 import './App.css';
@@ -11,6 +12,7 @@ function App() {
   return (
     <BrowserRouter>
     <Header />
+
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/tandil" element={<Tandil />} />
@@ -19,6 +21,7 @@ function App() {
         <Route path="/foro" element={<Forum />} />
       </Routes>
       
+
     </BrowserRouter>
   );
 }

@@ -17,7 +17,6 @@ const HeaderStyle = styled.header`
   z-index:10;
   top:0;
 
-
   picture {
     display: flex;
     align-items: flex-end;

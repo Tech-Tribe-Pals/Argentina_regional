@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 
 
 
+
 const HomeIndex = styled.section`
   height: 100vh;
   width: 100%;
@@ -95,6 +96,7 @@ const HomeIndex = styled.section`
     li {
       margin-top: 1rem;
     }
+
   }
 `;
 
@@ -104,6 +106,7 @@ export default function Home() {
 
 
  
+
 
       <video autoPlay loop muted src="./Inicio.mp4" type="video/mp4" />
 
@@ -138,6 +141,7 @@ export default function Home() {
           </div>
         </div>
       </nav>
+
     </HomeIndex>
   );
 }
