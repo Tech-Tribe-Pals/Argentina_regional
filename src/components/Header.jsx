@@ -14,6 +14,7 @@ const HeaderStyle = styled.header`
   padding: 1.5rem;
   justify-content: space-between;
   position: sticky;
+  z-index:10;
   top:0;
 
 
@@ -61,7 +62,7 @@ const Header = () => {
       <picture>
 
         <img src="./logo.svg" alt="Logo" />
-        <span>Geografia Regional</span>
+        <span>Argentina Regional</span>
 
       </picture>
       <nav>
