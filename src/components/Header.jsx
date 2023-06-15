@@ -1,6 +1,7 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import styled from "styled-components";
-import Footer from "./Footer";
+import { useContext, useEffect } from 'react';
+import { HeaderContext } from '../context/HeaderContext';
 
 const HeaderStyle = styled.header`
 
@@ -58,8 +59,19 @@ const HeaderStyle = styled.header`
 `;
 
 const Header = () => {
+  const { headerOut, setPath } = useContext(HeaderContext);
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.pathname === "/") {
+      setPath(location.pathname);
+    } else {
+      setPath(location.pathname);
+    }
+  }, [location.pathname, setPath]);
+
   return (
-    <HeaderStyle>
+    <HeaderStyle style={ headerOut ? { display: 'none' } : { display: 'flex' } }>
       <picture>
 
         <img src="./logo.svg" alt="Logo" />
@@ -79,7 +91,7 @@ const Header = () => {
             <Link to={"/post"}>Post</Link>
           </li>
           <li>
-            <Link to={"/foro"}>Foro</Link>
+            <Link to={"/blog"}>Blog</Link>
           </li>
         </ul>
       </nav>
