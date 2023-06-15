@@ -7,6 +7,7 @@ import Post from './pages/Post';
 import Primer from './components/ComponentesRegiones/Primer';
 import Home from './pages/Home';
 import Tandil from './pages/Tandil';
+import Blog from './pages/Blog'
 
 function App() {
   return (
@@ -18,7 +19,8 @@ function App() {
         <Route path="/tandil" element={<Tandil />} />
         <Route path="/regiones" element={<Primer />} />
         <Route path="/post" element={<Post />} />
-        <Route path="/foro" element={<Forum />} />
+        <Route path="/blog" element={<Forum />} />
+        <Route path="/blog/:id" element={<Blog />} />
       </Routes>
       
 
