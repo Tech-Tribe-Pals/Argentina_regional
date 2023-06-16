@@ -8,17 +8,8 @@ const ForoStyled = styled.main`
   display: flex;
   flex-direction: row-reverse;
   justify-content: space-between;
-  margin-bottom:20rem;
+  margin-bottom:25rem;
   aside {
-    div {
-      position: fixed;
-      width: 100%;
-      height: 5%;
-      background-color: #4e6247;
-      top: 11%;
-      z-index: 11;
-    }
-
     display: flex;
     flex-direction: column;
     border-left: 4px solid black;
@@ -77,7 +68,7 @@ const Forum = () => {
         <div></div>
       </aside>
       <section>
-        <nav>ffede</nav>
+        <nav></nav>
         <CardForo />
         <CardForo />
         <CardForo />

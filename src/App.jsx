@@ -7,6 +7,7 @@ import Primer from "./components/ComponentesRegiones/Primer";
 import Home from "./pages/Home";
 import Tandil from "./pages/Tandil";
 import Footer from "./components/Footer";
+import SobreMi from "./pages/SobreMi";
 
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
       <Header />
        <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/sobremi" element={<SobreMi />} />
         <Route path="/tandil" element={<Tandil />} />
         <Route path="/regiones" element={<Primer />} />
         <Route path="/post" element={<Post />} />
