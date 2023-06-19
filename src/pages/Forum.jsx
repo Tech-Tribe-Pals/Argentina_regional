@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-import Card from "../components/Card.jsx";
-import CardForo from "../components/ComponentesRegiones/cardForo";
+import Card from "../components/Card";
 import styled from "styled-components";
 
 const ForoStyled = styled.main`
@@ -28,7 +27,6 @@ const ForoStyled = styled.main`
       z-index: 1;
       border-bottom: 8px solid #374433;
     }
-
     margin-top: 3rem;
     width: 80%;
     background-color: #ffffff;
@@ -54,12 +52,6 @@ const Forum = () => {
     };
 
     fetchPosts();
-
-    const interval = setInterval(fetchPosts, 5000); // Realizar la solicitud cada 5 segundos
-
-    return () => {
-      clearInterval(interval); // Limpiar el intervalo al desmontar el componente
-    };
   }, []);
 
   return (
@@ -68,18 +60,13 @@ const Forum = () => {
         <div></div>
       </aside>
       <section>
-        <nav></nav>
-        <CardForo />
-        <CardForo />
-        <CardForo />
-        {/* <h1>Foro de Publicaciones</h1>
-      {posts.length !== 0 ? (
-        posts.map((post) => (
-          <Card key={post._id} post={post} />
-        ))
-      ) : (
-        <p>Cargando...</p>
-      )} */}
+        <nav>ffede</nav>
+        <h1>Foro de Publicaciones</h1>
+        {posts.length !== 0 ? (
+          posts.map((post) => <Card key={post._id} post={post} />)
+        ) : (
+          <p>Cargando...</p>
+        )}
       </section>
     </ForoStyled>
   );

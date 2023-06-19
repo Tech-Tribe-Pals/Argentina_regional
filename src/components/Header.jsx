@@ -1,7 +1,7 @@
-import React, { useState, useEffect, useRef } from "react";
-import { Link } from "react-router-dom";
+import { useState, useEffect, useRef, useContext } from "react";
+import { Link, useLocation } from "react-router-dom";
 import styled from "styled-components";
-import Footer from "./Footer";
+import { HeaderContext } from "../context/HeaderContext";
 
 const HeaderStyle = styled.header`
   width: 100%;
@@ -109,8 +109,19 @@ const Header = () => {
     };
   }, []);
 
+  const { headerOut, setPath } = useContext(HeaderContext);
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.pathname === "/") {
+      setPath(location.pathname);
+    } else {
+      setPath(location.pathname);
+    }
+  }, [location.pathname, setPath]);
+
   return (
-    <HeaderStyle>
+    <HeaderStyle style={headerOut ? { display: "none" } : { display: "flex" }}>
       <picture>
         <img src="./logo.svg" alt="Logo" />
         <span>Argentina Regional</span>
@@ -134,10 +145,15 @@ const Header = () => {
             </DropdownWrapper>
           </li>
           <li>
+            <Link to={"/sobremi"}>Nosotros</Link>
+          </li>
+
+
+          <li>
             <Link to={"/post"}>Post</Link>
           </li>
           <li>
-            <Link to={"/foro"}>Foro</Link>
+            <Link to={"/blog"}>Blog</Link>
           </li>
         </ul>
       </nav>

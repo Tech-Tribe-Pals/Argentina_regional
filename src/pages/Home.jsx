@@ -1,7 +1,9 @@
-import React from "react";
+import { useContext, useEffect } from "react";
 import styled from "styled-components";
 import BotonStyle from "../components/BotonStyle";
 import { Link } from "react-router-dom";
+import { HeaderContext } from "../context/HeaderContext";
+
 
 const HomeIndex = styled.section`
   height: 100vh;
@@ -105,6 +107,11 @@ const HomeIndex = styled.section`
 `;
 
 export default function Home() {
+  const { setPath } = useContext(HeaderContext)
+
+  useEffect(() => {
+    setPath(window.location.pathname)
+  })
   return (
     <HomeIndex>
 
@@ -129,9 +136,9 @@ export default function Home() {
               </Link>
             </li>
             <li>
-              <Link to={"/foro"}>
+              <Link to={"/blog"}>
                 {" "}
-                <BotonStyle info={"Foro"} />
+                <BotonStyle info={"Blog"} />
               </Link>
             </li>
           </ul>
