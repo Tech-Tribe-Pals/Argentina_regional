@@ -9,6 +9,7 @@ import Tandil from './pages/Tandil';
 import Blog from './pages/Blog'
 import Footer from "./components/Footer";
 import SobreMi from "./pages/SobreMi";
+import Contacto from './pages/Contacto';
 
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
        <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/sobremi" element={<SobreMi />} />
+        <Route path="/contacto" element={<Contacto />} />
         <Route path="/tandil" element={<Tandil />} />
         <Route path="/regiones" element={<Primer />} />
         <Route path="/post" element={<Post />} />

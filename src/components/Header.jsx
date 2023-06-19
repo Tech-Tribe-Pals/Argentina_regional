@@ -134,10 +134,14 @@ const Header = () => {
           <li>
             <Link to={"/sobremi"}>Sobre Mi</Link>
           </li>
+          <li>
+            <Link to={"/contacto"}>Contacto</Link>
+          </li>
           <li ref={dropdownRef}>
             <DropdownWrapper>
               <a onClick={handleDropdownClick}>Regiones</a>
               <DropdownContent open={dropdownOpen}>
+              <DropdownItem to={"/regiones"}>Principal</DropdownItem>
                 <DropdownItem to={"/tandil"}>Cuyo</DropdownItem>
                 <DropdownItem to={"/region2"}>Patagonia</DropdownItem>
                 <DropdownItem to={"/region3"}>Norte</DropdownItem>
