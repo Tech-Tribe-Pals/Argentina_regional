@@ -4,7 +4,6 @@ import BotonStyle from "../components/BotonStyle";
 import { Link } from "react-router-dom";
 import { HeaderContext } from "../context/HeaderContext";
 
-
 const HomeIndex = styled.section`
   height: 100vh;
   width: 100%;
@@ -58,7 +57,7 @@ const HomeIndex = styled.section`
     z-index: 1;
     width: 20%;
     height: 100%;
-    
+
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -74,7 +73,6 @@ const HomeIndex = styled.section`
     flex-direction: column;
     align-items: center;
 
-
     img {
       width: 50%;
       margin-bottom: 1rem;
@@ -84,17 +82,16 @@ const HomeIndex = styled.section`
   .welcome {
     width: 100%;
     height: 200px;
-    background-color: #5E6C45;
-    position:relative;
+    background-color: #5e6c45;
+    position: relative;
     border-top-right-radius: 1rem;
     border-top-left-radius: 1rem;
     img {
-        position:absolute;
-        height:75%;
-        width:100%;bottom:0;
-
+      position: absolute;
+      height: 75%;
+      width: 100%;
+      bottom: 0;
     }
-
   }
 
   ul {
@@ -102,24 +99,22 @@ const HomeIndex = styled.section`
     li {
       margin-top: 1rem;
     }
-
   }
 `;
 
 export default function Home() {
-  const { setPath } = useContext(HeaderContext)
+  const { setPath } = useContext(HeaderContext);
 
   useEffect(() => {
-    setPath(window.location.pathname)
-  })
+    setPath(window.location.pathname);
+  });
   return (
     <HomeIndex>
-
-      <video autoPlay loop muted src="./Inicio.mp4" type="video/mp4" />
+      <video autoPlay loop muted src="./videos/Header_.mp4" type="video/mp4" />
 
       <div className="unicen">
-        <img src="./fch.png" alt="" />
-        <img src="./unicen.png" alt="" />
+        <img src="./fch.png" alt="logo1" />
+        <img src="./unicen.png" alt="logo2" />
       </div>
 
       <nav>
@@ -144,11 +139,10 @@ export default function Home() {
           </ul>
 
           <div className="welcome">
-            <img src="./profe.svg" alt="" />
+            <img src="./profe.svg" alt="animacion_profe" />
           </div>
         </div>
       </nav>
-
     </HomeIndex>
   );
 }

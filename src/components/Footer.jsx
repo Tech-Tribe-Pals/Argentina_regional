@@ -12,14 +12,13 @@ const FooterStyle = styled.footer`
   align-items: center;
 
   p {
-    bottom:0;
-    position:absolute;
-    width:100%;
-    background-color:#2B2A2A;
-    text-align:center;
-    padding:0.2rem;
+    bottom: 0;
+    position: absolute;
+    width: 100%;
+    background-color: #2b2a2a;
+    text-align: center;
+    padding: 0.2rem;
   }
-
 
   .fondo {
     top: -80%;
@@ -36,13 +35,11 @@ const FooterStyle = styled.footer`
     width: 80%;
     margin-top: 5rem;
 
-    ul{  
+    ul {
       li {
-        margin-top:0.5rem;
-       
-
+        margin-top: 0.5rem;
       }
-  }
+    }
   }
 
   .unicen {
@@ -61,7 +58,7 @@ const FooterStyle = styled.footer`
 export default function Footer() {
   return (
     <FooterStyle>
-      <img className="fondo" src="./Footer.png" alt="" />
+      {/* <img className="fondo" src="./Footer.png" alt="" /> */}
 
       <div className="unicen">
         <img src="./fch.png" alt="" />
@@ -98,9 +95,7 @@ export default function Footer() {
         </div>
       </div>
 
-
-    <p>Hecha por Javier Rivarolla, Adriel Camacho y Federico Massolo</p>
-
+      <p>Hecha por Javier Rivarolla, Adriel Camacho y Federico Massolo</p>
     </FooterStyle>
   );
 }

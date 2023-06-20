@@ -25,11 +25,13 @@ const Post = () => {
     try {
       const response = await axios.post(
         `${import.meta.env.VITE_APP_URL}/api/posts/upload`,
-        formData, {
+        formData,
+        {
           headers: {
-            'Content-Type': 'multipart/form-data',
+            "Content-Type": "multipart/form-data",
           },
-        })
+        }
+      );
 
       setCoverImage(response.data);
     } catch (error) {
@@ -76,18 +78,19 @@ const Post = () => {
         {({ getRootProps, getInputProps }) => (
           <div {...getRootProps()}>
             <input {...getInputProps()} />
-            {
-              coverImage === null ?
+            {coverImage === null ? (
               <p>
-              Arrastra y suelta una imagen aquí o haz clic para seleccionar una
-              </p> :
+                Arrastra y suelta una imagen aquí o haz clic para seleccionar
+                una
+              </p>
+            ) : (
               <img src={coverImage.imageUrl} />
-            }
+            )}
           </div>
         )}
       </Dropzone>
       <button className="Boton" onClick={handleSave}>
-        Listo <img src="./checkBtn.svg" alt="" />
+        Listo <img src="./checkBtn.svg" alt="btn" />
       </button>
       <ToastContainer autoClose={1500} />
     </PostStyle>
