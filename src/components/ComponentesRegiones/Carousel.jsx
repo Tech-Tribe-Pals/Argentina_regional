@@ -181,12 +181,12 @@ const Carouselin = () => {
       info: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation",
     },
     {
-      name: "Pampeana",
-      img: "./Foto3.webp",
-      video: "./videos/Cuyo_.mp4",
-      ruta: "/post",
-      region: "Lorem 3",
-      info: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation",
+      name: "Metropolitana",
+      img: "./METROPOLITANA/metropolitana_3.PNG",
+      video: "./videos/Metrolopolitana_.mp4",
+      ruta: "/metropolitana",
+      region: "METROPOLITANA",
+      info: "Esta región comprende la Ciudad Autónoma de Buenos Aires, en cuyo espacio urbano coexiste la Capital Federal de la República Argentina. Se adiciona el continuo urbano-suburbano de hasta 40 partidos de la provincia de Buenos Aires. No solamente incluye el Conurbano Bonaerense, sino además el Gran La Plata. Estos contrastes exhiben patrimonios culturales únicos, muy visitados, pero también espacios extremadamente vulnerados, como por ejemplo se verifica en las márgenes de la Cuenca Matanza-Riachuelo. ",
     },
   ];
 

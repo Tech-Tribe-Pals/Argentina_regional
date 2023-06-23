@@ -68,7 +68,6 @@ export default function Footer() {
       <div className="info">
         <div>
           <ul>
-            <h2>Lorem</h2>
             <li>Lorem ip</li>
             <li>Lorem ip</li>
             <li>Lorem ip</li>
@@ -77,7 +76,6 @@ export default function Footer() {
         </div>
         <div>
           <ul>
-            <h2>Lorem</h2>
             <li>Lorem ip</li>
             <li>Lorem ip</li>
             <li>Lorem ip</li>
@@ -86,7 +84,6 @@ export default function Footer() {
         </div>
         <div>
           <ul>
-            <h2>Lorem</h2>
             <li>Lorem ip</li>
             <li>Lorem ip</li>
             <li>Lorem ip</li>
@@ -94,8 +91,6 @@ export default function Footer() {
           </ul>
         </div>
       </div>
-
-      <p>Hecha por Javier Rivarolla, Adriel Camacho y Federico Massolo</p>
     </FooterStyle>
   );
 }

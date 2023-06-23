@@ -3,7 +3,7 @@ import styled from "styled-components";
 import PresentacionRegiones from "../components/ComponentesRegiones/PresentacionRegiones";
 import MainRegiones from "../components/ComponentesRegiones/MainRegiones";
 
-const TandilStyle = styled.main`
+const MetropolitanaStyle = styled.main`
   background-color: #45673e;
   display: flex;
   flex-direction: column;
@@ -11,12 +11,11 @@ const TandilStyle = styled.main`
   margin-bottom: 8rem;
 `;
 
-export default function Tandil() {
+export default function Metropolitana() {
   return (
-    <TandilStyle>
-      <PresentacionRegiones fondo={"./Fondo.jpg"} />
+    <MetropolitanaStyle>
+      <PresentacionRegiones fondo={"./METROPOLITANA/metropolitana_3.PNG"} />
       <MainRegiones />
-    </TandilStyle>
+    </MetropolitanaStyle>
   );
-
 }

@@ -140,14 +140,17 @@ const Header = () => {
               <DropdownContent open={dropdownOpen}>
                 <DropdownItem to={"/tandil"}>Cuyo</DropdownItem>
                 <DropdownItem to={"/region2"}>Patagonia</DropdownItem>
-                <DropdownItem to={"/region3"}>Norte</DropdownItem>
+                <DropdownItem to={"/metropolitana"}>Metropolitana</DropdownItem>
+                <DropdownItem to={"/region3"}>Noroeste</DropdownItem>
+                <DropdownItem to={"/region3"}>Noreste</DropdownItem>
+                <DropdownItem to={"/region3"}>Antartida</DropdownItem>
+                <DropdownItem to={"/region3"}>Transfronterizas</DropdownItem>
               </DropdownContent>
             </DropdownWrapper>
           </li>
           <li>
             <Link to={"/sobremi"}>Nosotros</Link>
           </li>
-
 
           <li>
             <Link to={"/post"}>Post</Link>
