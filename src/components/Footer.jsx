@@ -1,4 +1,3 @@
-import React from "react";
 import styled from "styled-components";
 
 const FooterStyle = styled.footer`
@@ -62,7 +61,7 @@ export default function Footer() {
 
       <div className="unicen">
         <img src="./fch.png" alt="" />
-        <img src="./unicen.png" alt="" />
+        <img src="./unicen.svg" alt="" />
       </div>
 
       <div className="info">

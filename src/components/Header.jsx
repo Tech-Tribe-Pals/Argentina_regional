@@ -138,13 +138,13 @@ const Header = () => {
             <DropdownWrapper>
               <a onClick={handleDropdownClick}>Regiones</a>
               <DropdownContent open={dropdownOpen}>
-                <DropdownItem to={"/tandil"}>Cuyo</DropdownItem>
-                <DropdownItem to={"/region2"}>Patagonia</DropdownItem>
-                <DropdownItem to={"/metropolitana"}>Metropolitana</DropdownItem>
-                <DropdownItem to={"/region3"}>Noroeste</DropdownItem>
-                <DropdownItem to={"/region3"}>Noreste</DropdownItem>
-                <DropdownItem to={"/region3"}>Antartida</DropdownItem>
-                <DropdownItem to={"/region3"}>Transfronterizas</DropdownItem>
+                <DropdownItem to={"/regiones/cuyo"}>Cuyo</DropdownItem>
+                <DropdownItem to={"/regiones/patagonia"}>Patagonia</DropdownItem>
+                <DropdownItem to={"/regiones/metropolitana"}>Metropolitana</DropdownItem>
+                <DropdownItem to={"/regiones/noroeste"}>Noroeste</DropdownItem>
+                <DropdownItem to={"/regiones/noreste"}>Noreste</DropdownItem>
+                <DropdownItem to={"/regiones/antartida"}>Antartida</DropdownItem>
+                <DropdownItem to={"/regiones/transfronterizas"}>Transfronterizas</DropdownItem>
               </DropdownContent>
             </DropdownWrapper>
           </li>
