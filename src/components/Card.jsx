@@ -1,5 +1,5 @@
-// import { useEffect } from "react";
-// import axios from "axios";
+import { useEffect } from "react";
+import axios from "axios";
 import styled from "styled-components";
 import esLocale from "date-fns/locale/es";
 import { format } from "date-fns";

@@ -2,22 +2,14 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import Card from "../components/Card";
 import styled from "styled-components";
+import NavBlog from "../components/NavBlog";
 
 const ForoStyled = styled.main`
   display: flex;
   flex-direction: row-reverse;
   justify-content: space-between;
-
+  margin-bottom:25rem;
   aside {
-    div {
-      position: fixed;
-      width: 100%;
-      height: 5%;
-      background-color: #4e6247;
-      top: 11%;
-      z-index: 11;
-    }
-
     display: flex;
     flex-direction: column;
     border-left: 4px solid black;
@@ -36,7 +28,6 @@ const ForoStyled = styled.main`
       z-index: 1;
       border-bottom: 8px solid #374433;
     }
-
     margin-top: 3rem;
     width: 80%;
     background-color: #ffffff;
@@ -70,8 +61,8 @@ const Forum = () => {
         <div></div>
       </aside>
       <section>
-        <nav>ffede</nav>
-        <h1>Foro de Publicaciones</h1>
+        <NavBlog />
+        <h2>Foro de Publicaciones</h2>
         {posts.length !== 0 ? (
           posts.map((post) => <Card key={post._id} post={post} />)
         ) : (

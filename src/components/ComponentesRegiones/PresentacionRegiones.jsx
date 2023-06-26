@@ -20,17 +20,6 @@ export default function PresentacionRegiones({fondo}) {
 
   return (
     <HeaderStyle style={{ background: `url(${fondo})`, backgroundRepeat: `no-repeat`, backgroundSize: "cover", backgroundPosition: "center"}}> 
-
-
-
-      <img width={100} src={"ContenidoRegiones.svg"} alt="" />
-   
-
-
-
-
-
-
     </HeaderStyle>
   )
 }
