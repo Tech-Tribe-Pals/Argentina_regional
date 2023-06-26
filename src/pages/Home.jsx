@@ -114,7 +114,7 @@ export default function Home() {
 
       <div className="unicen">
         <img src="./fch.png" alt="logo1" />
-        <img src="./unicen.png" alt="logo2" />
+        <img src="./unicen.svg" alt="logo2" />
       </div>
 
       <nav>

@@ -1,6 +1,6 @@
 import { useState, useRef } from "react";
 import styled from "styled-components";
-import ImgCard from "./Video_card";
+import VideoCard from "./VideoCard";
 
 const CarouselStyle = styled.section`
   overflow-y: hidden;
@@ -147,7 +147,7 @@ const Carouselin = () => {
     {
       name: "Cuyo",
       img: "./Foto1.webp",
-      video: "./video/Cuyo.mp4",
+      video: "./videos/Cuyo_.mp4",
       ruta: "/tandil",
       region: "Lorem 1",
       info: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore",
@@ -183,7 +183,7 @@ const Carouselin = () => {
     {
       name: "Metropolitana",
       img: "./METROPOLITANA/metropolitana_3.PNG",
-      video: "./videos/Metrolopolitana_.mp4",
+      video: "./videos/Metropolitana_.mp4",
       ruta: "/metropolitana",
       region: "METROPOLITANA",
       info: "Esta región comprende la Ciudad Autónoma de Buenos Aires, en cuyo espacio urbano coexiste la Capital Federal de la República Argentina. Se adiciona el continuo urbano-suburbano de hasta 40 partidos de la provincia de Buenos Aires. No solamente incluye el Conurbano Bonaerense, sino además el Gran La Plata. Estos contrastes exhiben patrimonios culturales únicos, muy visitados, pero también espacios extremadamente vulnerados, como por ejemplo se verifica en las márgenes de la Cuenca Matanza-Riachuelo. ",
@@ -198,7 +198,7 @@ const Carouselin = () => {
     <CarouselStyle>
       <div ref={carousel} className="Displayer">
         {arr.map((item, i) => (
-          <ImgCard
+          <VideoCard
             cssClass={actual === i ? "show anim1" : "hide anim2"}
             key={i}
             video={item.video}
