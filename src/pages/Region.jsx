@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import styled from "styled-components";
 import Subsection from "../components/Region/Subsection";
 import PresentacionRegiones from "../components/Region/PresentacionRegiones";
@@ -119,10 +119,18 @@ const Region = () => {
   const [data, setData] = useState([]);
 
   const { region } = useParams();
+  const navigate = useNavigate()
 
   useEffect(() => {
     const fetchData = arr.find((e) => e.name === region);
-    setData(fetchData.docs);
+
+    if (fetchData) {
+      setData(fetchData.docs);
+    } else {
+      
+      navigate('/error')
+    }
+
   }, [region]);
 
   return (

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-import Card from "../components/Card";
+import { CardView, Card } from "../components/Cards";
 import styled from "styled-components";
 import NavBlog from "../components/NavBlog";
 
@@ -13,8 +13,13 @@ const ForoStyled = styled.main`
     display: flex;
     flex-direction: column;
     border-left: 4px solid black;
-    width: 15%;
+    width: 200px;
     background-color: #4e6247;
+    align-items: center;
+    h3 {
+      margin: 20px 0;
+      color: #FFF;
+    }
   }
 
   section {
@@ -34,6 +39,22 @@ const ForoStyled = styled.main`
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
+  }
+  @media (width < 990px) {
+    aside {
+      display: none;
+    }
+    section {
+      width: 100%;
+      nav {
+        height: auto;
+        width: auto;
+        padding: 15px;
+        position: fixed;
+        top: 100px;
+        flex-direction: column;
+      }
+    }
   }
 `;
 
@@ -58,11 +79,16 @@ const Forum = () => {
   return (
     <ForoStyled>
       <aside>
-        <div></div>
+        <h3>Los más vistos</h3>
+        {posts.length !== 0 ? (
+          posts.map((post) => <CardView key={post._id} post={post} />)
+        ) : (
+          <p>Cargando...</p>
+        )}
       </aside>
       <section>
         <NavBlog />
-        <h2>Foro de Publicaciones</h2>
+        <h2>Publicaciones</h2>
         {posts.length !== 0 ? (
           posts.map((post) => <Card key={post._id} post={post} />)
         ) : (

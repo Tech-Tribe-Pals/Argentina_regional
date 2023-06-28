@@ -3,6 +3,7 @@ import styled from "styled-components";
 import BotonStyle from "../components/BotonStyle";
 import { Link } from "react-router-dom";
 import { HeaderContext } from "../context/HeaderContext";
+import Bubble from "../components/Bubble";
 
 const HomeIndex = styled.section`
   height: 100vh;
@@ -139,6 +140,7 @@ export default function Home() {
           </ul>
 
           <div className="welcome">
+            <Bubble />
             <img src="./profe.svg" alt="animacion_profe" />
           </div>
         </div>

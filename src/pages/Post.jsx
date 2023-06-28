@@ -2,11 +2,11 @@ import { useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import Dropzone from "react-dropzone";
 import ReactQuill from "react-quill";
-import axios from "axios";
 import styled from "styled-components";
 
 import "react-toastify/dist/ReactToastify.css";
 import "react-quill/dist/quill.snow.css";
+import postsAPI from "../api/postsAPI";
 
 const Post = () => {
   const [content, setContent] = useState("");
@@ -20,20 +20,10 @@ const Post = () => {
   const handleImageUpload = async (files) => {
     const formData = new FormData();
     formData.append("image", files[0]);
-    formData.append("upload_preset", "your_cloudinary_preset");
 
     try {
-      const response = await axios.post(
-        `${import.meta.env.VITE_APP_URL}/api/posts/upload`,
-        formData,
-        {
-          headers: {
-            "Content-Type": "multipart/form-data",
-          },
-        }
-      );
-
-      setCoverImage(response.data);
+      const image = await postsAPI.uploadImg(formData)
+      setCoverImage(image);
     } catch (error) {
       console.error("Error al cargar la imagen a Cloudinary", error);
       toast.error("Error al cargar la imagen");
@@ -48,12 +38,7 @@ const Post = () => {
         thumbnail: coverImage.imageUrl,
       };
 
-      const response = await axios.post(
-        `${import.meta.env.VITE_APP_URL}/api/posts`,
-        postData
-      );
-
-      console.log(response.data);
+      await postsAPI.createPost(postData)
       toast.success("Publicación guardada con éxito");
 
       setContent("");
