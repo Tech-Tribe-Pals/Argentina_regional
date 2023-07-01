@@ -15,10 +15,12 @@ const Region = () => {
     const response = await fetch("/src/api/regiones.json");
     const allData = await response.json();
     const filter = allData.find((e) => e.name === region);
-    setData(filter.docs);
 
-    if (!filter?.docs)
-    navigate("/error");
+    if (filter) {
+      setData(filter.docs);
+    } else {
+      navigate('/error')
+    }
   };
 
   console.log(data);

@@ -23,14 +23,20 @@ const ForoStyled = styled.main`
   }
 
   section {
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+
+    h1 {align-self:flex-start; margin-left:2rem}
+
     nav {
+      align-self:flex-start;
       background-color: #4e6247;
       border-bottom-right-radius: 0.7rem;
       border-top-right-radius: 0.7rem;
       width: 90%;
       height: 85px;
       margin-bottom: 2rem;
-      z-index: 1;
       border-bottom: 8px solid #374433;
     }
     margin-top: 3rem;

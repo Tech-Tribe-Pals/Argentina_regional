@@ -38,7 +38,7 @@ const Header = () => {
   return (
     <HeaderStyle style={headerOut ? { display: "none" } : { display: "flex" }}>
       <picture>
-        <img src="./logo.svg" alt="Logo" />
+        <img src="/Inicio/logo.svg" alt="Logo" />
         <span>Argentina Regional</span>
       </picture>
       <nav>
@@ -147,7 +147,6 @@ const DropdownContent = styled.div`
   border-bottom-left-radius: 0.5rem;
   border-bottom-right-radius: 0.5rem;
   border-top-right-radius: 0.3rem;
-  margin-top: 0.2rem;
 
   ${(props) =>
     props.open &&

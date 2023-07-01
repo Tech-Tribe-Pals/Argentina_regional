@@ -21,7 +21,7 @@ const Boton = styled.button`
   padding-left: 8px;
 
   img {
-    margin-left: 3px;
+    margin-left: 5px;
   }
 
   :active {

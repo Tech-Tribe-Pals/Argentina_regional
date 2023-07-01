@@ -111,16 +111,16 @@ export default function Home() {
   });
   return (
     <HomeIndex>
-      <video autoPlay loop muted src="./videos/Header_.mp4" type="video/mp4" />
+      <video autoPlay loop muted src="/videos/Header_.mp4" type="video/mp4" />
 
       <div className="unicen">
-        <img src="./fch.png" alt="logo1" />
-        <img src="./unicen.svg" alt="logo2" />
+        <img src="/Inicio/fch.png" alt="logo1" />
+        <img src="/Inicio/unicen.svg" alt="logo2" />
       </div>
 
       <nav>
         <picture>
-          <img src="./logo.svg" />
+          <img src="/Inicio/logo.svg" />
           <h1>Argentina Regional</h1>
         </picture>
 
@@ -141,7 +141,7 @@ export default function Home() {
 
           <div className="welcome">
             <Bubble />
-            <img src="./profe.svg" alt="animacion_profe" />
+            <img src="/Inicio/profe.svg" alt="animacion_profe" />
           </div>
         </div>
       </nav>
