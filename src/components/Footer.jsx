@@ -12,7 +12,7 @@ const FooterStyle = styled.footer`
   align-items: flex-start;
   justify-content: space-around;
   a {
-    color: #ffffff;
+    color: #ffffff;  
     :hover {
       color: #45673e;
     }

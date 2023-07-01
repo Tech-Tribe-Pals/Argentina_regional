@@ -4,6 +4,7 @@ import styled from "styled-components";
 import { HeaderContext } from "../context/HeaderContext";
 
 const Header = () => {
+
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const dropdownRef = useRef(null);
 
@@ -28,6 +29,8 @@ const Header = () => {
   const location = useLocation();
 
   useEffect(() => {
+    window.scrollTo(0, 0);
+
     if (location.pathname === "/") {
       setPath(location.pathname);
     } else {
