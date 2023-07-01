@@ -9,7 +9,6 @@ const CardStyle = styled.article`
   position: relative;
   width: 90%;
   height: 50vh;
-  margin-right: 2rem;
   margin-top: 1.5rem;
   color:white;
   display: flex;
@@ -50,6 +49,10 @@ const CardStyle = styled.article`
     top: 0;
     left: 0; 
     z-index: 0;
+  }
+  @media (width < 990px) {
+    margin-right: 0;
+    height: 250px;
   }
 `;
 

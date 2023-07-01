@@ -8,7 +8,7 @@ const ForoStyled = styled.main`
   display: flex;
   flex-direction: row-reverse;
   justify-content: space-between;
-  margin-bottom:25rem;
+  margin-bottom: 25rem;
   aside {
     display: flex;
     flex-direction: column;
@@ -18,19 +18,22 @@ const ForoStyled = styled.main`
     align-items: center;
     h3 {
       margin: 20px 0;
-      color: #FFF;
+      color: #fff;
     }
   }
 
   section {
-      display:flex;
-      flex-direction:column;
-      align-items:center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
-    h1 {align-self:flex-start; margin-left:2rem}
+    h1 {
+      align-self: flex-start;
+      margin-left: 2rem;
+    }
 
     nav {
-      align-self:flex-start;
+      align-self: flex-start;
       background-color: #4e6247;
       border-bottom-right-radius: 0.7rem;
       border-top-right-radius: 0.7rem;
@@ -48,7 +51,29 @@ const ForoStyled = styled.main`
   }
   @media (width < 990px) {
     aside {
-      display: none;
+      position: fixed;
+      z-index: 2;
+      border: none;
+      right: -194px;
+      transition: ease-in-out .3s;
+      border-radius: 0 0 20px 20px;
+      .expand {
+        width: 30px;
+        height: 35px;
+        background-color: #4e6247;
+        position: absolute;
+        left: -20px;
+        top: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 5px;
+        z-index: 3;
+        ::after {
+          content: "<";
+          color: #fff;
+        }
+      }
     }
     section {
       width: 100%;
@@ -57,15 +82,17 @@ const ForoStyled = styled.main`
         width: auto;
         padding: 15px;
         position: fixed;
-        top: 100px;
+        top: 88px;
+        left: -250px;
         flex-direction: column;
       }
     }
   }
 `;
 
-const Forum = () => {
+const Blogs = () => {
   const [posts, setPosts] = useState([]);
+  const [show, setShow] = useState(false);
 
   useEffect(() => {
     const fetchPosts = async () => {
@@ -84,7 +111,8 @@ const Forum = () => {
 
   return (
     <ForoStyled>
-      <aside>
+      <aside style={show ? {right: 0} : {}}>
+        <div onClick={() => setShow(!show)} className="expand" />
         <h3>Los más vistos</h3>
         {posts.length !== 0 ? (
           posts.map((post) => <CardView key={post._id} post={post} />)
@@ -105,4 +133,4 @@ const Forum = () => {
   );
 };
 
-export default Forum;
+export default Blogs;
