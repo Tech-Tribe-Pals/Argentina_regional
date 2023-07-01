@@ -3,6 +3,80 @@ import { Link, useLocation } from "react-router-dom";
 import styled from "styled-components";
 import { HeaderContext } from "../context/HeaderContext";
 
+const Header = () => {
+  const [dropdownOpen, setDropdownOpen] = useState(false);
+  const dropdownRef = useRef(null);
+
+  const handleDropdownClick = () => {
+    setDropdownOpen(!dropdownOpen);
+  };
+
+  const handleClickOutside = (event) => {
+    if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+      setDropdownOpen(false);
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener("click", handleClickOutside);
+    return () => {
+      document.removeEventListener("click", handleClickOutside);
+    };
+  }, []);
+
+  const { headerOut, setPath } = useContext(HeaderContext);
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.pathname === "/") {
+      setPath(location.pathname);
+    } else {
+      setPath(location.pathname);
+    }
+  }, [location.pathname, setPath]);
+
+  return (
+    <HeaderStyle style={headerOut ? { display: "none" } : { display: "flex" }}>
+      <picture>
+        <img src="./logo.svg" alt="Logo" />
+        <span>Argentina Regional</span>
+      </picture>
+      <nav>
+        <ul>
+          <li>
+            <Link to={"/"}>Home</Link>
+          </li>
+          <li>
+            <Link to={"/sobremi"}>Presentación</Link>
+          </li>
+          <li ref={dropdownRef}>
+            <DropdownWrapper>
+              <a onClick={handleDropdownClick}>Regiones</a>
+              <DropdownContent open={dropdownOpen}>
+                <DropdownItem to={"/regiones/cuyo"}>Cuyo</DropdownItem>
+                <DropdownItem to={"/regiones/patagonia"}>Patagonia</DropdownItem>
+                <DropdownItem to={"/regiones/metropolitana"}>Metropolitana</DropdownItem>
+                <DropdownItem to={"/regiones/noroeste"}>Noroeste</DropdownItem>
+                <DropdownItem to={"/regiones/noreste"}>Noreste</DropdownItem>
+                <DropdownItem to={"/regiones/antartida"}>Antartida</DropdownItem>
+                <DropdownItem to={"/regiones/transfronterizas"}>Transfronterizas</DropdownItem>
+              </DropdownContent>
+            </DropdownWrapper>
+          </li>
+          <li>
+            <Link to={"/post"}>Post</Link>
+          </li>
+          <li>
+            <Link to={"/blog"}>Blog</Link>
+          </li>
+        </ul>
+      </nav>
+    </HeaderStyle>
+  );
+};
+
+export default Header;
+
 const HeaderStyle = styled.header`
   width: 100%;
   background-color: #4e6247;
@@ -50,6 +124,11 @@ const HeaderStyle = styled.header`
       }
     }
   }
+  @media (width < 990px) {
+    nav {
+      display: none;
+    }
+  }
 `;
 
 const DropdownWrapper = styled.div`
@@ -86,85 +165,3 @@ const DropdownItem = styled(Link)`
     background-color: #f1f1f1;
   }
 `;
-
-const Header = () => {
-  const [dropdownOpen, setDropdownOpen] = useState(false);
-  const dropdownRef = useRef(null);
-
-  const handleDropdownEnter = () => {
-    setDropdownOpen(true);
-  };
-
-  const handleDropdownLeave = () => {
-    // Verificar si el mouse se encuentra sobre el contenido del menú desplegable
-    if (!dropdownRef.current.contains(event.relatedTarget)) {
-      setDropdownOpen(false);
-    }
-  };
-
-  const handleClickOutside = (event) => {
-    if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
-      setDropdownOpen(false);
-    }
-  };
-
-  useEffect(() => {
-    document.addEventListener("click", handleClickOutside);
-    return () => {
-      document.removeEventListener("click", handleClickOutside);
-    };
-  }, []);
-
-  const { headerOut, setPath } = useContext(HeaderContext);
-  const location = useLocation();
-
-  useEffect(() => {
-    if (location.pathname === "/") {
-      setPath(location.pathname);
-    } else {
-      setPath(location.pathname);
-    }
-  }, [location.pathname, setPath]);
-
-  return (
-    <HeaderStyle style={headerOut ? { display: "none" } : { display: "flex" }}>
-      <picture>
-        <img src="./Inicio/logo.svg" alt="Logo" />
-        <span>Argentina Regional</span>
-      </picture>
-      <nav>
-        <ul>
-          <li>
-            <Link to={"/"}>Home</Link>
-          </li>
-          <li>
-            <Link to={"/sobremi"}>Presentacion</Link>
-          </li>
-          <li ref={dropdownRef} onMouseEnter={handleDropdownEnter} onMouseLeave={handleDropdownLeave}>
-            <DropdownWrapper>
-              <a>Regiones</a>
-              <DropdownContent open={dropdownOpen}>
-                <DropdownItem to={"/tandil"}>Cuyo</DropdownItem>
-                <DropdownItem to={"/region2"}>Patagonia</DropdownItem>
-                <DropdownItem to={"/metropolitana"}>Metropolitana</DropdownItem>
-                <DropdownItem to={"/region3"}>Noroeste</DropdownItem>
-                <DropdownItem to={"/region3"}>Noreste</DropdownItem>
-                <DropdownItem to={"/region3"}>Antartida</DropdownItem>
-                <DropdownItem to={"/region3"}>Transfronterizas</DropdownItem>
-                <DropdownItem to={"/region3"}>Transfronterizas Internas</DropdownItem>
-              </DropdownContent>
-            </DropdownWrapper>
-          </li>
-          <li>
-            <Link to={"/post"}>Post</Link>
-          </li>
-          <li>
-            <Link to={"/blog"}>Blog</Link>
-          </li>
-        </ul>
-      </nav>
-    </HeaderStyle>
-  );
-};
-
-export default Header;

@@ -3,6 +3,7 @@ import styled from "styled-components";
 import BotonStyle from "../components/BotonStyle";
 import { Link } from "react-router-dom";
 import { HeaderContext } from "../context/HeaderContext";
+import Bubble from "../components/Bubble";
 
 const HomeIndex = styled.section`
   height: 100vh;
@@ -110,16 +111,16 @@ export default function Home() {
   });
   return (
     <HomeIndex>
-      <video autoPlay loop muted src="./Videos_Regiones-Inicio/Header_.mp4" type="video/mp4" />
+      <video autoPlay loop muted src="./videos/Header_.mp4" type="video/mp4" />
 
       <div className="unicen">
-        <img src="./Inicio/fch.png" alt="logo_fch" />
-        <img src="./Inicio/unicen.svg" alt="logo_unicen" />
+        <img src="/Inicio/fch.png" alt="logo1" />
+        <img src="/Inicio/unicen.svg" alt="logo2" />
       </div>
 
       <nav>
         <picture>
-          <img src="./Inicio/logo.svg" />
+          <img src="/Inicio/logo.svg" />
           <h1>Argentina Regional</h1>
         </picture>
 
@@ -139,7 +140,8 @@ export default function Home() {
           </ul>
 
           <div className="welcome">
-            <img src="./Inicio/profe.svg" alt="animacion_profe" />
+            <Bubble />
+            <img src="/Inicio/profe.svg" alt="animacion_profe" />
           </div>
         </div>
       </nav>

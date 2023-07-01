@@ -1,59 +1,64 @@
 import { useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
-import Dropzone from "react-dropzone";
 import ReactQuill from "react-quill";
-import axios from "axios";
 import styled from "styled-components";
 
 import "react-toastify/dist/ReactToastify.css";
 import "react-quill/dist/quill.snow.css";
+import postsAPI from "../api/postsAPI";
 
 const Post = () => {
   const [content, setContent] = useState("");
   const [titleContent, setTitleContent] = useState("");
   const [coverImage, setCoverImage] = useState(null);
+  const [hover, setHover] = useState(false);
 
   const handleEditorChange = (value) => {
     setContent(value);
   };
 
-  const handleImageUpload = async (files) => {
-    const formData = new FormData();
-    formData.append("image", files[0]);
-    formData.append("upload_preset", "your_cloudinary_preset");
+  const handleDragOver = (event) => {
+    event.preventDefault();
+    setHover(true);
+  };
 
-    try {
-      const response = await axios.post(
-        `${import.meta.env.VITE_APP_URL}/api/posts/upload`,
-        formData,
-        {
-          headers: {
-            "Content-Type": "multipart/form-data",
-          },
-        }
-      );
+  const handleDrop = async (event) => {
+    event.preventDefault();
+    const files = event.dataTransfer.files;
 
-      setCoverImage(response.data);
-    } catch (error) {
-      console.error("Error al cargar la imagen a Cloudinary", error);
-      toast.error("Error al cargar la imagen");
+    if (files.length > 0) {
+      const formData = new FormData();
+      formData.append("image", files[0]);
+
+      try {
+        const image = await postsAPI.uploadImg(formData);
+        setCoverImage(image);
+      } catch (error) {
+        console.error("Error al cargar la imagen a Cloudinary", error);
+        toast.error("Error al cargar la imagen");
+      }
     }
   };
+
+  const deleteImage = async () => {
+    try {
+      await postsAPI.deleteImg(coverImage)
+      setCoverImage(null)
+      setHover(false)
+    } catch (err) {
+      toast.error("Error al borrar imagen")
+    }
+  }
 
   const handleSave = async () => {
     try {
       const postData = {
         title: titleContent,
         content: content,
-        thumbnail: coverImage.imageUrl,
+        thumbnail: coverImage ? coverImage.imageUrl : "",
       };
 
-      const response = await axios.post(
-        `${import.meta.env.VITE_APP_URL}/api/posts`,
-        postData
-      );
-
-      console.log(response.data);
+      await postsAPI.createPost(postData);
       toast.success("Publicación guardada con éxito");
 
       setContent("");
@@ -72,21 +77,30 @@ const Post = () => {
       <input
         type="text"
         onChange={(event) => setTitleContent(event.target.value)}
+        value={titleContent}
       />
-      <ReactQuill value={content} onChange={handleEditorChange} />
-      <Dropzone onDrop={handleImageUpload}>
-        {({ getRootProps, getInputProps }) => (
-          <div {...getRootProps()}>
-            <input {...getInputProps()} />
-            {coverImage === null ? (
-              <p>
-                Arrastra y suelta una imagen aquí o haz clic para seleccionar
-                una
-              </p>
-            ) : (
-              <img src={coverImage.imageUrl} />
-            )}
-          </div>
+      <ReactQuill
+        style={{ marginBottom: 20 }}
+        value={content}
+        onChange={handleEditorChange}
+      />
+      <Dropzone
+        className={coverImage !== null ? "withImg" : hover ? "hover" : ""}
+        onDragOver={handleDragOver}
+        onDragLeave={() => setHover(false)}
+        onDrop={handleDrop}
+      >
+        {coverImage !== null ? (
+          <>
+          <button onClick={deleteImage}><img src="/Iconos/bin.svg" /></button>
+          <img src={coverImage.imageUrl} />
+          </>
+        ) : (
+          <p>
+            {hover
+              ? "Ahora suelte la imagen"
+              : "Arrastre la imagen de portada aca"}
+          </p>
         )}
       </Dropzone>
       <button className="Boton" onClick={handleSave}>
@@ -100,14 +114,50 @@ const Post = () => {
 export default Post;
 
 const PostStyle = styled.main`
+  width: 90%;
+  margin: 0 auto;
+  .hover {
+    border: dotted 4px #49f;
+    overflow: hidden;
+  }
+  .withImg {
+    position: relative;
+    overflow: hidden;
+    border: solid 2px transparent;
+    img {
+      width: 100%;
+      object-fit: cover;
+    }
+    button {
+      top: 10px;
+      right: 10px;
+      position: absolute;
+      background-color: white;
+      border: none;
+      border-radius: 5px;
+      padding: 5px;
+      :hover {
+        background-color: red;
+        cursor: pointer;
+      }
+      img {
+        width: 20px;
+      }
+    }
+  }
+  h1 {
+    margin: 20px 0;
+  }
+  h3 {
+    margin-bottom: 20px;
+  }
   input {
     width: 100%;
     padding: 8px;
-    margin: 10px 0;
+    margin-bottom: 20px;
   }
-  height: auto;
-  position: relative;
   .Boton {
+    z-index: 2;
     color: whitesmoke;
     font-weight: bold;
     font-size: medium;
@@ -140,4 +190,14 @@ const PostStyle = styled.main`
       transition: all 0.1s ease-in-out;
     }
   }
+`;
+
+const Dropzone = styled.div`
+  width: 100%;
+  height: 150px;
+  border: dotted 2px #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
 `;

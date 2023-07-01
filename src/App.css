@@ -21,3 +21,7 @@ a {
 .card-body img {
   max-height: 250px;
 }
+
+/* :root {
+  color-scheme: light dark;
+} */

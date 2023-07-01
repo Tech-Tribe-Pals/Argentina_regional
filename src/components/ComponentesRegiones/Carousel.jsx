@@ -1,6 +1,6 @@
 import { useState, useRef } from "react";
 import styled from "styled-components";
-import ImgCard from "./Video_card";
+import VideoCard from "./VideoCard";
 
 const CarouselStyle = styled.section`
   overflow-y: hidden;
@@ -62,7 +62,8 @@ const CarouselStyle = styled.section`
   .navegation {
     width: 700px;
     position: relative;
-    z-index: 1;
+    z-index: 2;
+
     .overflow {
       width: 700px;
       height: 250px;
@@ -71,16 +72,21 @@ const CarouselStyle = styled.section`
       overflow-x: scroll;
       z-index: 1;
       padding: 1rem;
-      border-top-left-radius: 17px;
-      border-bottom-left-radius: 17px;
+
       flex-direction: row-reverse;
+      ::-webkit-scrollbar {
+        background-color: #5f4d49;
+
+      }
+      ::-webkit-scrollbar-thumb {
+        background-color: #541;      }
       button {
         z-index: 10;
       }
     }
 
     .bird {
-      top: -43%;
+      top: -30%;
       position: absolute;
       z-index: 1;
       width: 75px;
@@ -89,7 +95,7 @@ const CarouselStyle = styled.section`
     .wood {
       height: 100%;
       position: absolute;
-      left: 0;
+      left: -180px;
       top: 0;
       z-index: 0;
     }
@@ -216,7 +222,7 @@ const Carouselin = () => {
     <CarouselStyle>
       <div ref={carousel} className="Displayer">
         {arr.map((item, i) => (
-          <ImgCard
+          <VideoCard
             cssClass={actual === i ? "show anim1" : "hide anim2"}
             key={i}
             video={item.video}
@@ -234,11 +240,8 @@ const Carouselin = () => {
             </button>
           ))}
         </div>
-        <img
-          className="wood"
-          src="/Contenido_Categorias_Regiones/Tronco.svg"
-          alt=""
-        />
+        <img className="wood" src="./Tronco.svg" />
+        <img className="bird" src="./bird.svg" alt="" />
       </div>
       <img
         className="sun"
