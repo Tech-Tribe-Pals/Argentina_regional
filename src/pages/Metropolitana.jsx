@@ -1,4 +1,3 @@
-import React from "react";
 import styled from "styled-components";
 import PresentacionRegiones from "../components/ComponentesRegiones/PresentacionRegiones";
 
@@ -9,7 +8,7 @@ const ContenidoInfo = styled.section`
   border-radius: 0.3rem;
   height: auto;
   width: 90%;
-  text-aling: center;
+  text-align: center;
   align-items: center;
   display: flex;
   flex-direction: column;

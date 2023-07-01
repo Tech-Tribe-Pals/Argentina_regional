@@ -1,6 +1,7 @@
-import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { HeaderContext } from "../context/HeaderContext";
 
 const FooterStyle = styled.footer`
   height: 50vh;
@@ -72,11 +73,12 @@ const FooterStyle = styled.footer`
   }
 `;
 export default function Footer() {
+  const { headerOut } = useContext(HeaderContext);
   return (
-    <FooterStyle>
+    <FooterStyle style={headerOut ? { display: "none" } : { display: "flex" }}>
       <div className="unicen">
-        <img src="./Inicio/fch.png" alt="img_fch" />
-        <img src="./Inicio/unicen.svg" alt="img_unicen" />
+        <img src="/Inicio/fch.png" alt="img_fch" />
+        <img src="/Inicio/unicen.svg" alt="img_unicen" />
       </div>
 
       <div className="info">

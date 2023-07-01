@@ -111,7 +111,7 @@ export default function Home() {
   });
   return (
     <HomeIndex>
-      <video autoPlay loop muted src="./videos/Header_.mp4" type="video/mp4" />
+      <video autoPlay loop muted src="/videos/Header_.mp4" type="video/mp4" />
 
       <div className="unicen">
         <img src="/Inicio/fch.png" alt="logo1" />

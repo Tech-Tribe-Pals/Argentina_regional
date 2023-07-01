@@ -38,7 +38,7 @@ const Header = () => {
   return (
     <HeaderStyle style={headerOut ? { display: "none" } : { display: "flex" }}>
       <picture>
-        <img src="./logo.svg" alt="Logo" />
+        <img src="/Inicio/logo.svg" alt="Logo" />
         <span>Argentina Regional</span>
       </picture>
       <nav>

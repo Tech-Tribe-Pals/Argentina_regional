@@ -37,7 +37,6 @@ const ForoStyled = styled.main`
       width: 90%;
       height: 85px;
       margin-bottom: 2rem;
-      z-index: 1;
       border-bottom: 8px solid #374433;
     }
     margin-top: 3rem;

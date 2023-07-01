@@ -1,4 +1,3 @@
-import React from "react";
 import styled from "styled-components";
 
 const ContainerInfo = styled.main`
@@ -163,7 +162,7 @@ export default function SobreMi() {
             </p>
           </ContentWrapperOne>
           <PictureProfe>
-            <img src="./public/Presentacion/Jorge_Lapena.png" alt="JorgeLapena" />
+            <img src="/Presentacion/Jorge_Lapena.png" alt="JorgeLapena" />
           </PictureProfe>
 
           <div className="Prontuario">
@@ -187,7 +186,7 @@ export default function SobreMi() {
             </div>
             <div>
               <figure>
-                <img src="./Presentacion/Experiencia.svg" width={50} alt="Icono2" />
+                <img src="/Presentacion/Experiencia.svg" width={50} alt="Icono2" />
                 <h3>
                   Experiencia <br /> docente
                 </h3>
@@ -207,7 +206,7 @@ export default function SobreMi() {
             </div>
             <div>
               <figure>
-                <img src="./Presentacion/Publicaciones.svg" width={50} alt="Icono3" />
+                <img src="/Presentacion/Publicaciones.svg" width={50} alt="Icono3" />
                 <h3>
                   Publicaciones <br /> y trabajos académicos
                 </h3>
@@ -226,7 +225,7 @@ export default function SobreMi() {
             </div>
             <div>
               <figure>
-                <img src="./Presentacion/Afiliaciones.svg" width={50} alt="Icono4" />
+                <img src="/Presentacion/Afiliaciones.svg" width={50} alt="Icono4" />
                 <h3>
                   Afiliaciones <br /> y membresías
                 </h3>
@@ -251,7 +250,7 @@ export default function SobreMi() {
             <div>
               <figure>
                 <img
-                  src="./Presentacion/Investigaciones.svg"
+                  src="/Presentacion/Investigaciones.svg"
                   width={50}
                   alt="Icono5"
                 />
@@ -274,7 +273,7 @@ export default function SobreMi() {
             </div>
             <div>
               <figure>
-                <img src="./Presentacion/Portfolio.svg" width={50} alt="Icono6" />
+                <img src="/Presentacion/Portfolio.svg" width={50} alt="Icono6" />
                 <h3>
                   Experiencia <br /> profesional
                 </h3>
@@ -301,7 +300,7 @@ export default function SobreMi() {
         <Article className="Nosotros">
           <ContentWrapper>
             <Picture>
-              <img src="./Presentacion/Fede.jfif" width={150} alt="FedericoMassolo" />
+              <img src="/Presentacion/Fede.jfif" width={150} alt="FedericoMassolo" />
             </Picture>
             <h3>Federico Massolo</h3>
             <p>
@@ -314,7 +313,7 @@ export default function SobreMi() {
           <ContentWrapper>
             <Picture>
               <img
-                src="./Presentacion/Javier.png"
+                src="/Presentacion/Javier.png"
                 height={150}
                 width={150}
                 alt="JavierRivarola"
@@ -334,7 +333,7 @@ export default function SobreMi() {
                 CoderHouse
               </li>
               <li>
-                <img src="./Presentacion/contact.svg" width={30} alt="img-contacto" />
+                <img src="/Presentacion/contact.svg" width={30} alt="img-contacto" />
               </li>
               <li>
                 <a

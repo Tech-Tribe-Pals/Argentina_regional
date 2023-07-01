@@ -17,7 +17,6 @@ function App() {
       <Header />
       <Routes>
       <Route path="/" element={<Home />} />
-      <Route path="/" element={<Home />} />
       <Route path="/sobremi" element={<SobreMi />} />
       <Route path="/regiones" element={<Carousel />} />
       <Route path="/regiones/:region" element={<Region />} />

@@ -80,7 +80,6 @@ const Post = () => {
         value={titleContent}
       />
       <ReactQuill
-        style={{ marginBottom: 20 }}
         value={content}
         onChange={handleEditorChange}
       />
@@ -104,7 +103,7 @@ const Post = () => {
         )}
       </Dropzone>
       <button className="Boton" onClick={handleSave}>
-        Listo <img src="./checkBtn.svg" alt="btn" />
+        Listo <img src="/Iconos/checkBtn.svg" alt="btn" />
       </button>
       <ToastContainer autoClose={1500} />
     </PostStyle>
@@ -199,5 +198,5 @@ const Dropzone = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 20px;
+  margin: 20px 0;
 `;
