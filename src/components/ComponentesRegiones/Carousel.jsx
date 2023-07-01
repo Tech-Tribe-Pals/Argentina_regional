@@ -61,30 +61,42 @@ const CarouselStyle = styled.section`
     align-self: center;
   }
   .navegation {
-    z-index: 1;
-    display: flex;
-    flex-direction: row;
-    justify-content: end;
-    height: 30%;
-    width: 750px;
-    background-color: #5f4d36;
-    padding: 1rem;
-    border-top-left-radius: 17px;
-    border-bottom-left-radius: 17px;
+    width: 700px;
     position: relative;
-    overflow-x: scroll;
+    z-index: 2;
+
+    .overflow {
+      width: 700px;
+      height: 250px;
+      background-color: #5f4d36;
+      display: flex;
+      overflow-x: scroll;
+      z-index: 1;
+      padding: 1rem;
+
+      flex-direction: row-reverse;
+      ::-webkit-scrollbar {
+        background-color: #5f4d49;
+
+      }
+      ::-webkit-scrollbar-thumb {
+        background-color: #541;      }
+      button {
+        z-index: 10;
+      }
+    }
 
     .bird {
-      top: -43%;
+      top: -30%;
       position: absolute;
       z-index: 1;
       width: 75px;
     }
 
-    .madera {
+    .wood {
       height: 100%;
       position: absolute;
-      left: 0;
+      left: -180px;
       top: 0;
       z-index: 0;
     }
@@ -209,12 +221,14 @@ const Carouselin = () => {
         ))}
       </div>
       <div className="navegation">
-        {arr.map((item, i) => (
-          <button key={i} onClick={() => handleClick(i)}>
-            <img className="Selector" src={item.img} alt="img" />
-          </button>
-        ))}
-        <img className="madera" src="./Tronco.svg" />
+        <div className="overflow">
+          {arr.map((item, i) => (
+            <button key={i} onClick={() => handleClick(i)}>
+              <img className="Selector" src={item.img} alt="img" />
+            </button>
+          ))}
+        </div>
+        <img className="wood" src="./Tronco.svg" />
         <img className="bird" src="./bird.svg" alt="" />
       </div>
       <img className="sun" src="./sun.svg" alt="" />

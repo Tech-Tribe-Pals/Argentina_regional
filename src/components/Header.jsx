@@ -124,6 +124,11 @@ const HeaderStyle = styled.header`
       }
     }
   }
+  @media (width < 990px) {
+    nav {
+      display: none;
+    }
+  }
 `;
 
 const DropdownWrapper = styled.div`
