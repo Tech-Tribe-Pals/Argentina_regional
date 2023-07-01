@@ -159,7 +159,7 @@ const Carouselin = () => {
     {
       name: "Cuyo",
       img: "./Foto1.webp",
-      video: "./videos/Cuyo_.mp4",
+      video: "/videos/Cuyo_.mp4",
       ruta: "/regiones/cuyo",
       region: "Lorem 1",
       info: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore",

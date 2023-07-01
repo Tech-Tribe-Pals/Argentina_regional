@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 import { useState } from "react";
+=======
+>>>>>>> 8404bd1b81d8beb4384a45161743970b6f330bd1
 import styled from "styled-components";
 
 const NavStyle = styled.nav`
@@ -6,6 +9,7 @@ const NavStyle = styled.nav`
   display: flex;
   align-items: center;
   justify-content: space-around;
+<<<<<<< HEAD
   input {
     padding: 5px;
     border-radius: 10px;
@@ -59,6 +63,17 @@ const NavBlog = () => {
         <input type="text" />
         <img src="/Iconos/search.svg" />
       </div>
+=======
+`;
+
+const NavBlog = () => {
+  return (
+    <NavStyle>
+      <p>Ordenar por:</p>
+      <input type="date" />
+      <input type="date" />
+      <input />
+>>>>>>> 8404bd1b81d8beb4384a45161743970b6f330bd1
     </NavStyle>
   );
 };

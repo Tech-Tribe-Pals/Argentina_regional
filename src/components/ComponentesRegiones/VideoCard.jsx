@@ -33,6 +33,7 @@ const Display = styled.div`
   }
 `;
 
+
 const VideoCard = ({ cssClass, video, ruta, region, info }) => {
   return (
     <Display className={cssClass}>
