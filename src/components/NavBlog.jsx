@@ -7,6 +7,21 @@ const NavStyle = styled.nav`
   align-items: center;
   justify-content: space-around;
   z-index: 2;
+  transition: ease-in-out .3s;
+  .expand {
+    display: none;
+    width: 30px;
+    height: 35px;
+    background-color: #4e6247;
+    position: absolute;
+    right: -20px;
+    top: -10px;
+    justify-content: center;
+    border-radius: 5px;
+    ::after {
+      content: '>';
+    }
+  }
   input {
     padding: 5px;
     border-radius: 10px;
@@ -31,6 +46,9 @@ const NavStyle = styled.nav`
     }
   }
   @media (width < 990px) {
+    .expand {
+      display: flex;
+    }
     div {
       margin: 10px 0;
     }
@@ -40,9 +58,11 @@ const NavStyle = styled.nav`
 const NavBlog = () => {
 
   const [order, setOrder] = useState(false)
+  const [anim, setAnim] = useState(false)
 
   return (
-    <NavStyle>
+    <NavStyle style={anim ? {left: 0} : {}}>
+    <div onClick={() => setAnim(!anim)} className="expand" />
       <div className="sort">
         <p>Ordenar por:</p>
         <img onClick={() => setOrder(!order)} style={order ? {'display': 'none'} : {}} src="/Iconos/desc.svg" />
