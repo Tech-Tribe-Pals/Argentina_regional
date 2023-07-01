@@ -1,16 +1,27 @@
+import React from "react";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 const FooterStyle = styled.footer`
-  height: 60vh;
+  height: 50vh;
   background-color: #55799b;
-  color: white;
   width: 100%;
   position: relative;
   display: flex;
   flex-direction: row;
-  align-items: center;
+  align-items: flex-start;
+  justify-content: space-around;
+
+  .Link {
+    color: #ffffff;
+
+    :hover {
+      color: #45673e;
+    }
+  }
 
   p {
+    color: white;
     bottom: 0;
     position: absolute;
     width: 100%;
@@ -19,24 +30,31 @@ const FooterStyle = styled.footer`
     padding: 0.2rem;
   }
 
-  .fondo {
-    top: -80%;
-    width: 100%;
-    position: absolute;
-    z-index: 0;
-  }
-
   .info {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
-    height: 40%;
-    width: 80%;
-    margin-top: 5rem;
+    width: 70%;
+    margin:5rem;
+
+    h3 {
+      color: #d9ecfd;
+      font-size: 1.5rem;
+    }
 
     ul {
+      list-style: none;
       li {
-        margin-top: 0.5rem;
+        margin-top: 0.8rem;
+      }
+    }
+
+    .Regiones {
+      display: flex;
+      flex-direction: row;
+
+      .Link2 {
+        margin-left:8rem;
       }
     }
   }
@@ -53,43 +71,86 @@ const FooterStyle = styled.footer`
     }
   }
 `;
-
 export default function Footer() {
   return (
     <FooterStyle>
-      {/* <img className="fondo" src="./Footer.png" alt="" /> */}
-
       <div className="unicen">
-        <img src="./fch.png" alt="" />
-        <img src="./unicen.svg" alt="" />
+        <img src="./Inicio/fch.png" alt="img_fch" />
+        <img src="./Inicio/unicen.svg" alt="img_unicen" />
       </div>
 
       <div className="info">
         <div>
+          <h3>Navegacion</h3>
           <ul>
-            <li>Lorem ip</li>
-            <li>Lorem ip</li>
-            <li>Lorem ip</li>
-            <li>Lorem ip</li>
+            <li>
+              <Link className="Link">Inicio</Link>
+            </li>
+            <li>
+              <Link className="Link">Regiones</Link>
+            </li>
+            <li>
+              <Link className="Link">Blog</Link>
+            </li>
+            <li>
+              <Link className="Link">Presentacion</Link>
+            </li>
+            <li>
+              <Link className="Link">Contacto</Link>
+            </li>
           </ul>
         </div>
-        <div>
-          <ul>
-            <li>Lorem ip</li>
-            <li>Lorem ip</li>
-            <li>Lorem ip</li>
-            <li>Lorem ip</li>
-          </ul>
-        </div>
-        <div>
-          <ul>
-            <li>Lorem ip</li>
-            <li>Lorem ip</li>
-            <li>Lorem ip</li>
-            <li>Lorem ip</li>
-          </ul>
-        </div>
-      </div>
-    </FooterStyle>
-  );
+<div>
+<h3>Regiones</h3>
+<div className="Regiones">
+  <ul>
+    <li>
+      <Link className="Link">Antartida</Link>
+    </li>
+    <li>
+      <Link className="Link">Cuyo</Link>
+    </li>
+    <li>
+      <Link className="Link">La Pampa</Link>
+    </li>
+    <li>
+      <Link className="Link">Metropolitana</Link>
+    </li>
+    <li>
+      <Link className="Link">Noreste</Link>
+    </li>
+    <li>
+      <Link className="Link"></Link>
+    </li>
+  </ul>
+  <ul className="Link2">
+    <li>
+      <Link className="Link">Noroeste</Link>
+    </li>
+    <li>
+      <Link className="Link">Patagonia</Link>
+    </li>
+    <li>
+      <Link className="Link">
+        Transfronterizas con <br /> Paises limitrofes
+      </Link>
+    </li>
+    <li>
+      <Link className="Link">
+        Transfronterizas <br /> Inter-Regionales
+      </Link>
+    </li>
+  </ul>
+</div>
+</div>
+<div>
+<ul>
+  <li>
+    <Link></Link>
+  </li>
+</ul>
+</div>
+</div>
+</FooterStyle>
+);
 }

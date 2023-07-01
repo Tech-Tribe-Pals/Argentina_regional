@@ -40,10 +40,10 @@ const ImgCard = ({ cssClass, video, ruta, region, info }) => {
         <h2>{region}</h2>
         <p>{info}</p>
         <Link className="boton" to={ruta}>
-          <BotonStyle icon={"./explorar.svg"} info={"Explorar"} />
+          <BotonStyle icon={"./Contenido_Categorias_Regiones/explorar.svg"} info={"Explorar"} />
         </Link>
       </div>
-      <video className="Region" src={video} autoPlay={true} loop={true}/>
+      <video className="Region" src={video} autoPlay={true} loop={true} />
     </Display>
   );
 };

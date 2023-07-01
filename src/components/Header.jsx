@@ -68,7 +68,6 @@ const DropdownContent = styled.div`
   border-bottom-left-radius: 0.5rem;
   border-bottom-right-radius: 0.5rem;
   border-top-right-radius: 0.3rem;
-  margin-top: 0.2rem;
 
   ${(props) =>
     props.open &&
@@ -92,8 +91,15 @@ const Header = () => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const dropdownRef = useRef(null);
 
-  const handleDropdownClick = () => {
-    setDropdownOpen(!dropdownOpen);
+  const handleDropdownEnter = () => {
+    setDropdownOpen(true);
+  };
+
+  const handleDropdownLeave = () => {
+    // Verificar si el mouse se encuentra sobre el contenido del menú desplegable
+    if (!dropdownRef.current.contains(event.relatedTarget)) {
+      setDropdownOpen(false);
+    }
   };
 
   const handleClickOutside = (event) => {
@@ -123,7 +129,7 @@ const Header = () => {
   return (
     <HeaderStyle style={headerOut ? { display: "none" } : { display: "flex" }}>
       <picture>
-        <img src="./logo.svg" alt="Logo" />
+        <img src="./Inicio/logo.svg" alt="Logo" />
         <span>Argentina Regional</span>
       </picture>
       <nav>
@@ -132,26 +138,23 @@ const Header = () => {
             <Link to={"/"}>Home</Link>
           </li>
           <li>
-            <Link to={"/sobremi"}>Sobre Mi</Link>
+            <Link to={"/sobremi"}>Presentacion</Link>
           </li>
-          <li ref={dropdownRef}>
+          <li ref={dropdownRef} onMouseEnter={handleDropdownEnter} onMouseLeave={handleDropdownLeave}>
             <DropdownWrapper>
-              <a onClick={handleDropdownClick}>Regiones</a>
+              <a>Regiones</a>
               <DropdownContent open={dropdownOpen}>
-                <DropdownItem to={"/regiones/cuyo"}>Cuyo</DropdownItem>
-                <DropdownItem to={"/regiones/patagonia"}>Patagonia</DropdownItem>
-                <DropdownItem to={"/regiones/metropolitana"}>Metropolitana</DropdownItem>
-                <DropdownItem to={"/regiones/noroeste"}>Noroeste</DropdownItem>
-                <DropdownItem to={"/regiones/noreste"}>Noreste</DropdownItem>
-                <DropdownItem to={"/regiones/antartida"}>Antartida</DropdownItem>
-                <DropdownItem to={"/regiones/transfronterizas"}>Transfronterizas</DropdownItem>
+                <DropdownItem to={"/tandil"}>Cuyo</DropdownItem>
+                <DropdownItem to={"/region2"}>Patagonia</DropdownItem>
+                <DropdownItem to={"/metropolitana"}>Metropolitana</DropdownItem>
+                <DropdownItem to={"/region3"}>Noroeste</DropdownItem>
+                <DropdownItem to={"/region3"}>Noreste</DropdownItem>
+                <DropdownItem to={"/region3"}>Antartida</DropdownItem>
+                <DropdownItem to={"/region3"}>Transfronterizas</DropdownItem>
+                <DropdownItem to={"/region3"}>Transfronterizas Internas</DropdownItem>
               </DropdownContent>
             </DropdownWrapper>
           </li>
-          <li>
-            <Link to={"/sobremi"}>Nosotros</Link>
-          </li>
-
           <li>
             <Link to={"/post"}>Post</Link>
           </li>
