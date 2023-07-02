@@ -221,21 +221,21 @@ const Carouselin = () => {
       </div>
       <img
         className="sun"
-        src="/Contenido_Categorias_Regiones/sun.svg"
+        src="/Regiones/sun.svg"
         alt=""
       />
       <img
         className="mountain"
-        src="/Contenido_Categorias_Regiones/MountainRegionFondo.svg"
+        src="/Regiones/MountainRegionFondo.svg"
         alt=""
       />
       <img
         className="arbol"
-        src="/Contenido_Categorias_Regiones/arbol.svg"
+        src="/Regiones/arbol.svg"
         alt=""
       />
 
-      <img width={75} className="nube" src="/Contenido_Categorias_Regiones/cloud.svg" alt="" />
+      <img width={75} className="nube" src="/Regiones/cloud.svg" alt="" />
     </CarouselStyle>
   );
 };

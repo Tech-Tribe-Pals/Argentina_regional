@@ -6,12 +6,12 @@ import { HeaderContext } from "../context/HeaderContext";
 import Bubble from "../components/Bubble";
 
 const HomeIndex = styled.section`
+  overflow: hidden;
   height: 100vh;
   width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
-
   position: relative;
 
   .unicen {
@@ -39,12 +39,12 @@ const HomeIndex = styled.section`
 
   h1 {
     color: white;
+    text-align: center;
   }
 
-  .cosa {
+  .Menu-Links {
     height: 65%;
     width: 100%;
-
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -53,7 +53,6 @@ const HomeIndex = styled.section`
 
   nav {
     padding: 1rem 1rem 0rem 1rem;
-    border-left: solid 9px black;
     background-color: #4e6247;
     z-index: 1;
     width: 20%;
@@ -101,6 +100,58 @@ const HomeIndex = styled.section`
       margin-top: 1rem;
     }
   }
+
+  @media (max-width: 767.98px) {
+    video {
+      filter: brightness(80%);
+    }
+
+    .Menu-Links {
+      ul {
+        li {
+          a {
+            button {
+              margin-top: 3rem;
+            }
+          }
+        }
+      }
+    }
+
+    nav {
+      padding-top: 2rem;
+      width: 100%;
+      background-color: rgb(0, 0, 0, 0.5);
+      border: none;
+      justify-content: space-evenly;
+    }
+
+    .welcome {
+      height: 100px;
+      align-self: flex-end;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      img {
+        width: 25%;
+        height: 100%;
+        right: 0;
+        bottom: -20%;
+      }
+    }
+
+    .unicen {
+      width: 100%;
+      top: 0 !important;
+      height: 5vh;
+      justify-content: flex-start;
+      align-items: center;
+      img {
+        width: 20%;
+        height: auto;
+      }
+    }
+  }
 `;
 
 export default function Home() {
@@ -112,19 +163,16 @@ export default function Home() {
   return (
     <HomeIndex>
       <video autoPlay loop muted src="/videos/Header_.mp4" type="video/mp4" />
-
       <div className="unicen">
         <img src="/Inicio/fch.png" alt="logo1" />
         <img src="/Inicio/unicen.svg" alt="logo2" />
       </div>
-
       <nav>
         <picture>
           <img src="/Inicio/logo.svg" />
           <h1>Argentina Regional</h1>
         </picture>
-
-        <div className="cosa">
+        <div className="Menu-Links">
           <ul>
             <li>
               <Link to={"/regiones"}>

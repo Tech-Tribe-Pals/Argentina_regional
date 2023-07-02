@@ -42,13 +42,13 @@ const Post = () => {
 
   const deleteImage = async () => {
     try {
-      await postsAPI.deleteImg(coverImage)
-      setCoverImage(null)
-      setHover(false)
+      await postsAPI.deleteImg(coverImage);
+      setCoverImage(null);
+      setHover(false);
     } catch (err) {
-      toast.error("Error al borrar imagen")
+      toast.error("Error al borrar imagen");
     }
-  }
+  };
 
   const handleSave = async () => {
     try {
@@ -79,10 +79,7 @@ const Post = () => {
         onChange={(event) => setTitleContent(event.target.value)}
         value={titleContent}
       />
-      <ReactQuill
-        value={content}
-        onChange={handleEditorChange}
-      />
+      <ReactQuill value={content} onChange={handleEditorChange} />
       <Dropzone
         className={coverImage !== null ? "withImg" : hover ? "hover" : ""}
         onDragOver={handleDragOver}
@@ -91,8 +88,10 @@ const Post = () => {
       >
         {coverImage !== null ? (
           <>
-          <button onClick={deleteImage}><img src="/Iconos/bin.svg" /></button>
-          <img src={coverImage.imageUrl} />
+            <button onClick={deleteImage}>
+              <img src="/Iconos/bin.svg" />
+            </button>
+            <img src={coverImage.imageUrl} />
           </>
         ) : (
           <p>
@@ -135,8 +134,8 @@ const PostStyle = styled.main`
       border: none;
       border-radius: 5px;
       padding: 5px;
-      :hover {
-        background-color: red;
+      :hover {background-color: #DD3E3E;
+        img {filter:invert(100%);}
         cursor: pointer;
       }
       img {

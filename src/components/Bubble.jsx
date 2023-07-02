@@ -7,7 +7,7 @@ const BubbleStyle = styled.div`
   padding: 15px 20px;
   width: 320px;
   z-index: 2;
-  bottom: 10rem;
+  bottom: 9.5rem;
   left: -18rem;
   border-radius: 10px;
   border-left: 3px solid #e2e2e2;
@@ -36,28 +36,27 @@ const BubbleStyle = styled.div`
   .hide {
     display: none;
   }
+
+  @media (max-width: 767.98px) {
+    padding: 5px 5px;
+    width: 70%;
+    bottom: 3rem;
+    left: 2rem;
+
+    ::after {display:none; }
+
+    p {
+
+      font-size:.8rem;
+
+    }
+  }
 `;
 
 const Bubble = () => {
-  const [close, setClose] = useState(true);
-
-  const checkClose = () => {
-    const actualConfig = localStorage.getItem('close')
-    setClose(actualConfig ? actualConfig : false)
-  }
-
-  const saveClose = () => {
-    localStorage.setItem('close', !close)
-    setClose(!close)
-  }
-
-  useEffect(() => {
-    checkClose()
-  }, [])
-
   return (
-    <BubbleStyle style={close ? { display: "none" } : {}}>
-      <button onClick={saveClose}>X</button>
+    <BubbleStyle>
+      
       <p>Profesor Jorge Lapena</p>
       <p>
         Bienvenidas aquellas personas que visitan este sitio destinado a conocer

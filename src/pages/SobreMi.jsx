@@ -10,6 +10,10 @@ const ContainerInfo = styled.main`
   h2 {
     font-size: 3rem;
   }
+
+  @media (max-width: 767.98px) {
+    margin-bottom: 4rem;
+  }
 `;
 
 const Section = styled.section`
@@ -154,7 +158,6 @@ const ContainerProfe = styled.div`
 const ContentWrapperOne = styled.div`
   display: flex;
   flex-flow: row wrap;
-
   width: 50%;
   margin-top: 4rem;
 
@@ -165,15 +168,15 @@ const ContentWrapperOne = styled.div`
   }
 
   @media (max-width: 767.98px) {
-
-    justify-content:center;
+    justify-content: center;
     h2 {
       text-align: center;
       font-size: 3rem;
     }
 
     width: 90%;
-    p {margin-top:2rem;
+    p {
+      margin-top: 2rem;
       font-size: 1.1rem;
       text-align: center;
       width: 100% !important;

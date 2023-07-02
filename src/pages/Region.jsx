@@ -2,9 +2,8 @@ import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import styled from "styled-components";
 import Subsection from "../components/Region/Subsection";
-import PresentacionRegiones from "../components/Region/PresentacionRegiones";
 import Links from "../components/Region/Links";
-
+import PresentacionRegiones from "../components/Region/PresentacionRegiones"
 const Region = () => {
   const [data, setData] = useState([]);
 
@@ -19,7 +18,7 @@ const Region = () => {
     if (filter) {
       setData(filter.docs);
     } else {
-      navigate('/error')
+      navigate("/error");
     }
   };
 

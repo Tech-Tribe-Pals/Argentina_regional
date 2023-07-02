@@ -28,11 +28,16 @@ const BlogStyle = styled.main`
         display: flex;
         gap: 10px;
         a:hover {
-          background-color: #4f4;
+          background-color: #75B46A;
+          img {filter:invert(100%); transition: 0s linear filter;}
+          
         }
         button:hover {
-          background-color: red;
+          background-color: #DD3E3E;
           cursor: pointer;
+
+          img {filter:invert(100%);}
+          
         }
         a,
         button {
@@ -65,7 +70,7 @@ const BlogStyle = styled.main`
       align-self: center;
       width: 100%;
     }
-    width: 95%;
+    width: 100%;
     background-color: #ffffff;
     display: flex;
     flex-direction: column;
@@ -84,6 +89,29 @@ const BlogStyle = styled.main`
       margin-top: 2rem;
       margin-bottom: 2rem;
       object-fit: cover;
+    }
+  }
+
+  @media (max-width: 767.98px) {
+    padding-bottom: 0;
+    section {
+      padding: 2rem 1.5rem 5rem 1.5rem;
+      border-radius: 0rem;
+      border: none;
+      
+      h2 {
+
+        margin-top: 2rem;
+
+      }
+
+      .Card {
+        width: 100%;
+        object-fit: contain;height:auto;
+      }
+      img {
+        width: 100%;
+      }
     }
   }
 `;
@@ -108,9 +136,7 @@ const Blog = () => {
     fetchPost();
   }, [id]);
 
-  const deletePost = () => {
-
-  };
+  const deletePost = () => {};
 
   if (!post) {
     return <div>Cargando...</div>;
@@ -143,8 +169,8 @@ const Blog = () => {
       <Modal isOpen={modal}>
         ¿Estas seguro que quieres eliminar esta publicación?
         <div className="options">
-        <button onClick={deletePost}>Eliminar</button>
-        <button onClick={() => setModal(!modal)}>Cancelar</button>
+          <button onClick={deletePost}>Eliminar</button>
+          <button onClick={() => setModal(!modal)}>Cancelar</button>
         </div>
       </Modal>
     </BlogStyle>
