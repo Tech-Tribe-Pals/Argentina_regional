@@ -6,17 +6,16 @@ const LinkStyle = styled.div`
   background-color: #fff;
   right: 20px;
   flex-direction: column;
-  padding: 5px;
+  padding: 8px;
   text-align: left;
   line-height: 1.8;
-  border: solid 2px #d9d9d9;
+  border-left: solid 5px #d9d9d9;
+  border-bottom: solid 3px #d9d9d9;
   border-radius: 10px;
-  img {
-    width: 25px;
-    height: 25px;
-    display: flex;
-    align-items: center;
-  }
+  z-index:3;
+  
+
+
   .modal {
     ul {
       li {
@@ -35,18 +34,34 @@ const LinkStyle = styled.div`
       right: 5px;
       background-color: transparent;
       border: none;
+      cursor:pointer;
+
+      img {
+
+        width:20px;
+
+      }
     }
   }
 `;
 
+
+const IndiceStyle =styled.div `
+display:flex;
+flex-direction:column;
+align-items:center;
+cursor:pointer;
+  font-size:1rem;
+`
+
 const Links = ({ links }) => {
-  const [close, setClose] = useState(true);
+  const [close, setClose] = useState(false);
 
   return (
     <LinkStyle>
       {close ? (
         <div className="modal">
-          <button onClick={() => setClose(!close)}>X</button>
+          <button onClick={() => setClose(!close)}><img src="/Iconos/CloseIndiceRegion.svg" alt="icon_close"/></button>
           <h4>Links para ampliar:</h4>
           <ul>
             {links.map((e, i) => (
@@ -57,7 +72,9 @@ const Links = ({ links }) => {
           </ul>
         </div>
       ) : (
-        <img src="/Iconos/source.svg" onClick={() => setClose(!close)} />
+        <IndiceStyle onClick={() => setClose(!close)}><span>Links</span></IndiceStyle>
+        
+        
       )}
     </LinkStyle>
   );

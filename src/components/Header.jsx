@@ -4,6 +4,7 @@ import styled from "styled-components";
 import { HeaderContext } from "../context/HeaderContext";
 
 const Header = () => {
+
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const dropdownRef = useRef(null);
 

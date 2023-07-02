@@ -15,8 +15,7 @@ const ForoStyled = styled.main`
   aside {
     display: flex;
     flex-direction: column;
-    border-left: 4px solid black;
-    width: 200px;
+    width: 300px;
     background-color: #4e6247;
     align-items: center;
     h3 {
@@ -54,6 +53,7 @@ const ForoStyled = styled.main`
   }
   @media (width < 990px) {
     aside {
+      width: 200px;
       position: fixed;
       z-index: 2;
       border: none;

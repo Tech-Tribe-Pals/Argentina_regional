@@ -25,13 +25,17 @@ const CardStyle = styled.article`
     width: 100%;
     display: flex;
     flex-direction: row;
-    
     z-index:1;
     justify-content: space-between;
     align-items: center;
 
     a {
       margin-right: 2rem;
+      :hover {
+        filter: invert(35%) sepia(10%) saturate(1126%) hue-rotate(60deg) brightness(95%) contrast(87%);
+        transform:scale(1.2);
+        transition: all .2s ease-in-out;
+      }
     }
 
     h3 {
@@ -70,15 +74,18 @@ const Aside = styled.div`
   border-radius: 10px;
   margin: 10px;
   width: 90%;
-  height: 100px;
+  height: 150px;
   position: relative;
   h3 {
-    background-color: #6e8467;
+    padding:3px;
+    background-color: rgb(40, 41, 40,.8);
     width: 100%;
     position: absolute;
     bottom: -20px;
-    border-radius: 0 0 10px 10px;
-    text-align: center;
+    border-radius: 0 0 7px 7px;
+    font-size:.9rem;
+    text-align: start;
+    filter:blur(200%);
   }
 `;
 
@@ -95,7 +102,6 @@ export const Card = ({ post }) => {
     <CardStyle>
       <p>{formattedDate}</p>
       <img className="img-card" src={post.thumbnail} />
-
       <div className="info-card">
         <h3>{post.title}</h3>
         <Link to={`/blog/${post._id}`}>

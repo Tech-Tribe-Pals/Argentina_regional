@@ -23,7 +23,6 @@ function App() {
       <Route path="/post" element={<Post />} />
       <Route path="/post/:id" element={<Post />} />
       <Route path="/blog" element={<Blogs />} />
-      <Route path="/blog/q" element={<Blogs />} />
       <Route path="/blog/:id" element={<Blog />} />
       <Route path="*" element={<Page404 />} />
       </Routes>

@@ -164,8 +164,8 @@ const PostStyle = styled.main`
       border: none;
       border-radius: 5px;
       padding: 5px;
-      :hover {
-        background-color: red;
+      :hover {background-color: #DD3E3E;
+        img {filter:invert(100%);}
         cursor: pointer;
       }
       img {

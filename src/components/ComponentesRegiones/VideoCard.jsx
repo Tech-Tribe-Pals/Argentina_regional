@@ -8,6 +8,7 @@ const Display = styled.div`
   justify-content: space-between;
   align-items: end;
   height: 100%;
+  align-items: center;
 
   div {
     height: 300px;
@@ -18,6 +19,7 @@ const Display = styled.div`
     justify-content: space-evenly;
 
     .boton {
+      margin-top: 20px;
       align-self: center;
     }
   }
@@ -26,7 +28,8 @@ const Display = styled.div`
     padding: 1rem;
     border-radius: 15px;
     background-color: #685842;
-    height: 100%;
+    display: flex;
+    
     width: 600px;
     border-bottom: 10px #53493c solid;
     margin-right: 4rem;
@@ -41,7 +44,7 @@ const VideoCard = ({ cssClass, video, ruta, region, info }) => {
         <h2>{region}</h2>
         <p>{info}</p>
         <Link className="boton" to={ruta}>
-          <BotonStyle icon={"./Contenido_Categorias_Regiones/explorar.svg"} info={"Explorar"} />
+          <BotonStyle icon={"/Regiones/explorar.svg"} info={"Explorar"} />
         </Link>
       </div>
       <video className="Region" src={video} autoPlay loop/>

@@ -1,10 +1,8 @@
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
-import { ToastContainer, toast } from "react-toastify";
 import axios from "axios";
 import styled from "styled-components";
 import Modal from "../components/Modal";
-import postsAPI from "../api/postsAPI";
 
 const BlogStyle = styled.main`
   display: flex;
@@ -30,11 +28,16 @@ const BlogStyle = styled.main`
         display: flex;
         gap: 10px;
         a:hover {
-          background-color: #4f4;
+          background-color: #75B46A;
+          img {filter:invert(100%); transition: 0s linear filter;}
+          
         }
         button:hover {
-          background-color: red;
+          background-color: #DD3E3E;
           cursor: pointer;
+
+          img {filter:invert(100%);}
+          
         }
         a,
         button {
@@ -67,7 +70,7 @@ const BlogStyle = styled.main`
       align-self: center;
       width: 100%;
     }
-    width: 95%;
+    width: 100%;
     background-color: #ffffff;
     display: flex;
     flex-direction: column;
@@ -88,46 +91,52 @@ const BlogStyle = styled.main`
       object-fit: cover;
     }
   }
+
+  @media (max-width: 767.98px) {
+    padding-bottom: 0;
+    section {
+      padding: 2rem 1.5rem 5rem 1.5rem;
+      border-radius: 0rem;
+      border: none;
+      
+      h2 {
+
+        margin-top: 2rem;
+
+      }
+
+      .Card {
+        width: 100%;
+        object-fit: contain;height:auto;
+      }
+      img {
+        width: 100%;
+      }
+    }
+  }
 `;
 
 const Blog = () => {
   const { id } = useParams();
   const [post, setPost] = useState(null);
   const [modal, setModal] = useState(false);
-  const [isView, setView] = useState(false)
-
-  const fetchPost = async () => {
-    try {
-      const response = await axios.get(
-        `${import.meta.env.VITE_APP_URL}/api/posts/${id}`
-      );
-      setPost(response.data);
-      checkView(response.data)
-    } catch (error) {
-      console.error("Error al obtener el post", error);
-    }
-  };
-
-  const checkView = async (thisPost) => {
-    if (isView === false) {
-      setView(true)
-      await postsAPI.editPost(id, { ...thisPost, views: thisPost.views + 1 })
-    }
-  } 
 
   useEffect(() => {
+    const fetchPost = async () => {
+      try {
+        const response = await axios.get(
+          `${import.meta.env.VITE_APP_URL}/api/posts/${id}`
+        );
+        setPost(response.data);
+      } catch (error) {
+        console.error("Error al obtener el post", error);
+      }
+    };
+
     fetchPost();
   }, [id]);
 
-  const deletePost = async () => {
-    const post = await postsAPI.deletePost(id)
-
-    if (post) {
-      toast.success('La publicación fue borrada con exito.')
-    } else {
-      toast.error('La publicación no pudo ser borrada.')
-    }
-  };
+  const deletePost = () => {};
 
   if (!post) {
     return <div>Cargando...</div>;
@@ -160,11 +169,10 @@ const Blog = () => {
       <Modal isOpen={modal}>
         ¿Estas seguro que quieres eliminar esta publicación?
         <div className="options">
-        <button onClick={deletePost}>Eliminar</button>
-        <button onClick={() => setModal(!modal)}>Cancelar</button>
+          <button onClick={deletePost}>Eliminar</button>
+          <button onClick={() => setModal(!modal)}>Cancelar</button>
         </div>
       </Modal>
-      <ToastContainer autoClose={1500} />
     </BlogStyle>
   );
 };

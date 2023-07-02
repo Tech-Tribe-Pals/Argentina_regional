@@ -1,6 +1,7 @@
 import { useState, useRef } from "react";
 import styled from "styled-components";
 import VideoCard from "./VideoCard";
+import Overflow from "./Overflow";
 
 const CarouselStyle = styled.section`
   overflow-y: hidden;
@@ -72,8 +73,17 @@ const CarouselStyle = styled.section`
       overflow-x: scroll;
       z-index: 1;
       padding: 1rem;
-
-      flex-direction: row-reverse;
+      .blocked {
+        opacity: 0.3;
+      }
+      .btnNav {
+        background-color: transparent;
+        border: none;
+        filter: invert(100%);
+        img {
+          width: 25px;
+        }
+      }
       ::-webkit-scrollbar {
         background-color: #5f4d49;
 
@@ -209,33 +219,27 @@ const Carouselin = () => {
         ))}
       </div>
       <div className="navegation">
-        <div className="overflow">
-          {arr.map((item, i) => (
-            <button key={i} onClick={() => handleClick(i)}>
-              <img className="Selector" src={`/${item.name}/${item.name.toLowerCase()}_1.png`} alt="img" />
-            </button>
-          ))}
-        </div>
+        <Overflow item={arr} clickOut={handleClick} />
         <img className="wood" src="/Regiones/Tronco.svg" />
         <img className="bird" src="/Regiones/bird.svg" alt="" />
       </div>
       <img
         className="sun"
-        src="/Contenido_Categorias_Regiones/sun.svg"
+        src="/Regiones/sun.svg"
         alt=""
       />
       <img
         className="mountain"
-        src="/Contenido_Categorias_Regiones/MountainRegionFondo.svg"
+        src="/Regiones/MountainRegionFondo.svg"
         alt=""
       />
       <img
         className="arbol"
-        src="/Contenido_Categorias_Regiones/arbol.svg"
+        src="/Regiones/arbol.svg"
         alt=""
       />
 
-      <img width={75} className="nube" src="/Contenido_Categorias_Regiones/cloud.svg" alt="" />
+      <img width={75} className="nube" src="/Regiones/cloud.svg" alt="" />
     </CarouselStyle>
   );
 };

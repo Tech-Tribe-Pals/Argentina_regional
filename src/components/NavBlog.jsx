@@ -65,7 +65,9 @@ const NavBlog = ({ sendFilter, actualPage }) => {
   const filterPosts = async () => {
     try {
       if (startDate && endDate && startDate > endDate) {
-        console.error("La fecha de inicio no puede ser mayor que la fecha de fin");
+        console.error(
+          "La fecha de inicio no puede ser mayor que la fecha de fin"
+        );
         return;
       }
 
@@ -76,7 +78,7 @@ const NavBlog = ({ sendFilter, actualPage }) => {
         page: actualPage,
       };
 
-      sendFilter(filter)
+      sendFilter(filter);
     } catch (error) {
       console.error("Error al filtrar los posteos:", error);
     }
