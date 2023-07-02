@@ -7,7 +7,7 @@ const NavStyle = styled.nav`
   align-items: center;
   justify-content: space-around;
   z-index: 2;
-  transition: ease-in-out .3s;
+  transition: ease-in-out 0.3s;
   .expand {
     display: none;
     width: 30px;
@@ -19,7 +19,7 @@ const NavStyle = styled.nav`
     justify-content: center;
     border-radius: 5px;
     ::after {
-      content: '>';
+      content: ">";
     }
   }
   input {
@@ -55,30 +55,72 @@ const NavStyle = styled.nav`
   }
 `;
 
-const NavBlog = () => {
+const NavBlog = ({ sendFilter, actualPage }) => {
+  const [order, setOrder] = useState(false);
+  const [startDate, setStartDate] = useState("");
+  const [endDate, setEndDate] = useState("");
+  const [searchText, setSearchText] = useState("");
+  const [anim, setAnim] = useState(false);
 
-  const [order, setOrder] = useState(false)
-  const [anim, setAnim] = useState(false)
+  const filterPosts = async () => {
+    try {
+      if (startDate && endDate && startDate > endDate) {
+        console.error("La fecha de inicio no puede ser mayor que la fecha de fin");
+        return;
+      }
+
+      const filter = {
+        search: searchText,
+        filter: order ? 1 : -1,
+        limit: 4,
+        page: actualPage,
+      };
+
+      sendFilter(filter)
+    } catch (error) {
+      console.error("Error al filtrar los posteos:", error);
+    }
+  };
 
   return (
-    <NavStyle style={anim ? {left: 0} : {}}>
-    <div onClick={() => setAnim(!anim)} className="expand" />
+    <NavStyle style={anim ? { left: 0 } : {}}>
+      <div onClick={() => setAnim(!anim)} className="expand" />
       <div className="sort">
         <p>Ordenar por:</p>
-        <img onClick={() => setOrder(!order)} style={order ? {'display': 'none'} : {}} src="/Iconos/desc.svg" />
-        <img onClick={() => setOrder(!order)} style={order ? {} : {'display': 'none'}} src="/Iconos/asc.svg" />
+        <img
+          onClick={() => setOrder(!order)}
+          style={order ? { display: "none" } : {}}
+          src="/Iconos/desc.svg"
+        />
+        <img
+          onClick={() => setOrder(!order)}
+          style={order ? {} : { display: "none" }}
+          src="/Iconos/asc.svg"
+        />
       </div>
       <div className="date">
-      <p>Desde:</p>
-      <input type="date" />
+        <p>Desde:</p>
+        <input
+          type="date"
+          value={startDate}
+          onChange={(e) => setStartDate(e.target.value)}
+        />
       </div>
       <div className="date">
-      <p>Hasta:</p>
-      <input type="date" />
+        <p>Hasta:</p>
+        <input
+          type="date"
+          value={endDate}
+          onChange={(e) => setEndDate(e.target.value)}
+        />
       </div>
       <div className="search">
-        <input type="text" />
-        <img src="/Iconos/search.svg" />
+        <input
+          type="text"
+          value={searchText}
+          onChange={(e) => setSearchText(e.target.value)}
+        />
+        <img onClick={() => filterPosts()} src="/Iconos/search.svg" />
       </div>
     </NavStyle>
   );

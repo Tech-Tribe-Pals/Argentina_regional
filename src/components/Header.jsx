@@ -28,12 +28,13 @@ const Header = () => {
   const location = useLocation();
 
   useEffect(() => {
+    window.scrollTo(0, 0);
     if (location.pathname === "/") {
       setPath(location.pathname);
     } else {
       setPath(location.pathname);
     }
-  }, [location.pathname, setPath]);
+  }, [location.pathname]);
 
   return (
     <HeaderStyle style={headerOut ? { display: "none" } : { display: "flex" }}>

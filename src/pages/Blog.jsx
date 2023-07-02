@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
 import axios from "axios";
 import styled from "styled-components";
 import Modal from "../components/Modal";
+import postsAPI from "../api/postsAPI";
 
 const BlogStyle = styled.main`
   display: flex;
@@ -92,24 +94,39 @@ const Blog = () => {
   const { id } = useParams();
   const [post, setPost] = useState(null);
   const [modal, setModal] = useState(false);
+  const [isView, setView] = useState(false)
+
+  const fetchPost = async () => {
+    try {
+      const response = await axios.get(
+        `${import.meta.env.VITE_APP_URL}/api/posts/${id}`
+      );
+      setPost(response.data);
+      checkView(response.data)
+    } catch (error) {
+      console.error("Error al obtener el post", error);
+    }
+  };
+
+  const checkView = async (thisPost) => {
+    if (isView === false) {
+      setView(true)
+      await postsAPI.editPost(id, { ...thisPost, views: thisPost.views + 1 })
+    }
+  } 
 
   useEffect(() => {
-    const fetchPost = async () => {
-      try {
-        const response = await axios.get(
-          `${import.meta.env.VITE_APP_URL}/api/posts/${id}`
-        );
-        setPost(response.data);
-      } catch (error) {
-        console.error("Error al obtener el post", error);
-      }
-    };
-
     fetchPost();
   }, [id]);
 
-  const deletePost = () => {
+  const deletePost = async () => {
+    const post = await postsAPI.deletePost(id)
 
+    if (post) {
+      toast.success('La publicación fue borrada con exito.')
+    } else {
+      toast.error('La publicación no pudo ser borrada.')
+    }
   };
 
   if (!post) {
@@ -147,6 +164,7 @@ const Blog = () => {
         <button onClick={() => setModal(!modal)}>Cancelar</button>
         </div>
       </Modal>
+      <ToastContainer autoClose={1500} />
     </BlogStyle>
   );
 };

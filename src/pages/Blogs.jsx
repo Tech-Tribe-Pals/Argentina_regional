@@ -1,8 +1,11 @@
 import { useEffect, useState } from "react";
-import axios from "axios";
-import { CardView, Card } from "../components/Cards";
+import { Card } from "../components/Cards";
 import styled from "styled-components";
 import NavBlog from "../components/NavBlog";
+import postsAPI from "../api/postsAPI";
+import Pagination from "../components/Pagination";
+import { useNavigate, useLocation } from "react-router-dom";
+import MostViews from "../components/MostViews";
 
 const ForoStyled = styled.main`
   display: flex;
@@ -55,7 +58,7 @@ const ForoStyled = styled.main`
       z-index: 2;
       border: none;
       right: -194px;
-      transition: ease-in-out .3s;
+      transition: ease-in-out 0.3s;
       border-radius: 0 0 20px 20px;
       .expand {
         width: 30px;
@@ -91,43 +94,67 @@ const ForoStyled = styled.main`
 `;
 
 const Blogs = () => {
-  const [posts, setPosts] = useState([]);
-  const [show, setShow] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation()
+  const page = location.search.split('')[location.search.split('').length - 1] || 1
+
+  const [posts, setPosts] = useState({
+    docs: [],
+    currentPage: 1,
+    totalPages: 0,
+  });
+  const [filter, setFilter] = useState({
+    search: "",
+    filter: -1,
+    limit: 4,
+    page: page || 1,
+  });
+
+  const fetchPosts = async (filterConfig) => {
+    try {
+      const newFilter = filterConfig ? filterConfig : { ...filter, page: page }
+      setFilter(newFilter)
+      const response = await postsAPI.filterPosts(newFilter);
+      setPosts(response);
+    } catch (error) {
+      console.error("Error al obtener las publicaciones", error);
+    }
+  };
 
   useEffect(() => {
-    const fetchPosts = async () => {
-      try {
-        const response = await axios.get(
-          `${import.meta.env.VITE_APP_URL}/api/posts`
-        );
-        setPosts(response.data);
-      } catch (error) {
-        console.error("Error al obtener las publicaciones", error);
-      }
-    };
-
     fetchPosts();
-  }, []);
+  }, [page]);
+
+  const handlePageChange = (page) => {
+    window.scrollTo(0, 0);
+    navigate(`/blog?q=page=${page}`);
+  };
+
+  const filterChange = async (newFilter) => {
+    if (newFilter.search !== filter.search) {
+      fetchPosts(newFilter)
+      navigate(`/blog?q=page=1`);
+    } else {
+      fetchPosts(newFilter)
+    }
+  }
 
   return (
     <ForoStyled>
-      <aside style={show ? {right: 0} : {}}>
-        <div onClick={() => setShow(!show)} className="expand" />
-        <h3>Los más vistos</h3>
-        {posts.length !== 0 ? (
-          posts.map((post) => <CardView key={post._id} post={post} />)
-        ) : (
-          <p>Cargando...</p>
-        )}
-      </aside>
+      <MostViews posts={posts.docs} />
       <section>
-        <NavBlog />
+        <NavBlog sendFilter={filterChange} actualPage={filter.page} />
         <h2>Publicaciones</h2>
-        {posts.length !== 0 ? (
-          posts.map((post) => <Card key={post._id} post={post} />)
+        {posts.docs.length !== 0 ? (
+          posts.docs.map((post) => <Card key={post._id} post={post} />)
         ) : (
           <p>Cargando...</p>
         )}
+        <Pagination
+          currentPage={Number(page)}
+          totalPages={posts.totalPages}
+          onPageChange={handlePageChange}
+        />
       </section>
     </ForoStyled>
   );

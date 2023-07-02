@@ -1,9 +1,6 @@
 import ImgMap from './ImgMap'
 
 const Subsection = ({ sections }) => {
-  sections[0].imgs.map(e => {
-    console.log(e.src);
-  })
   return (
     <section className='subsection'>
       {sections.map((e, i) => (

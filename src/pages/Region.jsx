@@ -23,8 +23,6 @@ const Region = () => {
     }
   };
 
-  console.log(data);
-
   useEffect(() => {
     getFetched();
   }, [region]);

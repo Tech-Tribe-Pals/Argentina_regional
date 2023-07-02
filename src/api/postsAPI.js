@@ -9,16 +9,36 @@ const createPost = async (data) => {
   return response.data;
 };
 
-const uploadImg = async (data) => {
-  const response = await api.post("/upload", data);
+const getPosts = async () => {
+  const response = await api.get("/");
   return response.data;
 };
 
-const deleteImg = async (data) => {
-  const response = await api.delete("/delete", { data })
+const filterPosts = async (filters) => {
+  const response = await api.post("/filter", filters);
+  return response.data;
+};
+
+const mostViews = async (filters) => {
+  const response = await api.post("/views", filters);
+  return response.data;
+};
+
+const findPost = async (id) => {
+  const response = await api.get(`/${id}`)
   return response.data
 }
 
-const postsAPI = { createPost, uploadImg, deleteImg };
+const editPost = async (id, data) => {
+  const response = await api.put(`/${id}`, data)
+  return response.data
+}
+
+const deletePost = async (id) => {
+  const response = await api.delete(`/${id}`)
+  return response.data
+}
+
+const postsAPI = { createPost, getPosts, filterPosts, mostViews, findPost, editPost, deletePost };
 
 export default postsAPI;

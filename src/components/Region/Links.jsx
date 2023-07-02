@@ -57,7 +57,7 @@ const Links = ({ links }) => {
           </ul>
         </div>
       ) : (
-        <img src="/Iconos/Portfolio.svg" onClick={() => setClose(!close)} />
+        <img src="/Iconos/source.svg" onClick={() => setClose(!close)} />
       )}
     </LinkStyle>
   );

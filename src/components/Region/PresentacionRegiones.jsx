@@ -14,7 +14,6 @@ const HeaderStyle = styled.section`
 `;
 
 export default function PresentacionRegiones({ fondo }) {
-  console.log(fondo);
 
   return (
     <HeaderStyle
