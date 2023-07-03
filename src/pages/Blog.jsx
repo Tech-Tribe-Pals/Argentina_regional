@@ -1,9 +1,10 @@
 import { useContext, useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link, useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
 import styled from "styled-components";
 import Modal from "../components/Modal";
 import { UserContext } from '../context/UserContext'
+import postsAPI from "../api/postsAPI";
 
 const BlogStyle = styled.main`
   display: flex;
@@ -122,29 +123,42 @@ const BlogStyle = styled.main`
 
 const Blog = () => {
   const { id } = useParams();
+  const navigate = useNavigate()
   const { isUser } = useContext(UserContext)
 
   const [post, setPost] = useState(null);
   const [modal, setModal] = useState(false);
+  const [newId, setNewId] = useState(null);
+
+  const addView = async () => {
+    if (newId !== id) {
+      await postsAPI.addView(id)
+      setNewId(id)
+    }
+  }
+
+  const fetchPost = async () => {
+    try {
+      const response = await axios.get(
+        `${import.meta.env.VITE_APP_URL}/api/posts/${id}`
+      );
+      setPost(response.data);
+    } catch (error) {
+      console.error("Error al obtener el post", error);
+    }
+  };
 
   useEffect(() => {
-    const fetchPost = async () => {
-      try {
-        const response = await axios.get(
-          `${import.meta.env.VITE_APP_URL}/api/posts/${id}`
-        );
-        setPost(response.data);
-      } catch (error) {
-        console.error("Error al obtener el post", error);
-      }
-    };
-
     fetchPost();
+    addView()
   }, [id]);
 
-  const deletePost = () => {};
-
-  console.log(isUser);
+  const deletePost = async () => {
+    const post = await postsAPI.deletePost(id)
+    if (post) {
+      navigate('/blog')
+    }
+  };
 
   if (!post) {
     return <div>Cargando...</div>;

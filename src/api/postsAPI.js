@@ -25,20 +25,34 @@ const mostViews = async (filters) => {
 };
 
 const findPost = async (id) => {
-  const response = await api.get(`/${id}`)
-  return response.data
-}
+  const response = await api.get(`/${id}`);
+  return response.data;
+};
 
 const editPost = async (id, data) => {
-  const response = await api.put(`/${id}`, data)
-  return response.data
-}
+  const response = await api.put(`/${id}`, data);
+  return response.data;
+};
+
+const addView = async (id) => {
+  const response = await api.post(`/views/${id}`);
+  return response.data;
+};
 
 const deletePost = async (id) => {
-  const response = await api.delete(`/${id}`)
-  return response.data
-}
+  const response = await api.delete(`/${id}`);
+  return response.data;
+};
 
-const postsAPI = { createPost, getPosts, filterPosts, mostViews, findPost, editPost, deletePost };
+const postsAPI = {
+  createPost,
+  getPosts,
+  filterPosts,
+  mostViews,
+  findPost,
+  editPost,
+  addView,
+  deletePost,
+};
 
 export default postsAPI;

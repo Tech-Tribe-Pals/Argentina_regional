@@ -5,8 +5,12 @@ const api = axios.create({
 })
 
 const login = async (data) => {
+  try {
     const response = await api.post('/login', data)
     return response.data
+  } catch (err) {
+    return { error: 'Contraseña o usuario incorrecto' }
+  }
 }
 
 const checkToken = async (token) => {

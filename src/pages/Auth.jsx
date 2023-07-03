@@ -5,6 +5,10 @@ import styled from "styled-components";
 import { UserContext } from "../context/UserContext";
 
 const AuthStyle = styled.main`
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
   input {
     margin: 10px 0;
     padding: 5px;
@@ -30,21 +34,34 @@ const Auth = () => {
       username: username,
       password: password,
     };
+
+    
+
     const user = await authAPI.login(data);
     if (user.token) {
       toast.success(user.message);
       localStorage.setItem("token", user.token);
-      console.log(user);
       setUser(true);
+    } else if (username === '' || password === '') {
+      toast.error('Usuario o contraseña vacíos')
     } else {
-      toast.error(user.message);
+      toast.error(user.error);
     }
   };
+
+  const handleLogout = async () => {
+    setUser(false)
+    localStorage.removeItem("token");
+    toast.success("Sesión cerrada con exito");
+  }
 
   return (
     <AuthStyle>
       {isUser ? (
-        "Bienvenido Jorge!"
+        <section>
+        <h3>Bienvenido Jorge!</h3>
+        <button onClick={handleLogout}>Cerrar Sesión</button>
+        </section>
       ) : (
         <>
           <div className="formControl">

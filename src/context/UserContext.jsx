@@ -11,7 +11,6 @@ const UserProvider = ({ children }) => {
       const token = localStorage.getItem("token");
       if (token) {
         const response = await authAPI.checkToken(token);
-        console.log(response);
         if (response.valid) {
           setIsUser(true);
         } else {
