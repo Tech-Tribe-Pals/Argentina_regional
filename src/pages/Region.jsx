@@ -11,7 +11,7 @@ const Region = () => {
   const navigate = useNavigate();
 
   const getFetched = async () => {
-    const response = await fetch("/src/api/regiones.json");
+    const response = await fetch("/regiones.json");
     const allData = await response.json();
     const filter = allData.find((e) => e.name === region);
 

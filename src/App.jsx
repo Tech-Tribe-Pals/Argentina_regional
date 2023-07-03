@@ -10,6 +10,7 @@ import Footer from "./components/Footer";
 import SobreMi from "./pages/SobreMi";
 import Region from "./pages/Region";
 import Page404 from "./pages/Page404";
+import Auth from "./pages/Auth";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
       <Header />
       <Routes>
       <Route path="/" element={<Home />} />
+      <Route path="/login" element={<Auth />} />
       <Route path="/sobremi" element={<SobreMi />} />
       <Route path="/regiones" element={<Carousel />} />
       <Route path="/regiones/:region" element={<Region />} />

@@ -1,8 +1,9 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import axios from "axios";
 import styled from "styled-components";
 import Modal from "../components/Modal";
+import { UserContext } from '../context/UserContext'
 
 const BlogStyle = styled.main`
   display: flex;
@@ -10,6 +11,9 @@ const BlogStyle = styled.main`
   align-items: center;
   background-color: #45673e;
   padding-bottom: 3rem;
+  h1 {
+    font-size: 2.2em;
+  }
   section {
     margin-top: 1rem;
     border-radius: 0.5rem;
@@ -118,6 +122,8 @@ const BlogStyle = styled.main`
 
 const Blog = () => {
   const { id } = useParams();
+  const { isUser } = useContext(UserContext)
+
   const [post, setPost] = useState(null);
   const [modal, setModal] = useState(false);
 
@@ -138,6 +144,8 @@ const Blog = () => {
 
   const deletePost = () => {};
 
+  console.log(isUser);
+
   if (!post) {
     return <div>Cargando...</div>;
   }
@@ -145,7 +153,9 @@ const Blog = () => {
   return (
     <BlogStyle>
       <section>
-        <div className="adminPanel">
+        {
+          isUser ?
+          <div className="adminPanel">
           <p>Acciones de administrador</p>
           <div className="btns">
             <Link to={`/post/${id}`}>
@@ -155,12 +165,13 @@ const Blog = () => {
               <img src="/Iconos/bin.svg" />
             </button>
           </div>
-        </div>
+        </div> : ''
+        }
         <nav className="breadcrumbs">
           <Link to={"/blog"}>Publicaciones</Link> / <span>{post.title}</span>
         </nav>
         <img className="Card" src={post.thumbnail} />
-        <h2>{post.title}</h2>
+        <h1>{post.title}</h1>
         <div
           className="card-body"
           dangerouslySetInnerHTML={{ __html: post.content }}

@@ -18,6 +18,12 @@ const ForoStyled = styled.main`
     width: 300px;
     background-color: #4e6247;
     align-items: center;
+    .expand {
+      display: none;
+      img {
+        display: none;
+      }
+    }
     h3 {
       margin: 20px 0;
       color: #fff;
@@ -57,7 +63,7 @@ const ForoStyled = styled.main`
       position: fixed;
       z-index: 2;
       border: none;
-      right: -194px;
+      right: -200px;
       transition: ease-in-out 0.3s;
       border-radius: 0 0 20px 20px;
       .expand {
@@ -68,25 +74,27 @@ const ForoStyled = styled.main`
         left: -20px;
         top: 0;
         display: flex;
-        justify-content: center;
+        justify-content: start;
         align-items: center;
         border-radius: 5px;
         z-index: 3;
-        ::after {
-          content: "<";
-          color: #fff;
+        img {
+          display: flex;
+          width: 25px;
+          filter: invert(1);
         }
       }
     }
     section {
       width: 100%;
       nav {
+        border-top-right-radius: 0;
         height: auto;
         width: auto;
         padding: 15px;
         position: fixed;
         top: 88px;
-        left: -250px;
+        left: -255px;
         flex-direction: column;
       }
     }
@@ -102,6 +110,7 @@ const Blogs = () => {
     docs: [],
     currentPage: 1,
     totalPages: 0,
+    news: []
   });
   const [filter, setFilter] = useState({
     search: "",
@@ -141,7 +150,7 @@ const Blogs = () => {
 
   return (
     <ForoStyled>
-      <MostViews posts={posts.docs} />
+      <MostViews posts={posts.views} />
       <section>
         <NavBlog sendFilter={filterChange} actualPage={filter.page} />
         <h2>Publicaciones</h2>

@@ -53,46 +53,35 @@ const CarouselStyle = styled.section`
     }
   }
 
-  .Displayer {
-    margin-top: 0.5rem;
-    z-index: 1;
-    height: 65%;
-    width: 95%;
-    align-self: center;
-  }
   .navegation {
-    width: 700px;
     position: relative;
-    z-index: 2;
-
-    .overflow {
-      width: 700px;
-      height: 250px;
-      background-color: #5f4d36;
-      display: flex;
-      overflow-x: scroll;
-      z-index: 1;
-      padding: 1rem;
-      .blocked {
-        opacity: 0.3;
+    display: flex;
+    justify-content: center;
+    height: 250px;
+    background-color: #5f4d36;
+    display: flex;
+    z-index: 1;
+    padding: 1rem 2rem;
+    gap: 40px;
+    .blocked {
+      opacity: 0.3;
+    }
+    .btnNav {
+      background-color: transparent;
+      border: none;
+      filter: invert(100%);
+      img {
+        width: 25px;
       }
-      .btnNav {
-        background-color: transparent;
-        border: none;
-        filter: invert(100%);
-        img {
-          width: 25px;
-        }
-      }
-      ::-webkit-scrollbar {
-        background-color: #5f4d49;
-
-      }
-      ::-webkit-scrollbar-thumb {
-        background-color: #541;      }
-      button {
-        z-index: 10;
-      }
+    }
+    ::-webkit-scrollbar {
+      background-color: #5f4d49;
+    }
+    ::-webkit-scrollbar-thumb {
+      background-color: #541;
+    }
+    button {
+      z-index: 2;
     }
 
     .bird {
@@ -120,7 +109,6 @@ const CarouselStyle = styled.section`
   }
 
   button {
-    margin-right: 3.5rem;
     border-radius: 11px;
   }
 
@@ -130,6 +118,10 @@ const CarouselStyle = styled.section`
     object-fit: cover;
     z-index: 1;
     border-radius: 11px;
+  }
+
+  .actual {
+    border: solid 4px #b89b75;
   }
 
   .show {
@@ -166,6 +158,17 @@ const CarouselStyle = styled.section`
       border-bottom: 0px;
       transform: translateY(2%) scale(0.9);
       transition: all 0.1s ease-in-out;
+    }
+  }
+  @media (width < 990px) {
+    .navegation {
+      width: 100%;
+    }
+    .wood {
+      display: none;
+    }
+    .bird {
+      right: 10%;
     }
   }
 `;
@@ -207,37 +210,25 @@ const Carouselin = () => {
   return (
     <CarouselStyle>
       <div ref={carousel} className="Displayer">
-        {arr.map((item, i) => (
-          <VideoCard
-            cssClass={actual === i ? "show anim1" : "hide anim2"}
-            key={i}
-            video={`/videos/${item.name}_.mp4`}
-            ruta={`/videos/${item.name}`}
-            region={item.name}
-            info={item.info}
-          />
-        ))}
+        <VideoCard
+          video={`/videos/${arr[actual].name}_.mp4`}
+          ruta={`/regiones/${arr[actual].name.toLowerCase()}`}
+          region={arr[actual].name}
+          info={arr[actual].info}
+        />
       </div>
       <div className="navegation">
         <Overflow item={arr} clickOut={handleClick} />
         <img className="wood" src="/Regiones/Tronco.svg" />
         <img className="bird" src="/Regiones/bird.svg" alt="" />
       </div>
-      <img
-        className="sun"
-        src="/Regiones/sun.svg"
-        alt=""
-      />
+      <img className="sun" src="/Regiones/sun.svg" alt="" />
       <img
         className="mountain"
         src="/Regiones/MountainRegionFondo.svg"
         alt=""
       />
-      <img
-        className="arbol"
-        src="/Regiones/arbol.svg"
-        alt=""
-      />
+      <img className="arbol" src="/Regiones/arbol.svg" alt="" />
 
       <img width={75} className="nube" src="/Regiones/cloud.svg" alt="" />
     </CarouselStyle>

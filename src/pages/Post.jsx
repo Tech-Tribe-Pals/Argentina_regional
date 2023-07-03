@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import ReactQuill from "react-quill";
 import styled from "styled-components";
@@ -8,6 +8,7 @@ import "react-quill/dist/quill.snow.css";
 import postsAPI from "../api/postsAPI";
 import { useParams, useNavigate } from "react-router-dom";
 import imgAPI from "../api/imgAPI";
+import { UserContext } from "../context/UserContext";
 
 const Post = () => {
   const [content, setContent] = useState("");
@@ -16,6 +17,7 @@ const Post = () => {
   const [hover, setHover] = useState(false);
 
   const { id } = useParams();
+  const { isUser } = useContext(UserContext)
   const navigate = useNavigate()
 
   const checkPost = async () => {
@@ -99,6 +101,14 @@ const Post = () => {
       toast.error("Error al guardar la publicación");
     }
   };
+
+  if (!isUser) {
+    return (
+      <PostStyle>
+      <p>No tienes acceso a esta parte</p>
+      </PostStyle>
+    )
+  }
 
   return (
     <PostStyle>

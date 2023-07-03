@@ -14,12 +14,13 @@ const NavStyle = styled.nav`
     height: 35px;
     background-color: #4e6247;
     position: absolute;
-    right: -20px;
+    right: -25px;
     top: -10px;
-    justify-content: center;
-    border-radius: 5px;
-    ::after {
-      content: ">";
+    justify-content: start;
+    border-radius: 0 5px 5px 5px;
+    img {
+      display: none;
+      width: 20px;
     }
   }
   input {
@@ -48,6 +49,9 @@ const NavStyle = styled.nav`
   @media (width < 990px) {
     .expand {
       display: flex;
+      img {
+        display: flex;
+      }
     }
     div {
       margin: 10px 0;
@@ -86,7 +90,9 @@ const NavBlog = ({ sendFilter, actualPage }) => {
 
   return (
     <NavStyle style={anim ? { left: 0 } : {}}>
-      <div onClick={() => setAnim(!anim)} className="expand" />
+      <div onClick={() => setAnim(!anim)} className="expand">
+      <img src="/Iconos/filter.svg" />
+      </div>
       <div className="sort">
         <p>Ordenar por:</p>
         <img

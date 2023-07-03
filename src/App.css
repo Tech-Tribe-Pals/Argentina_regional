@@ -12,15 +12,23 @@
 
 }
 
-
 a {
   text-decoration: none;
+}
+
+main {
+  min-height: 50vh;
 }
 
 .card-body img {
   max-height: 250px;
 }
 
-/* :root {
-  color-scheme: light dark;
-} */
+:root::-webkit-scrollbar {
+  /* color-scheme: light dark; */
+  background-color: #222;
+}
+
+:root::-webkit-scrollbar-thumb {
+  background-color: #555;
+}

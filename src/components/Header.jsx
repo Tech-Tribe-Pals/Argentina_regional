@@ -2,11 +2,13 @@ import { useState, useEffect, useRef, useContext } from "react";
 import { Link, useLocation } from "react-router-dom";
 import styled from "styled-components";
 import { HeaderContext } from "../context/HeaderContext";
+import { UserContext } from "../context/UserContext";
 
 const Header = () => {
 
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const dropdownRef = useRef(null);
+  const { isUser } = useContext(UserContext)
 
   const handleDropdownClick = () => {
     setDropdownOpen(!dropdownOpen);
@@ -65,9 +67,10 @@ const Header = () => {
               </DropdownContent>
             </DropdownWrapper>
           </li>
-          <li>
+          { isUser ? 
+            <li>
             <Link to={"/post"}>Post</Link>
-          </li>
+            </li> : ''}
           <li>
             <Link to={"/blog"}>Blog</Link>
           </li>
