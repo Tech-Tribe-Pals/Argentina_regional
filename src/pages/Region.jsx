@@ -711,7 +711,7 @@ const Region = () => {
         ],
         sections: [
           {
-            title: "La Yunga y sus Relieves contiguos",
+            title: "La Yunga y sus relieves contiguos",
             info: `Esta subregión es también conocida como el ambiente de la selva Tucumano Oranense, porque se desarrolla tal formación vegetal en altura a partir de la humedad y temperatura retenida por la disposición del relieve y la dirección de vientos provenientes de la región Amazónica y del océano Atlántico contiguo. Se trata de una franja extendida desde el Norte de Salta y que abarca el extremo Oriental de Jujuy, casi todo Tucumán y el borde oriental de Catamarca. Esta condición bioclimática ha favorecido el desarrollo de múltiples actividades agrícolas, frutícolas y apícolas, como por ejemplo el azúcar que históricamente atraía trabajadores de todo el NOA, además de influir en el crecimiento demográfico de esta área (Tucumán es así la provincia más densamente poblada del país), cuya historia ubica a las primeras ciudades coloniales del otrora virreinato. Sin embargo, la mecanización del agro y la introducción de nuevos ciclos productivos como el limón no aportan tantos beneficios en distribución de ingresos, aunque se exalte su alto umbral de exportación a EE.UU. Entre las alternativas han surgido ferias y otras actividades de la economía social que multiplican el espíritu de Simoca (gran feria del sur tucumano). `,
             imgs: [
               {
