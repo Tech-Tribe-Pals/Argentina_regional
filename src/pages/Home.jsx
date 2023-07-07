@@ -1,9 +1,10 @@
-import { useContext, useEffect } from "react";
+import { useContext, useState, useEffect } from "react";
 import styled from "styled-components";
 import BotonStyle from "../components/BotonStyle";
 import { Link } from "react-router-dom";
 import { HeaderContext } from "../context/HeaderContext";
 import Bubble from "../components/Bubble";
+import Loader from '../components/Loader'
 
 const HomeIndex = styled.section`
   overflow: hidden;
@@ -35,6 +36,15 @@ const HomeIndex = styled.section`
     left: 0;
     object-fit: cover;
     z-index: 0;
+  }
+
+  .load-wrap {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   h1 {
@@ -102,10 +112,6 @@ const HomeIndex = styled.section`
   }
 
   @media (max-width: 767.98px) {
-
-    height: 100svh;
-
-
     video {
       filter: brightness(80%);
     }
@@ -146,12 +152,14 @@ const HomeIndex = styled.section`
 
     .unicen {
       width: 100%;
-      top: 0 !important;
+      top: 20px;
+      left: 20px;
       height: 5vh;
       justify-content: flex-start;
       align-items: center;
       img {
-        width: 20%;
+        filter: invert(1);
+        width: 30%;
         height: auto;
       }
     }
@@ -160,16 +168,40 @@ const HomeIndex = styled.section`
 
 export default function Home() {
   const { setPath } = useContext(HeaderContext);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     setPath(window.location.pathname);
   });
+
+  const handleVideoLoaded = () => {
+    setIsLoading(false);
+  };
+
+  const handleVideoError = () => {
+    setIsLoading(false); // Puedes mostrar un mensaje de error en lugar de simplemente cambiar isLoading a false
+  };
+
   return (
     <HomeIndex>
-      <video autoPlay loop muted src="/videos/Header_.mp4" type="video/mp4" />
+    {isLoading && (
+      <div className="load-wrap">
+        <Loader theme={'#4e6247'} />
+      </div>
+    )}
+
+    <video
+        autoPlay
+        loop
+        muted
+        src="https://res.cloudinary.com/dcmic2snw/video/upload/v1688745901/geografia/VID-20230705-WA0024_mkzsce.mp4"
+        type="video/mp4"
+        onLoadedData={handleVideoLoaded}
+        onError={handleVideoError}
+      />
+    
       <div className="unicen">
-        <img src="/Inicio/fch.png" alt="logo1" />
-        <img src="/Inicio/unicen.svg" alt="logo2" />
+        <img src="/Inicio/unicen.svg" alt="unicen" />
       </div>
       <nav>
         <picture>

@@ -60,7 +60,7 @@ const CardStyle = styled.article`
   }
 `;
 
-const Aside = styled.div`
+const Aside = styled(Link)`
   display: flex;
   flex-direction: column;
   justify-content: end;
@@ -76,10 +76,17 @@ const Aside = styled.div`
   width: 90%;
   height: 150px;
   position: relative;
+  :hover h3 {
+    height: 100%;
+  }
   h3 {
     padding:3px;
+    transition: ease-in-out .2s;
     background-color: rgb(40, 41, 40,.8);
     width: 100%;
+    height: 50%;
+    display: flex;
+    align-items: center;
     position: absolute;
     bottom: -20px;
     border-radius: 0 0 7px 7px;
@@ -114,7 +121,7 @@ export const Card = ({ post }) => {
 
 export const CardView = ({ post }) => {
   return (
-    <Aside style={{backgroundImage: `url(${post.thumbnail})`}}>
+    <Aside to={`/blog/${post._id}`} style={{backgroundImage: `url(${post.thumbnail})`}}>
       <h3>{post.title}</h3>
     </Aside>
   );

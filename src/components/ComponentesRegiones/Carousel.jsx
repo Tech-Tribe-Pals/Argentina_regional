@@ -92,7 +92,7 @@ const CarouselStyle = styled.section`
     }
 
     .wood {
-      height: 100%;
+      height: 250px;
       position: absolute;
       left: -180px;
       top: 0;

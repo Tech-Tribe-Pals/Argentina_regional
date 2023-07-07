@@ -47,7 +47,7 @@ const BubbleStyle = styled.div`
 
     p {
 
-      font-size:.8rem;
+      font-size:1rem;
 
     }
   }
@@ -56,8 +56,6 @@ const BubbleStyle = styled.div`
 const Bubble = () => {
   return (
     <BubbleStyle>
-      
-      <p>Profesor Jorge Lapena</p>
       <p>
         Bienvenidas aquellas personas que visitan este sitio destinado a conocer
         en profundidad lugares icónicos y otros pocos difundidos, que también

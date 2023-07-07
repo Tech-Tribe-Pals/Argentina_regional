@@ -77,7 +77,7 @@ const NavBlog = ({ sendFilter, actualPage }) => {
 
       const filter = {
         search: searchText,
-        filter: order ? 1 : -1,
+        filter: !order ? 1 : -1,
         limit: 4,
         page: actualPage,
       };
@@ -88,6 +88,11 @@ const NavBlog = ({ sendFilter, actualPage }) => {
     }
   };
 
+  const changeOrder = () => {
+    setOrder(!order)
+    filterPosts()
+  }
+
   return (
     <NavStyle style={anim ? { left: 0 } : {}}>
       <div onClick={() => setAnim(!anim)} className="expand">
@@ -96,12 +101,12 @@ const NavBlog = ({ sendFilter, actualPage }) => {
       <div className="sort">
         <p>Ordenar por:</p>
         <img
-          onClick={() => setOrder(!order)}
+          onClick={changeOrder}
           style={order ? { display: "none" } : {}}
           src="/Iconos/desc.svg"
         />
         <img
-          onClick={() => setOrder(!order)}
+          onClick={changeOrder}
           style={order ? {} : { display: "none" }}
           src="/Iconos/asc.svg"
         />
