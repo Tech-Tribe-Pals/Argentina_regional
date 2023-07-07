@@ -42,6 +42,7 @@ const Header = () => {
 
   const toggle = (num) => {
     setMenu(num);
+    setRegiones(!num);
   };
 
   const [setregiones, setRegiones] = useState(0);

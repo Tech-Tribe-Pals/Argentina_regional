@@ -51,10 +51,12 @@ const FooterStyle = styled.footer`
     }
   }
   .unicen {
-    width: 250px;
+    filter: invert(100%);
+    width: 200px;
     display: flex;
     flex-direction: column;
     gap: 20px;
+    margin-top: 2rem;
     margin-left: 2rem;
     img {
       width: 100%;
@@ -70,8 +72,17 @@ const FooterStyle = styled.footer`
     }
   }
   @media (width < 768px) {
+    
+    .info {
+    .regiones {
+      .regionList {
+        columns: 1;
+      }
+    }
+    }
     .unicen {
       flex-direction: column;
+      margin-left:0;
       margin-bottom: 20px;
     }
     .info {
@@ -114,7 +125,6 @@ export default function Footer() {
   return (
     <FooterStyle style={headerOut ? { display: "none" } : { display: "flex" }}>
       <div className="unicen">
-        <img src="/Inicio/fch.png" alt="img_fch" />
         <img src="/Inicio/unicen.svg" alt="img_unicen" />
       </div>
 

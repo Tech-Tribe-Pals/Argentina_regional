@@ -102,6 +102,10 @@ const HomeIndex = styled.section`
   }
 
   @media (max-width: 767.98px) {
+
+    height: 100svh;
+
+
     video {
       filter: brightness(80%);
     }
