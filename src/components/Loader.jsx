@@ -30,7 +30,7 @@ align-items: center;
   }
 `;
 
-const Loader = () => {
+const Loader = ({ theme }) => {
   const [position, setPosition] = useState(0);
 
   const dotChange = () => {
@@ -49,9 +49,9 @@ const Loader = () => {
 
   return (
     <LoaderStyle>
-      <div className={position === 0 ? "anim" : ""} />
-      <div className={position === 1 ? "anim" : ""} />
-      <div className={position === 2 ? "anim" : ""} />
+      <div style={theme ? { backgroundColor: theme }: {}} className={position === 0 ? "anim" : ""} />
+      <div style={theme ? { backgroundColor: theme }: {}} className={position === 1 ? "anim" : ""} />
+      <div style={theme ? { backgroundColor: theme }: {}} className={position === 2 ? "anim" : ""} />
     </LoaderStyle>
   );
 };

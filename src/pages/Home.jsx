@@ -24,6 +24,7 @@ const HomeIndex = styled.section`
     flex-direction: row;
     align-items: center;
     img {
+      filter: invert(1);
       height: 100%;
       width: 50%;
     }
@@ -158,7 +159,6 @@ const HomeIndex = styled.section`
       justify-content: flex-start;
       align-items: center;
       img {
-        filter: invert(1);
         width: 30%;
         height: auto;
       }

@@ -83,6 +83,9 @@ const Header = () => {
                 <Link to={"/regiones/metropolitana"}>Metropolitana</Link>
               </li>
               <li>
+                <Link to={"regiones/pampeana"}>Pampeana</Link>
+              </li>
+              <li>
                 <Link to={"/regiones/noroeste"}>Noroeste</Link>
               </li>
               <li>
@@ -92,7 +95,10 @@ const Header = () => {
                 <Link to={"/regiones/antartida"}>Antártida</Link>
               </li>
               <li>
-                <Link to={"/regiones/transfronterizas"}>Transfronterizas</Link>
+                <Link to={"/regiones/transfronterizasP"}>Transfronteriza con Países Limitrofes</Link>
+              </li>
+              <li>
+                <Link to={"/regiones/transfronterizasI"}>Transfronterizas Inter Regionales</Link>
               </li>
             </ul>
           </div>
@@ -107,13 +113,17 @@ const Header = () => {
                 <DropdownItem to={"/regiones/metropolitana"}>
                   Metropolitana
                 </DropdownItem>
+                <DropdownItem to={"regiones/pampeana"}>Pampeana</DropdownItem>
                 <DropdownItem to={"/regiones/noroeste"}>Noroeste</DropdownItem>
                 <DropdownItem to={"/regiones/noreste"}>Noreste</DropdownItem>
+                <DropdownItem to={"/regiones/transfronterizasP"}>
+                Transfronteriza con Países Limitrofes
+                </DropdownItem>
+                <DropdownItem to={"/regiones/transfronterizasI"}>
+                Transfronterizas Inter Regionales
+                </DropdownItem>
                 <DropdownItem to={"/regiones/antartida"}>
                   Antártida
-                </DropdownItem>
-                <DropdownItem to={"/regiones/transfronterizas"}>
-                  Transfronterizas
                 </DropdownItem>
               </DropdownContent>
             </DropdownWrapper>

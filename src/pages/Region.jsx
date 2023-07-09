@@ -36,8 +36,8 @@ const Region = () => {
           <h1>{data.title}</h1>
           <p>{data.info}</p>
           <img src={data.img} />
-          <Links links={data.links} />
-          <Subsection sections={data.sections} />
+          { data.links && <Links links={data.links} />}
+          { data.sections && <Subsection sections={data.sections} /> }
         </ContenidoInfo>
       )}
     </MetropolitanaStyle>

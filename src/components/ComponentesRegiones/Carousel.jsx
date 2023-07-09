@@ -6,7 +6,7 @@ import Overflow from "./Overflow";
 const CarouselStyle = styled.section`
   overflow-y: hidden;
   overflow-x: hidden;
-  height: 86vh;
+  min-height: 86vh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -201,6 +201,20 @@ const Carouselin = () => {
       name: "Metropolitana",
       info: "Esta región comprende la Ciudad Autónoma de Buenos Aires, en cuyo espacio urbano coexiste la Capital Federal de la República Argentina. Se adiciona el continuo urbano-suburbano de hasta 40 partidos de la provincia de Buenos Aires. No solamente incluye el Conurbano Bonaerense, sino además el Gran La Plata. Estos contrastes exhiben patrimonios culturales únicos, muy visitados, pero también espacios extremadamente vulnerados, como por ejemplo se verifica en las márgenes de la Cuenca Matanza-Riachuelo. ",
     },
+    {
+      name: "Transfronterizas Inter Regionales",
+      info: "También llamadas regiones de transición o de frontera interregional, estas áreas representan lugares sujetos a doble vínculo regional. Los espacios fronterizos han están expuestos o son consecuencia de los cambios de los espacios regionales tradicionales. La pampeanización es uno de estos procesos de cambio, a partir de la deforestación del bosque nativo para dar lugar a la expansión del modelo agropecuario intensivo. Otros ejemplos están asociados a la atracción ejercidas por grandes metrópolis o ciudades, tales como Córdoba que vincula áreas contiguas de San Luis, La Rioja y Santiago del Estero, que en teoría forman parte de otras regiones. ",
+      bonus: 'I'
+    },
+    {
+      name: "Transfronterizas con países limítrofes",
+      info: "Al referir a las regiones transfronterizas decimos que son áreas contiguas entre países separados por un límite jurisdiccional, pero que sus ambientes, culturas y vínculos socioterritoriales son comunes. Es decir, exceden las barreras normativas o burocráticas, y en algunos casos, sus habitantes forman parte de comunidades integradas en un pasado preexistente a la definición de la superficie de cada territorio administrativo. Por ello, subsisten costumbres, geolectos, parentescos, amistades y hasta vínculos económicos- laborales cotidianos. ",
+      bonus: 'P'
+    },
+    {
+      name: "Antartida",
+      info: "Referir a la Antártida Argentina amerita un análisis diferente a las islas australes, que también integran la provincia con capital en Ushuaia, entre ellas las que están usurpadas por el Reino Unido de Gran Bretaña e Irlanda del Norte. La porción del continente blanco reclamado por Argentina (porción triangular definida por los 60º y 90º de Latitud Sur; y de Este a Oeste por los 25º a 74º de Latitud Sur) forma parte de un espacio común global, sometido al Tratado Antártico (1959), motivo por el cual su espacio se superpone con superficie pretendida por Chile y el Reino Unido de Gran Bretaña e Irlanda del Norte, dado a la situación materializada en el Canal de Beagle desde 1984.",
+    },
   ];
 
   const handleClick = (pos) => {
@@ -211,8 +225,8 @@ const Carouselin = () => {
     <CarouselStyle>
       <div ref={carousel} className="Displayer">
         <VideoCard
-          video={`/videos/${arr[actual].name}_.mp4`}
-          ruta={`/regiones/${arr[actual].name.toLowerCase()}`}
+          video={`/videos/${arr[actual].name.split(' ')[0]}${arr[actual].bonus ? arr[actual].bonus : ''}_.mp4`}
+          ruta={`/regiones/${arr[actual].bonus ? arr[actual].name.split(' ')[0].toLowerCase() + arr[actual].bonus : arr[actual].name.split(' ')[0].toLowerCase()}`}
           region={arr[actual].name}
           info={arr[actual].info}
         />
