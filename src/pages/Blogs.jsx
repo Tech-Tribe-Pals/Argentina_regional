@@ -68,16 +68,16 @@ const ForoStyled = styled.main`
       border-radius: 0 0 20px 20px;
       max-height: 85vh;
       .expand {
-        width: 30px;
-        height: 35px;
+        width: 40px;
+        height: 50px;
         background-color: #4e6247;
         position: absolute;
-        left: -20px;
+        left: -40px;
         top: 0;
         display: flex;
-        justify-content: start;
+        justify-content: center;
         align-items: center;
-        border-radius: 5px;
+        border-radius: 5px 0px 0px 5px;
         z-index: 3;
         img {
           display: flex;

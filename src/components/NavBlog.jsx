@@ -10,14 +10,14 @@ const NavStyle = styled.nav`
   transition: ease-in-out 0.3s;
   .expand {
     display: none;
-    width: 30px;
-    height: 35px;
+    width: 40px;
+    height: 50px;
     background-color: #4e6247;
     position: absolute;
-    right: -25px;
+    right: -40px;
     top: -10px;
-    justify-content: start;
-    border-radius: 0 5px 5px 5px;
+    justify-content: center;
+    border-radius: 0 5px 5px 0px;
     img {
       display: none;
       width: 20px;
