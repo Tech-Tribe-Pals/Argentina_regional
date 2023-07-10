@@ -251,13 +251,7 @@
       "fondo": "/Pampeana/pampeana_1.png",
       "title": "Pampeana",
       "info": "El espacio pampeano constituye una región definida por el desarrollo agropecuario gestado en la segunda mitad del siglo XIX, tras la apropiación del mal llamado “Desierto” (Oeste del río Salado). Incluía la actual Región Metropolitana y no alcanzaba las actuales fronteras extra-pampeanas. Hoy incluye gran parte de las provincias más pobladas y con mayor Producto Bruto Interno, tales como Buenos Aires, Santa Fe y Córdoba, aunque también áreas contiguas de Entre Ríos (salvo los deltas), el Noreste de La Pampa y el borde oriental de San Luis. Ha influido en la deforestación de los bosques nativos del Espinal, principalmente por un modelo agrícola intensivo asociado al agronegocio, en detrimento de la diversidad agropecuaria, la agroindustria y el arraigo rural. A este despoblamiento interior se suma la casi extinción del ferrocarril y otros servicios que podrían revitalizar a cientos de pueblos rurales. Sí por ejemplo ha repuntado el turismo serrano y de los balnearios atlánticos.",
-      "imgs": [
-        {
-          "src": "/Pampeana/banner_pampeana.png",
-          "alt": "pampeana-banner",
-          "class": "pampeana-banner"
-        }
-      ],
+      "img": "/Pampeana/banner_pampeana.png",
       "links": [
         {
           "name": "La importancia del puerto local",
@@ -341,28 +335,7 @@
           "info": "Es la subregión más despoblada de la Región Pampeana, signada por su condición franco-arcillosa, casi siempre expuesta a inundaciones y anegamientos, propia de sus depresiones relativas y la contigüidad con el curso inferior del río Salado Bonaerense (con desbordes frecuentes ante la recepción de aportes de canalizaciones provenientes de casi toda la provincia). Se trata así de un área predilecta para la ganadería bovina con modalidades extensivas. Por ello, existen cabeceras de partido con muy poca población, como por ejemplo Tordillo con unos 2.000 habitantes. Las únicas ciudades con mayores rasgos de diversificación y dinamismo son Dolores, Chascomús y Las Flores, aunque en parte por el paso de importantes rutas como la 2 y la 3, y la sede de Tribunales Federales en el primer caso.",
           "imgs": [
             {
-              "src": "/Patagonia/patagonia_5.png",
-              "alt": "patagonia-ushuaia",
-              "class": "patagonia-ushuaia"
-            }
-          ],
-          "links": [
-            {
-              "name": "Agriculturizacion del humedal pampeano",
-              "url": "https://www.produccion-animal.com.ar/produccion_peces/piscicultura/12-humedal_pampeano.pdf"
-            },
-            {
-              "name": "Cuenca del Río Salado",
-              "url": "http://sedici.unlp.edu.ar/handle/10915/110129"
-            }
-          ]
-        },
-        {
-          "title": "La Pampa Deprimida",
-          "info": "Es la subregión más despoblada de la Región Pampeana, signada por su condición franco-arcillosa, casi siempre expuesta a inundaciones y anegamientos, propia de sus depresiones relativas y la contigüidad con el curso inferior del río Salado Bonaerense (con desbordes frecuentes ante la recepción de aportes de canalizaciones provenientes de casi toda la provincia). Se trata así de un área predilecta para la ganadería bovina con modalidades extensivas. Por ello, existen cabeceras de partido con muy poca población, como por ejemplo Tordillo con unos 2.000 habitantes. Las únicas ciudades con mayores rasgos de diversificación y dinamismo son Dolores, Chascomús y Las Flores, aunque en parte por el paso de importantes rutas como la 2 y la 3, y la sede de Tribunales Federales en el primer caso.",
-          "imgs": [
-            {
-              "src": "/Patagonia/patagonia_5.png",
+              "src": "/Pampeana/pampeana_6.png",
               "alt": "patagonia-ushuaia",
               "class": "patagonia-ushuaia"
             }
@@ -384,7 +357,7 @@
           "info": "El triángulo Pergamino-Venado Tuerto-Marcos Juárez constituye el área núcleo de mayor rendimiento agrícola del país, no solo por el cultivo de la soja, que hoy lidera en número de hectáreas. Esta subregión converge en el complejo industrial y portuario de Rosario. En función de este desarrollo primario se asociaron decenas de agroindustrias que en las provincias como Santa Fe y Córdoba configuraron la fama de localidades de pleno empleo, principalmente por las semilleras, los centros de procesamiento de alimentos y fábricas de implementos agrícolas. No así, el rápido crecimiento de Pergamino determinó una polarización o dualización socioeconómica, al extremo de relevarse cerca de una decena de asentamientos informales y terrenos tomados. Otras cuidades menores no tuvieron igual impacto, aunque de la mano de una diversificación más signada por el empleo público, como por ejemplo Junín, sede de Tribunales Federales y de una universidad nacional, sumado a varios centros de salud de alta complejidad. Más al Norte, esta región ha ampliado su frontera e incluye ciudades agroindustriales y agrocomerciales, de gran peso económico, como Rafaela y San Francisco (sedes de cuencas lecheras de alcance nacional).",
           "imgs": [
             {
-              "src": "/Pampeana/banner_pampeana.png",
+              "src": "/Pampeana/pampeana_10.png",
               "alt": "pampeana-ondulada",
               "class": "pampeana-ondulada"
             }
@@ -602,7 +575,7 @@
           "info": "El turismo, la explotación forestal, la yerba mate, el tabaco e incluso la soja han apropiado el espacio de la Selva Misionera o Paranaense, dando la oportunidad de distribuir la población en el interior, aunque con un costado ambiental sujeto al debate (gran erosión pluvial y fluvial en las mesetas, sumados a la incidencia de los agroquímicos). Misiones junto con el extremo Noreste de Corrientes ocupan este ambiente, signado por la \"tierra colorada\" (alta presencia de hierro y aluminio expuestos a la oxidación) y la frondosidad selvática. Si bien las cataratas del Iguazú figuran entre los principales atractivos (una de las 10 maravillas naturales del mundo) junto con el paso de la Triple Frontera (a Foz de Iguazú y Ciudad del Este, que es Zona Franca), se adicionan las Ruinas Jesuíticas de San Ignacio, las Geodas de Wanda y el tren turístico que comunica Posadas con Encarnación (Paraguay).",
           "imgs": [
             {
-              "src": "/Noreste/noreste_5.png",
+              "src": "/Noreste/noreste_6.png",
               "alt": "noreste5",
               "class": "noreste5"
             }
@@ -753,7 +726,7 @@
           "info": "Se trata de islas deshabitadas solo recorridas por el turismo nacional e internacional, por las fuerzas armadas, científicos o aventureros. Tal es el caso de la Isla de los Estados, con paradas provisorias, que reportan una gran adversidad ante la influencia de temporales de frío. En el pasado han reportado incidentes diplomáticos con Chile, como sucedió con las islas Nueva, Picón y Lenox (conflicto del Beagle, 1978-1984), así como con el Reino Unido de Gran Bretaña e Irlanda del Norte que continúan usurpando los archipiélagos de Malvinas, Sándwich del Sud y Georgias del Sud. Un caso más reciente lo constituye la instalación de salmoneras, las que se han instalado en el canal de Beagle y generan un foco de contaminación.",
           "imgs": [
             {
-              "src": "/TransfronterizasP/fronteraRegional_12.png",
+              "src": "/TransfronterizasP/fronteriza_12.jpg",
               "alt": "frontera12",
               "class": "frontera12"
             }
@@ -805,23 +778,6 @@
               "src": "/TransfronterizasI/regionales4.png",
               "alt": "regionales4",
               "class": "regionales4"
-            }
-          ]
-        },
-        {
-          "title": " Villa Serrana de Cordoba Central ",
-          "info": "En el lado oriental de las Sierras Comechingones se distribuyen una veintena de comarcas turísticas, articuladas por los accesos de la autovía de la Ruta Nacional 36 que comunican las ciudades de Córdoba con Río Cuarto. Estas villas turísticas, ubicadas casi en la frontera agropecuaria se distinguen por su trazado irregular conforme a la topografía de la peniplanicie serrana y los arroyos que circundan ambientes signados por bosques nativos, en parte fragmentados por el avance de negocios inmobiliarios y las transgresiones de la actividad rural. Entre los centros con más desarrollo turístico se destacan Santa Rosa de Calamuchita, La Serranita y Villa General Belgrano (capital nacional de la cerveza y sede hereditaria de una colonia suiza).",
-          "imgs": [
-            {
-              "src": "/TransfronterizasI/regionales4.png",
-              "alt": "regionales4",
-              "class": "regionales4"
-            }
-          ],
-          "links": [
-            {
-              "name": "Villa Belgrano desarrollo territorial",
-              "url": "https://www.argentina.gob.ar/sites/default/files/plan_estrategico_territorial_villa_general_belgrano.pdf"
             }
           ]
         },
@@ -929,7 +885,20 @@
       "fondo": "/Antartida/antartida_1.png",
       "title": "Antartida",
       "info": "Referir a la Antártida Argentina amerita un análisis diferente a las islas australes, que también integran la provincia con capital en Ushuaia, entre ellas las que están usurpadas por el Reino Unido de Gran Bretaña e Irlanda del Norte. La porción del continente blanco reclamado por Argentina (porción triangular definida por los 60º y 90º de Latitud Sur; y de Este a Oeste por los 25º a 74º de Latitud Sur) forma parte de un espacio común global, sometido al Tratado Antártico (1959), motivo por el cual su espacio se superpone con superficie pretendida por Chile y el Reino Unido de Gran Bretaña e Irlanda del Norte, dado a la situación materializada en el Canal de Beagle desde 1984, y el conflicto de Malvinas y las demás islas del Atlántico Sur en el segundo caso. Así, por el momento, todas las naciones que tienen bases estables no pueden desarrollar actividades militares, comerciales y otras, sobre todo, aquellas que pongan en riesgo la paz mundial y la reserva de los campos de hielo y su fauna asociada. De hecho, menos del 1% constituyen áreas libres de hielo. Por ende, su visita al lugar, distante a unos 1.000 kilómetros de Sudamérica es muy difícil ante la inexistencia de un transporte público. Y sus pobladores lo hacen generalmente por campañas semestrales bien preparadas (el frío polar es extremo y solo en verano la temperatura supera los 10 grados en días excepcionales), con permisos afines a la investigación científica, el resguardo ambiental y el arraigo de la proclama territorial, más allá de que la consideremos parte de un territorio provincial. No obstante, en los años 90 , distintos cruceros internacionales ofrecen recorridos por esas frías aguas en verano, algunos con punto de salida en Ushuaia, aunque con riesgos asociados a los deshielos o el caso contrario, el difícil acceso a algunos lugares ante el congelamiento. ",
-      "img": "/Antartida/banner-antartida.webp",
+      "imgs": [
+        {
+          "src": "/Antartida/antartida_2.png",
+          "alt": "antartida"
+        },
+        {
+          "src": "/Antartida/antartida_3.png",
+          "alt": "antartida"
+        },
+        {
+          "src": "/Antartida/antartida_4.png",
+          "alt": "antartida"
+        }
+      ],
       "links": [
         {
           "name": "Oficial Antartida",

@@ -3,7 +3,8 @@ import { useNavigate, useParams } from "react-router-dom";
 import styled from "styled-components";
 import Subsection from "../components/Region/Subsection";
 import Links from "../components/Region/Links";
-import PresentacionRegiones from "../components/Region/PresentacionRegiones"
+import PresentacionRegiones from "../components/Region/PresentacionRegiones";
+import ImgMap from "../components/Region/ImgMap";
 const Region = () => {
   const [data, setData] = useState([]);
 
@@ -18,7 +19,7 @@ const Region = () => {
     if (filter) {
       setData(filter.docs);
     } else {
-      navigate('/error')
+      navigate("/error");
     }
   };
 
@@ -35,9 +36,10 @@ const Region = () => {
           <PresentacionRegiones fondo={data.fondo} />
           <h1>{data.title}</h1>
           <p>{data.info}</p>
-          <img src={data.img} />
-          { data.links && <Links links={data.links} />}
-          { data.sections && <Subsection sections={data.sections} /> }
+          {data.imgs && <ImgMap imgs={data.imgs} />}
+          {data.img && <img className="banner" src={data.img} />}
+          {data.links && <Links links={data.links} />}
+          {data.sections && <Subsection sections={data.sections} />}
         </ContenidoInfo>
       )}
     </MetropolitanaStyle>
@@ -49,7 +51,8 @@ export default Region;
 const ContenidoInfo = styled.section`
   background-color: whitesmoke;
   border-left: solid #d9d9d9 11px;
-  margin-top: 4rem;
+  margin: 4rem;
+  padding-bottom: 20px;
   border-radius: 0.3rem;
   height: auto;
   width: 90%;
@@ -57,17 +60,40 @@ const ContenidoInfo = styled.section`
   align-items: center;
   display: flex;
   flex-direction: column;
+  .banner {
+    height: 20vh;
+    object-fit: cover;
+  }
   .subsection {
     display: flex;
     flex-direction: column;
-    .subsectionImgs {
+  }
+  .subsectionImgs {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    .container {
+      width: 350px;
+      height: 20rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      border-radius: 1rem;
       img {
-        width: 25rem;
-        height: 20rem;
-        border-radius: 1rem;
-        margin: 1rem;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        :hover {
+          object-fit: contain;
+        }
       }
     }
+  }
+  h1 {
+    margin-top: 50px;
   }
   h2 {
     margin: 1rem;

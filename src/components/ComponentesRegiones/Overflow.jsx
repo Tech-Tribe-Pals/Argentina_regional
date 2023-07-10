@@ -11,8 +11,8 @@ const Overflow = ({ item, clickOut }) => {
       newPosition = 0
       clickOut(0)
     } else if (newPosition === -1) {
-      newPosition = 5
-      clickOut(5)
+      newPosition = item.length - 1
+      clickOut(item.length - 1)
     } else {
       clickOut(newPosition)
     }
@@ -26,8 +26,8 @@ const Overflow = ({ item, clickOut }) => {
       newPosition = 0
       clickOut(0)
     } else if (newPosition === -1) {
-      newPosition = 5
-      clickOut(5)
+      newPosition = item.length - 1
+      clickOut(item.length - 1)
     } else {
       clickOut(newPosition)
     }
@@ -61,9 +61,9 @@ const Overflow = ({ item, clickOut }) => {
       {windowSize >= 768 ? (
         visibleItems.map((e, i) => (
           <button
-            className={i === 0 ? "actual" : ""}
+            className={i === 1 ? "actual" : ""}
             key={i}
-            onClick={() => changeRegion(i - 1)}
+            onClick={() => changeRegion(i)}
           >
             <img
               className="Selector"
@@ -76,7 +76,7 @@ const Overflow = ({ item, clickOut }) => {
         <button>
           <img
             className="Selector"
-            src={`/${visibleItems[0].name}/${visibleItems[0].name.toLowerCase()}_1.png`}
+            src={`/${visibleItems[0].bonus ? visibleItems[0].name.split(' ')[0] + visibleItems[0].bonus : visibleItems[0].name.split(' ')[0]}/${visibleItems[0].name.split(' ')[0].toLowerCase()}_1.png`}
             alt="img"
           />
         </button>

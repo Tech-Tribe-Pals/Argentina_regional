@@ -2,7 +2,9 @@ const Imagenes = ({ imgs }) => {
   return (
     <div className="subsectionImgs">
       {imgs.map((e, i) => (
-        <img key={i} src={e.src} className={e.class} alt={e.alt} />
+        <div key={i} className="container">
+        <img  src={e.src} alt={e.alt} />
+        </div>
       ))}
     </div>
   );

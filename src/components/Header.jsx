@@ -194,14 +194,11 @@ const HeaderStyle = styled.header`
         color: #fff;
         text-decoration-line: none;
       }
-
-      a:hover {
-        /* Add any hover style if needed */
-      }
     }
   }
 
   @media (max-width: 990px) {
+    padding: 1rem;
     nav {
       height: auto;
       display: flex;

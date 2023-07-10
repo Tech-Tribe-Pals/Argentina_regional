@@ -1,12 +1,15 @@
 import styled from "styled-components";
-const HeaderStyle = styled.img`
+const HeaderStyle = styled.div`
   height: 50vh;
-  object-fit: cover;
+  width: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 `;
 
 export default function PresentacionRegiones({ fondo }) {
 
   return (
-    <HeaderStyle src={fondo} />
+    <HeaderStyle style={{backgroundImage: `url(${fondo})`}} />
   );
 }

@@ -66,6 +66,7 @@ const ForoStyled = styled.main`
       right: -200px;
       transition: ease-in-out 0.3s;
       border-radius: 0 0 20px 20px;
+      max-height: 85vh;
       .expand {
         width: 30px;
         height: 35px;
@@ -93,7 +94,8 @@ const ForoStyled = styled.main`
         width: auto;
         padding: 15px;
         position: fixed;
-        top: 88px;
+        top: 81px;
+        width: 255px;
         left: -255px;
         flex-direction: column;
       }
