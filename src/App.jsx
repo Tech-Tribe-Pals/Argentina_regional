@@ -11,6 +11,7 @@ import SobreMi from "./pages/SobreMi";
 import Region from "./pages/Region";
 import Page404 from "./pages/Page404";
 import Auth from "./pages/Auth";
+import Contacto from "./pages/Contact";
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
       <Route path="/post/:id" element={<Post />} />
       <Route path="/blog" element={<Blogs />} />
       <Route path="/blog/:id" element={<Blog />} />
+      <Route path="/contacto" element={<Contacto />} />
       <Route path="*" element={<Page404 />} />
       </Routes>
       <Footer />

@@ -31,8 +31,8 @@ const Boton = styled.button`
   }
 `;
 
-export default function BotonStyle({ info, icon}) {
+export default function BotonStyle({ info, icon, submit, clickOut}) {
 
-  return <Boton>{info} <img width={20} src={icon} alt="" /></Boton>;
+  return <Boton onClick={clickOut} type={submit ? 'submit' : 'button'}>{info} <img width={20} src={icon} alt="" /></Boton>;
 
 }

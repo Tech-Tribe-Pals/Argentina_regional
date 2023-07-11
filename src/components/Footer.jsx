@@ -43,10 +43,10 @@ const FooterStyle = styled.footer`
     }
     .regiones {
       .regionList {
-        columns: 2;
-      }
-      .navegation {
-        margin-left: 8rem;
+        width: 100%;
+        display: grid;
+        align-items: center;
+        grid-template-columns: repeat(2, 1fr);
       }
     }
   }
@@ -133,19 +133,16 @@ export default function Footer() {
           <h3>Navegacion</h3>
           <ul>
             <li>
-              <Link>Inicio</Link>
+              <Link to={'/'}>Inicio</Link>
             </li>
             <li>
-              <Link>Regiones</Link>
+              <Link to={'/regiones'}>Regiones</Link>
             </li>
             <li>
-              <Link>Blog</Link>
+              <Link to={'/blog'}>Blog</Link>
             </li>
             <li>
-              <Link>Presentacion</Link>
-            </li>
-            <li>
-              <Link>Contacto</Link>
+              <Link to={'/sobremi'}>Presentacion</Link>
             </li>
           </ul>
         </div>
@@ -153,36 +150,36 @@ export default function Footer() {
           <h3>Regiones</h3>
           <ul className="regionList">
             <li>
-              <Link>Antartida</Link>
+              <Link to={'/regiones/antartida'}>Antartida</Link>
             </li>
             <li>
-              <Link>Cuyo</Link>
+              <Link to={'/regiones/cuyo'}>Cuyo</Link>
             </li>
             <li>
-              <Link>La Pampa</Link>
+              <Link to={'/regiones/pampeana'}>La Pampa</Link>
             </li>
             <li>
-              <Link>Metropolitana</Link>
+              <Link to={'/regiones/metropolitana'}>Metropolitana</Link>
             </li>
             <li>
-              <Link>Noreste</Link>
+              <Link to={'/regiones/noreste'}>Noreste</Link>
             </li>
 
             <li>
-              <Link>Noroeste</Link>
+              <Link to={'/regiones/noroeste'}>Noroeste</Link>
             </li>
             <li>
-              <Link>Patagonia</Link>
+              <Link to={'/regiones/patagonia'}>Patagonia</Link>
             </li>
             <li>
-              <Link>
+              <Link to={'/regiones/transfronterizasP'}>
                 Transfronterizas con <br /> Paises limitrofes
               </Link>
             </li>
             <li>
-              <Link>
+              <Link to={'/regiones/transfronterizasI'}>
                 Transfronterizas <br /> Inter-Regionales
-              </Link>
+              </Link> 
             </li>
           </ul>
         </div>
