@@ -1,4 +1,4 @@
-import React from "react";
+
 import styled from "styled-components";
 
 const Boton = styled.button`
@@ -33,6 +33,6 @@ const Boton = styled.button`
 
 export default function BotonStyle({ info, icon, submit, clickOut}) {
 
-  return <Boton onClick={clickOut} type={submit ? 'submit' : 'button'}>{info} <img width={20} src={icon} alt="" /></Boton>;
+  return <Boton onClick={clickOut} type={submit ? 'submit' : 'button'}>{info} { icon ? <img width={20} src={icon} alt="check" /> : '' }</Boton>;
 
 }
