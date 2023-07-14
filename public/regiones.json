@@ -591,9 +591,9 @@
     }
   },
   {
-    "name": "transfronterizasP",
+    "name": "transfronterizasp",
     "docs": {
-      "fondo": "/TransfronterizasP/transfronterizas_1.png",
+      "fondo": "/TransfronterizasP/transfronterizasp_1.png",
       "title": "Transfronteriza con países limitrofes",
       "info": "También llamadas regiones de transición o de frontera interregional, estas áreas representan lugares sujetos a doble vínculo regional o a casos más complejos que incentivan discusiones sobre su regionalización. Estos espacios fronterizos han están expuestos o son consecuencia de los cambios de los espacios regionales tradicionales. La pampeanización es uno de estos procesos de cambio, a partir de la deforestación del bosque nativo para dar lugar a la expansión del modelo agropecuario intensivo. Otros ejemplos están asociados a la atracción ejercidas por grandes metrópolis o ciudades, tales como Córdoba que vincula áreas contiguas de San Luis, La Rioja y Santiago del Estero, que en teoría forman parte de otras regiones.",
       "img": "/TransfronterizasP/banner-fronteriza.png",
@@ -603,7 +603,7 @@
           "info": "Administrativa o jurisdiccionalmente la Isla Martin García pertenece al Partido de La Plata, provincia de Buenos Aires, aunque geográficamente se localiza en aguas uruguayas. Esto sucede porque el límite medio del río de La Plata fue corrido hacia el oriente en esta parte ante la necesidad de establecer un nuevo criterio: el lecho de mayor profundidad. Así esta geografía insular hoy no puede convertirse más que en una reserva natural y un lugar de visita, sin posibilidad de ser un enclave comercial (puerto) y mucho menos militar. Sin embargo,  este afloramiento rocoso precámbrico (constitutivo del Cratón del río de La Plata)  se complementa de un área sedimentaria que cada vez crece más en superficie,  dada la cercanía al delta del Paraná. Por otro lado, en el lugar subyace una historia muy peculiar, ya que por muchos años fue un centro de retiro de enfermos por fiebre amarilla y otras pestes que adoraban el siglo XIX,  y más tarde, se convirtió en una cárcel, con algunas tareas que tuvieron epicentro en la base granítica de sus rocas. En la actividad,  esta isla junto con Apipe que está en aguas paraguayas,  pero también es Argentina,  se designan como (Arg.) en la Cartografía oficial para resaltar la soberanía por más que se localice más allá de los límites nacionales.",
           "imgs": [
             {
-              "src": "/TransfronterizasP/transfronterizas_1.png",
+              "src": "/TransfronterizasP/transfronterizasp_1.png",
               "alt": "front_regional1",
               "class": "front_regional1"
             },
@@ -736,9 +736,9 @@
     }
   },
   {
-    "name": "transfronterizasI",
+    "name": "transfronterizasi",
     "docs": {
-      "fondo": "/TransfronterizasI/transfronterizas_1.png",
+      "fondo": "/TransfronterizasI/transfronterizasi_1.png",
       "title": "Transfronterizas inter-regionales",
       "info": "También llamadas regiones de transición o de frontera interregional, estas áreas representan lugares sujetos a doble vínculo regional o a casos más complejos que incentivan discusiones sobre su regionalización. Estos espacios fronterizos han están expuestos o son consecuencia de los cambios de los espacios regionales tradicionales. La pampeanización es uno de estos procesos de cambio, a partir de la deforestación del bosque nativo para dar lugar a la expansión del modelo agropecuario intensivo. Otros ejemplos están asociados a la atracción ejercidas por grandes metrópolis o ciudades, tales como Córdoba que vincula áreas contiguas de San Luis, La Rioja y Santiago del Estero, que en teoría forman parte de otras regiones.",
       "img": "/TransfronterizasI/fronterizas-banner.png",

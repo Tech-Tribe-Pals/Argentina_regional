@@ -95,10 +95,10 @@ const Header = () => {
                 <Link to={"/regiones/antartida"}>Antártida</Link>
               </li>
               <li>
-                <Link to={"/regiones/transfronterizasP"}>Transfronteriza con Países Limitrofes</Link>
+                <Link to={"/regiones/transfronterizasp"}>Transfronteriza con Países Limitrofes</Link>
               </li>
               <li>
-                <Link to={"/regiones/transfronterizasI"}>Transfronterizas Inter Regionales</Link>
+                <Link to={"/regiones/transfronterizasi"}>Transfronterizas Inter Regionales</Link>
               </li>
             </ul>
           </div>
@@ -116,10 +116,10 @@ const Header = () => {
                 <DropdownItem to={"regiones/pampeana"}>Pampeana</DropdownItem>
                 <DropdownItem to={"/regiones/noroeste"}>Noroeste</DropdownItem>
                 <DropdownItem to={"/regiones/noreste"}>Noreste</DropdownItem>
-                <DropdownItem to={"/regiones/transfronterizasP"}>
+                <DropdownItem to={"/regiones/transfronterizasp"}>
                 Transfronteriza con Países Limitrofes
                 </DropdownItem>
-                <DropdownItem to={"/regiones/transfronterizasI"}>
+                <DropdownItem to={"/regiones/transfronterizasi"}>
                 Transfronterizas Inter Regionales
                 </DropdownItem>
                 <DropdownItem to={"/regiones/antartida"}>

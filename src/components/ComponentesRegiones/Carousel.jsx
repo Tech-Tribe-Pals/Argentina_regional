@@ -178,44 +178,44 @@ const Carouselin = () => {
   const carousel = useRef(null);
   const arr = [
     {
-      name: "Pampeana",
+      name: ["Pampeana", "Pampeana"],
       info: "El espacio pampeano constituye una región definida por el desarrollo agropecuario gestado en la segunda mitad del siglo XIX, tras la apropiación del mal llamado “Desierto” (Oeste del río Salado). Incluía la actual Región Metropolitana y no alcanzaba las actuales fronteras extra-pampeanas. Hoy incluye gran parte de las provincias más pobladas y con mayor Producto Bruto Interno, tales como Buenos Aires, Santa Fe y Córdoba, aunque también áreas contiguas de Entre Ríos (salvo los deltas), el Noreste de La Pampa y el borde oriental de San Luis.",
     },
     {
-      name: "Patagonia",
+      name: ["Patagonia", "Patagonia"],
       info: "Es la región de mayor superficie, generalizada como un espacio de clima frío, de grandes distancias, extensos parques nacionales, altos costos de vida y vacíos demográficas, donde no siempre el transporte terrestre es la mejor opción. En el siglo pasado fue un área receptora de las “grandes oportunidades”, en cuanto a laboral, de la mano de incentivos estatales (zona franca, apoyo a industrias, mejores sueldos y reconocimientos jubilatorios ventajosos), tanto como del sector privado (principalmente por la fruticultura, el turismo y el petróleo).",
     },
     {
-      name: "Noreste",
+      name: ["Noreste", "Noreste"],
       info: "Conforma una región signada por el clima cálido subtropicial, cuyos ambientes originarios tienen raíz en bosques nativos, incluida la selva Misionera, el parque Chaqueño y el bosque del Ñandubay. Sin embargo, año a año estas superficies están sometidas a la deforestación, los incendios forestales, el avance de los agroecosistemas y la forestación de especies exóticas como los pinos y eucaliptos. Estos últimos han llegado al extremo de afectar la eco-región de los Esteros del Iberá, mientras que los ambientes más arbóreos han cedido lugar a cultivos como la soja, cuyas consecuencias también tienen derivaciones en el éxodo rural y el empobrecimiento. ",
     },
     {
-      name: "Cuyo",
+      name: ["Cuyo", "Cuyo"],
       info: "Región mediterránea, atravesada completamente por la diagonal árida del país, aunque a partir de la expansión del riego se han desarrollado cientos de poblaciones, plantaciones y cultivos, en una especie de oasis, no siempre de manera sustentable en torno a los efectos provocados aguas abajo, en provincias como La Pampa. No obstante, provincias como San Juan han apostado por la megaminería en la inmensidad de la Cordillera de Los Andes.",
     },
     {
-      name: "Noroeste",
+      name: ["Noroeste", "Noroeste"],
       info: "Es una región de contrastes paisajísticos, ambientales y demográficos, y a la vez, cuna de las ciudades más antiguas del país, de gran importancia en el auge minero-colonial y aquella ruta afín, trazada entre el Alto Perú y el puerto de Buenos Aires. Al oriente se distingue la Yunga o Selva Tucumano-Oranense, cuya disposición y extensión Norte-Sur alberga un sinfín de potencialidades productivas. Tambien se encuentran las ciudades como San Miguel del Tucumán, Salta y otras. En el occidente, donde rige la aridez de la Puna, la Prepuna y los Valles Secos, actividades tradicionales como la extracción de sal, la industria textil artesanal.",
     },
     {
-      name: "Metropolitana",
+      name: ["Metropolitana", "Metropolitana"],
       info: "Esta región comprende la Ciudad Autónoma de Buenos Aires, en cuyo espacio urbano coexiste la Capital Federal de la República Argentina. Se adiciona el continuo urbano-suburbano de hasta 40 partidos de la provincia de Buenos Aires. No solamente incluye el Conurbano Bonaerense, sino además el Gran La Plata. Estos contrastes exhiben patrimonios culturales únicos, muy visitados, pero también espacios extremadamente vulnerados, como por ejemplo se verifica en las márgenes de la Cuenca Matanza-Riachuelo. ",
     },
     {
-      name: "Transfronterizas Inter Regionales",
-      info: "También llamadas regiones de transición o de frontera interregional, estas áreas representan lugares sujetos a doble vínculo regional. Los espacios fronterizos han están expuestos o son consecuencia de los cambios de los espacios regionales tradicionales. La pampeanización es uno de estos procesos de cambio, a partir de la deforestación del bosque nativo para dar lugar a la expansión del modelo agropecuario intensivo. Otros ejemplos están asociados a la atracción ejercidas por grandes metrópolis o ciudades, tales como Córdoba que vincula áreas contiguas de San Luis, La Rioja y Santiago del Estero, que en teoría forman parte de otras regiones. ",
-      bonus: 'I'
+      name: ["Transfronterizas Inter Regionales", 'TransfronterizasI'],
+      info: "También llamadas regiones de transición o de frontera interregional, estas áreas representan lugares sujetos a doble vínculo regional. Los espacios fronterizos han están expuestos o son consecuencia de los cambios de los espacios regionales tradicionales. La pampeanización es uno de estos procesos de cambio, a partir de la deforestación del bosque nativo para dar lugar a la expansión del modelo agropecuario intensivo. Otros ejemplos están asociados a la atracción ejercidas por grandes metrópolis o ciudades, tales como Córdoba que vincula áreas contiguas de San Luis, La Rioja y Santiago del Estero, que en teoría forman parte de otras regiones. "
     },
     {
-      name: "Transfronterizas con países limítrofes",
-      info: "Al referir a las regiones transfronterizas decimos que son áreas contiguas entre países separados por un límite jurisdiccional, pero que sus ambientes, culturas y vínculos socioterritoriales son comunes. Es decir, exceden las barreras normativas o burocráticas, y en algunos casos, sus habitantes forman parte de comunidades integradas en un pasado preexistente a la definición de la superficie de cada territorio administrativo. Por ello, subsisten costumbres, geolectos, parentescos, amistades y hasta vínculos económicos- laborales cotidianos. ",
-      bonus: 'P'
+      name: ["Transfronterizas con países limítrofes", 'TransfronterizasP'],
+      info: "Al referir a las regiones transfronterizas decimos que son áreas contiguas entre países separados por un límite jurisdiccional, pero que sus ambientes, culturas y vínculos socioterritoriales son comunes. Es decir, exceden las barreras normativas o burocráticas, y en algunos casos, sus habitantes forman parte de comunidades integradas en un pasado preexistente a la definición de la superficie de cada territorio administrativo. Por ello, subsisten costumbres, geolectos, parentescos, amistades y hasta vínculos económicos- laborales cotidianos. "
     },
     {
-      name: "Antartida",
-      info: "Referir a la Antártida Argentina amerita un análisis diferente a las islas australes, que también integran la provincia con capital en Ushuaia, entre ellas las que están usurpadas por el Reino Unido de Gran Bretaña e Irlanda del Norte. La porción del continente blanco reclamado por Argentina (porción triangular definida por los 60º y 90º de Latitud Sur; y de Este a Oeste por los 25º a 74º de Latitud Sur) forma parte de un espacio común global, sometido al Tratado Antártico (1959), motivo por el cual su espacio se superpone con superficie pretendida por Chile y el Reino Unido de Gran Bretaña e Irlanda del Norte, dado a la situación materializada en el Canal de Beagle desde 1984.",
+      name: ["Ántartida", "Antartida"],
+      info: "Referir a la Antártida Argentina amerita un análisis diferente a las islas australes, que también integran la provincia con capital en Ushuaia, entre ellas las que están usurpadas por el Reino Unido de Gran Bretaña e Irlanda del Norte. La porción del continente blanco reclamado por Argentina (porción triangular definida por los 60º y 90º de Latitud Sur; y de Este a Oeste por los 25º a 74º de Latitud Sur) forma parte de un espacio común global, sometido al Tratado Antártico (1959), motivo por el cual su espacio se superpone con superficie pretendida por Chile y el Reino Unido de Gran Bretaña e Irlanda del Norte, dado a la situación materializada en el Canal de Beagle desde 1984."
     },
   ];
+
+  let myLink = arr[actual].name
 
   const handleClick = (pos) => {
     setActual(pos);
@@ -225,9 +225,9 @@ const Carouselin = () => {
     <CarouselStyle>
       <div ref={carousel} className="Displayer">
         <VideoCard
-          video={`/videos/${arr[actual].name.split(' ')[0]}${arr[actual].bonus ? arr[actual].bonus : ''}_.mp4`}
-          ruta={`/regiones/${arr[actual].bonus ? arr[actual].name.split(' ')[0].toLowerCase() + arr[actual].bonus : arr[actual].name.split(' ')[0].toLowerCase()}`}
-          region={arr[actual].name}
+          video={`/videos/${myLink[1]}_.mp4`}
+          ruta={`/regiones/${myLink[1].toLowerCase()}`}
+          region={myLink[0]}
           info={arr[actual].info}
         />
       </div>
