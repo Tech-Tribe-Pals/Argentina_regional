@@ -1,4 +1,4 @@
-import React from "react";
+
 import styled from "styled-components";
 
 const Boton = styled.button`
@@ -21,7 +21,7 @@ const Boton = styled.button`
   padding-left: 8px;
 
   img {
-    margin-left: 3px;
+    margin-left: 5px;
   }
 
   :active {
@@ -31,8 +31,8 @@ const Boton = styled.button`
   }
 `;
 
-export default function BotonStyle({ info, icon}) {
+export default function BotonStyle({ info, icon, submit, clickOut}) {
 
-  return <Boton>{info} <img width={20} src={icon} alt="" /></Boton>;
+  return <Boton onClick={clickOut} type={submit ? 'submit' : 'button'}>{info} { icon ? <img width={20} src={icon} alt="check" /> : '' }</Boton>;
 
 }

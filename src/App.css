@@ -9,15 +9,26 @@
 
   font-family: 'Ubuntu', sans-serif;
   font-weight: 700;
-  transition: all .8s ease-in-out;
 
 }
-
 
 a {
   text-decoration: none;
 }
 
+main {
+  min-height: 50vh;
+}
+
 .card-body img {
   max-height: 250px;
+}
+
+:root::-webkit-scrollbar {
+  /* color-scheme: light dark; */
+  background-color: #222;
+}
+
+:root::-webkit-scrollbar-thumb {
+  background-color: #555;
 }

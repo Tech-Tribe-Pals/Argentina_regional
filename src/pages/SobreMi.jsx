@@ -1,7 +1,7 @@
-import React from "react";
 import styled from "styled-components";
 
 const ContainerInfo = styled.main`
+  overflow-x: hidden;
   width: 100%;
   margin-top: 3rem;
   color: #1f1f1f;
@@ -9,6 +9,10 @@ const ContainerInfo = styled.main`
 
   h2 {
     font-size: 3rem;
+  }
+
+  @media (max-width: 767.98px) {
+    margin-bottom: 4rem;
   }
 `;
 
@@ -41,7 +45,7 @@ const Separator = styled.div`
   }
 `;
 
-const Article = styled.article`
+const ArticlePresentacion = styled.article`
   width: 100%;
   display: flex;
   flex-flow: row wrap;
@@ -75,8 +79,40 @@ const Article = styled.article`
     }
   }
 
+  @media (max-width: 767.98px) {
+    .Prontuario {
+      flex-flow: column-reverse;
+    }
+    align-items: center;
+    flex-direction: column !important;
+  }
+`;
+
+const Article = styled.article`
+  width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+
+  div {
+    margin: 3rem 1rem 1rem 1rem;
+    flex: 1 0 30%;
+    display: flex;
+    flex-direction: column;
+
+    li {
+      margin-top: 1rem;
+      list-style: none;
+    }
+  }
+
   &:not(:last-child) {
     margin-bottom: 4rem;
+  }
+
+  @media (max-width: 767.98px) {
+    align-items: center;
+    flex-direction: column !important;
   }
 `;
 
@@ -107,10 +143,21 @@ const ContentWrapper = styled.div`
   }
 `;
 
+const ContainerProfe = styled.div`
+  width: 90%;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  @media (max-width: 767.98px) {
+    align-items: center;
+    flex-direction: column;
+  }
+`;
+
 const ContentWrapperOne = styled.div`
   display: flex;
   flex-flow: row wrap;
-
   width: 50%;
   margin-top: 4rem;
 
@@ -118,6 +165,22 @@ const ContentWrapperOne = styled.div`
     margin-top: 1rem;
     width: 80%;
     font-size: 1.2rem;
+  }
+
+  @media (max-width: 767.98px) {
+    justify-content: center;
+    h2 {
+      text-align: center;
+      font-size: 3rem;
+    }
+
+    width: 90%;
+    p {
+      margin-top: 2rem;
+      font-size: 1.1rem;
+      text-align: center;
+      width: 100% !important;
+    }
   }
 `;
 
@@ -132,8 +195,8 @@ const Picture = styled.picture`
 
 const PictureProfe = styled.picture`
   margin-top: 4rem;
-  width: 300px;
-  height: 300px;
+  width: 200px;
+  height: 220px;
   background-color: #4e6247;
   border-radius: 50%;
   display: flex;
@@ -150,26 +213,31 @@ export default function SobreMi() {
   return (
     <ContainerInfo>
       <Section>
-        <Article>
-          <ContentWrapperOne>
-            <h2>Presentación</h2>
-            <p>
-              Bienvenidos a todos/as, soy el profesor Jorge Lapena. Realizamos
-              ésta página con el fin de ofrecer información integral sobre
-              Argentina y sus regiones, abordando tanto los aspectos positivos
-              como las problemáticas que se enfrentan. A continuación,
-              encontrarán una compilación de mis estudios, contribuciones y
-              experiencias que respaldan estos conocimientos.
-            </p>
-          </ContentWrapperOne>
-          <PictureProfe>
-            <img src="./public/Presentacion/Jorge_Lapena.png" alt="JorgeLapena" />
-          </PictureProfe>
-
+        <ArticlePresentacion>
+          <ContainerProfe>
+            <ContentWrapperOne>
+              <h2>Presentación</h2>
+              <p>
+                Bienvenidos a todos/as, soy el profesor Jorge Lapena. Realizamos
+                ésta página con el fin de ofrecer información integral sobre
+                Argentina y sus regiones, abordando tanto los aspectos positivos
+                como las problemáticas que subyacen. A continuación, encontrarán
+                una compilación de mis estudios, contribuciones y experiencias
+                que respaldan estos conocimientos.
+              </p>
+            </ContentWrapperOne>
+            <PictureProfe>
+              <img src="/Presentacion/Jorge_Lapena.png" alt="JorgeLapena" />
+            </PictureProfe>
+          </ContainerProfe>
           <div className="Prontuario">
             <div>
               <figure>
-                <img src="./Presentacion/Estudios.svg" width={50} alt="Icono1" />
+                <img
+                  src="./Presentacion/Estudios.svg"
+                  width={50}
+                  alt="Icono1"
+                />
                 <h3>Educación y experiencia académica</h3>
               </figure>
               <ul>
@@ -187,7 +255,11 @@ export default function SobreMi() {
             </div>
             <div>
               <figure>
-                <img src="./Presentacion/Experiencia.svg" width={50} alt="Icono2" />
+                <img
+                  src="/Presentacion/Experiencia.svg"
+                  width={50}
+                  alt="Icono2"
+                />
                 <h3>
                   Experiencia <br /> docente
                 </h3>
@@ -207,7 +279,11 @@ export default function SobreMi() {
             </div>
             <div>
               <figure>
-                <img src="./Presentacion/Publicaciones.svg" width={50} alt="Icono3" />
+                <img
+                  src="/Presentacion/Publicaciones.svg"
+                  width={50}
+                  alt="Icono3"
+                />
                 <h3>
                   Publicaciones <br /> y trabajos académicos
                 </h3>
@@ -226,7 +302,11 @@ export default function SobreMi() {
             </div>
             <div>
               <figure>
-                <img src="./Presentacion/Afiliaciones.svg" width={50} alt="Icono4" />
+                <img
+                  src="/Presentacion/Afiliaciones.svg"
+                  width={50}
+                  alt="Icono4"
+                />
                 <h3>
                   Afiliaciones <br /> y membresías
                 </h3>
@@ -251,7 +331,7 @@ export default function SobreMi() {
             <div>
               <figure>
                 <img
-                  src="./Presentacion/Investigaciones.svg"
+                  src="/Presentacion/Investigaciones.svg"
                   width={50}
                   alt="Icono5"
                 />
@@ -274,7 +354,11 @@ export default function SobreMi() {
             </div>
             <div>
               <figure>
-                <img src="./Presentacion/Portfolio.svg" width={50} alt="Icono6" />
+                <img
+                  src="/Presentacion/Portfolio.svg"
+                  width={50}
+                  alt="Icono6"
+                />
                 <h3>
                   Experiencia <br /> profesional
                 </h3>
@@ -291,7 +375,7 @@ export default function SobreMi() {
               </ul>
             </div>
           </div>
-        </Article>
+        </ArticlePresentacion>
 
         <Separator>
           <span></span> <h3>Colaboradores</h3>
@@ -301,20 +385,44 @@ export default function SobreMi() {
         <Article className="Nosotros">
           <ContentWrapper>
             <Picture>
-              <img src="./Presentacion/Fede.jfif" width={150} alt="FedericoMassolo" />
+              <img
+                src="./Presentacion/Adriel.jfif"
+                height={150}
+                width={150}
+                alt=""
+              />
             </Picture>
-            <h3>Federico Massolo</h3>
-            <p>
-              s simplemente el texto de relleno de las imprentas y archivos de
-              texto. Lorem Ipsum ha sido el texto de relleno estándar de las
-              industrias desde el año 1500, cuando un impresor
-            </p>
+            <h3>Adriel Camacho</h3>
+            <ul>
+              <li>Alumno de la carrera de Analista de Sistemas en la ORT</li>
+              <li>
+                Realizando el curso de Fullstack Open de la Universidad de
+                Helsinki
+              </li>
+              <li>Desarrollador Fullstack con el conjunto MERN</li>
+              <li>
+                <img
+                  src="./Presentacion/contact.svg"
+                  width={30}
+                  alt="img-contacto"
+                />
+              </li>
+              <li>
+                <a
+                  href="https://www.linkedin.com/in/adrielcamacho/"
+                  target={"_blanc"}
+                >
+                  Adriel Camacho
+                </a>
+              </li>
+              <li>adriel@beitsefer.com.ar </li>
+            </ul>
           </ContentWrapper>
 
           <ContentWrapper>
             <Picture>
               <img
-                src="./Presentacion/Javier.png"
+                src="/Presentacion/Javier.png"
                 height={150}
                 width={150}
                 alt="JavierRivarola"
@@ -334,7 +442,11 @@ export default function SobreMi() {
                 CoderHouse
               </li>
               <li>
-                <img src="./Presentacion/contact.svg" width={30} alt="img-contacto" />
+                <img
+                  src="/Presentacion/contact.svg"
+                  width={30}
+                  alt="img-contacto"
+                />
               </li>
               <li>
                 <a
@@ -350,33 +462,35 @@ export default function SobreMi() {
 
           <ContentWrapper>
             <Picture>
-              <img src="./Presentacion/Adriel.jfif" height={150} width={150} alt="" />
+              <img
+                src="/Presentacion/Fede.jfif"
+                width={150}
+                alt="FedericoMassolo"
+              />
             </Picture>
-            <h3>Adriel Camacho</h3>
+            <h3>Federico Massolo</h3>
             <ul>
+              <li>Estudiante Front-End en Platzi</li>
+
+              <li>Estudiante Front-End en CoderHouse</li>
               <li>
-              Alumno de la carrera de Analista de Sistemas en la ORT
+                <img
+                  src="./Presentacion/contact.svg"
+                  width={30}
+                  alt="img-contacto"
+                />
               </li>
               <li>
-              Realizando el curso de Fullstack Open de la Universidad de Helsinki
-              </li>
-              <li>
-              Desarrollador Fullstack con el conjunto MERN
-              </li>
-              <li>
-                <img src="./Presentacion/contact.svg" width={30} alt="img-contacto" />
-              </li>
-              <li>
-              <a
-                  href="https://www.linkedin.com/in/adrielcamacho/"
+                <a
+                  href="https://www.linkedin.com/in/federico-massolo-55a13b238/"
                   target={"_blanc"}
                 >
-                  Adriel Camacho
+                  Federico Massolo
                 </a>
               </li>
-              <li>adriel@beitsefer.com.ar </li>
+              <li>fede1782015@hotmail.com</li>
             </ul>
-           </ContentWrapper>
+          </ContentWrapper>
         </Article>
       </Section>
     </ContainerInfo>

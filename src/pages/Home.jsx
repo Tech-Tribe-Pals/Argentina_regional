@@ -1,16 +1,18 @@
-import { useContext, useEffect } from "react";
+import { useContext, useState, useEffect } from "react";
 import styled from "styled-components";
 import BotonStyle from "../components/BotonStyle";
 import { Link } from "react-router-dom";
 import { HeaderContext } from "../context/HeaderContext";
+import Bubble from "../components/Bubble";
+import Loader from '../components/Loader'
 
 const HomeIndex = styled.section`
+  overflow: hidden;
   height: 100vh;
   width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
-
   position: relative;
 
   .unicen {
@@ -22,6 +24,7 @@ const HomeIndex = styled.section`
     flex-direction: row;
     align-items: center;
     img {
+      filter: invert(1);
       height: 100%;
       width: 50%;
     }
@@ -36,14 +39,23 @@ const HomeIndex = styled.section`
     z-index: 0;
   }
 
-  h1 {
-    color: white;
+  .load-wrap {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
-  .cosa {
+  h1 {
+    color: white;
+    text-align: center;
+  }
+
+  .Menu-Links {
     height: 65%;
     width: 100%;
-
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -52,7 +64,6 @@ const HomeIndex = styled.section`
 
   nav {
     padding: 1rem 1rem 0rem 1rem;
-    border-left: solid 9px black;
     background-color: #4e6247;
     z-index: 1;
     width: 20%;
@@ -100,36 +111,104 @@ const HomeIndex = styled.section`
       margin-top: 1rem;
     }
   }
+
+  @media (max-width: 767.98px) {
+    video {
+      filter: brightness(80%);
+    }
+
+    .Menu-Links {
+      ul {
+        li {
+          a {
+            button {
+              margin-top: 3rem;
+            }
+          }
+        }
+      }
+    }
+
+    nav {
+      padding-top: 2rem;
+      width: 100%;
+      background-color: rgb(0, 0, 0, 0.5);
+      border: none;
+      justify-content: space-evenly;
+    }
+
+    .welcome {
+      height: 100px;
+      align-self: flex-end;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      img {
+        width: 25%;
+        height: 100%;
+        right: 0;
+        bottom: -20%;
+      }
+    }
+
+    .unicen {
+      width: 100%;
+      top: 20px;
+      left: 20px;
+      height: 5vh;
+      justify-content: flex-start;
+      align-items: center;
+      img {
+        width: 30%;
+        height: auto;
+      }
+    }
+  }
 `;
 
 export default function Home() {
   const { setPath } = useContext(HeaderContext);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     setPath(window.location.pathname);
   });
+
+  const handleVideoLoaded = () => {
+    setIsLoading(false);
+  };
+
+  const handleVideoError = () => {
+    setIsLoading(false); // Puedes mostrar un mensaje de error en lugar de simplemente cambiar isLoading a false
+  };
+
   return (
     <HomeIndex>
-      <video
+    {isLoading && (
+      <div className="load-wrap">
+        <Loader theme={'#4e6247'} />
+      </div>
+    )}
+
+    <video
         autoPlay
         loop
         muted
-        src="./Videos_Regiones-Inicio/Header_.mp4"
+        src="https://res.cloudinary.com/dcmic2snw/video/upload/v1688745901/geografia/VID-20230705-WA0024_mkzsce.mp4"
         type="video/mp4"
+        onLoadedData={handleVideoLoaded}
+        onError={handleVideoError}
       />
-
+    
       <div className="unicen">
-        {/* <img src="./Inicio/fch.png" alt="logo_fch" />
-        <img src="./Inicio/unicen.svg" alt="logo_unicen" /> */}
+        <img src="/Inicio/unicen.svg" alt="unicen" />
       </div>
-
       <nav>
         <picture>
-          <img src="./Inicio/logo.svg" />
+          <img src="/Inicio/logo.svg" />
           <h1>Argentina Regional</h1>
         </picture>
-
-        <div className="cosa">
+        <div className="Menu-Links">
           <ul>
             <li>
               <Link to={"/regiones"}>
@@ -145,7 +224,8 @@ export default function Home() {
           </ul>
 
           <div className="welcome">
-            <img src="./Inicio/profe.svg" alt="animacion_profe" />
+            <Bubble />
+            <img src="/Inicio/profe.svg" alt="animacion_profe" />
           </div>
         </div>
       </nav>

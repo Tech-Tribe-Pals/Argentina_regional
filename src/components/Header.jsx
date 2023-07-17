@@ -2,95 +2,12 @@ import { useState, useEffect, useRef, useContext } from "react";
 import { Link, useLocation } from "react-router-dom";
 import styled from "styled-components";
 import { HeaderContext } from "../context/HeaderContext";
-
-const HeaderStyle = styled.header`
-  width: 100%;
-  background-color: #4e6247;
-  color: #fff;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  padding: 1.8rem;
-  justify-content: space-between;
-  position: relative;
-  position: sticky;
-  z-index: 10;
-  top: 0;
-
-  picture {
-    display: flex;
-    align-items: flex-end;
-
-    img {
-      max-width: 30px;
-    }
-
-    span {
-      margin-left: 10px;
-    }
-  }
-
-  nav {
-    ul {
-      display: flex;
-      flex-direction: row;
-    }
-
-    li {
-      list-style: none;
-
-      margin-left: 5rem;
-      cursor: pointer;
-      a {
-        color: #fff;
-        text-decoration-line: none;
-      }
-
-      a:hover {
-      }
-    }
-  }
-`;
-
-const DropdownWrapper = styled.div`
-  position: relative;
-  display: inline-block;
-`;
-
-const DropdownContent = styled.div`
-  display: none;
-  position: absolute;
-  background-color: #ffffff;
-  min-width: 160px;
-  border-left: solid 7px #b9b9b9;
-  border-bottom: solid 4px #b9b9b9;
-  border-right: solid 1px #b9b9b9;
-  border-bottom-left-radius: 0.5rem;
-  border-bottom-right-radius: 0.5rem;
-  border-top-right-radius: 0.3rem;
-  margin-top: 0.2rem;
-
-  ${(props) =>
-    props.open &&
-    `
-    display: block;
-  `}
-`;
-
-const DropdownItem = styled(Link)`
-  color: black !important;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-
-  &:hover {
-    background-color: #f1f1f1;
-  }
-`;
+import { UserContext } from "../context/UserContext";
 
 const Header = () => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const dropdownRef = useRef(null);
+  const { isUser } = useContext(UserContext);
 
   const handleDropdownClick = () => {
     setDropdownOpen(!dropdownOpen);
@@ -113,45 +30,111 @@ const Header = () => {
   const location = useLocation();
 
   useEffect(() => {
+    window.scrollTo(0, 0);
     if (location.pathname === "/") {
       setPath(location.pathname);
     } else {
       setPath(location.pathname);
     }
-  }, [location.pathname, setPath]);
+  }, [location.pathname]);
+
+  const [setmenu, setMenu] = useState(0);
+
+  const toggle = (num) => {
+    setMenu(num);
+    setRegiones(!num);
+  };
+
+  const [setregiones, setRegiones] = useState(0);
+
+  const toggleRegiones = (num) => {
+    setRegiones(num);
+  };
 
   return (
     <HeaderStyle style={headerOut ? { display: "none" } : { display: "flex" }}>
       <picture>
-        <img src="./Inicio/logo.svg" alt="Logo" />
+        <img src="/Inicio/logo.svg" alt="Logo" />
         <span>Argentina Regional</span>
       </picture>
+
+      <button onClick={() => toggle(!setmenu)} className="Burger-Menu">
+        <img src="/menu.svg" width={30} alt="" />
+      </button>
       <nav>
-        <ul>
+        <ul className={setmenu ? "show" : "hidden"}>
           <li>
             <Link to={"/"}>Home</Link>
           </li>
           <li>
-            <Link to={"/sobremi"}>Presentacion</Link>
+            <Link to={"/sobremi"}>Presentación</Link>
           </li>
-          <li ref={dropdownRef}>
+
+          <div className="RegionMobile">
+            <a onClick={() => toggleRegiones(!setregiones)}>Regiones</a>
+            <ul className={setregiones ? "show" : "hidden"}>
+              <li>
+                <Link to={"/regiones/cuyo"}>Cuyo</Link>
+              </li>
+              <li>
+                <Link to={"/regiones/patagonia"}>Patagonia</Link>
+              </li>
+              <li>
+                <Link to={"/regiones/metropolitana"}>Metropolitana</Link>
+              </li>
+              <li>
+                <Link to={"regiones/pampeana"}>Pampeana</Link>
+              </li>
+              <li>
+                <Link to={"/regiones/noroeste"}>Noroeste</Link>
+              </li>
+              <li>
+                <Link to={"/regiones/noreste"}>Noreste</Link>
+              </li>
+              <li>
+                <Link to={"/regiones/antartida"}>Antártida</Link>
+              </li>
+              <li>
+                <Link to={"/regiones/transfronterizasP"}>Transfronteriza con Países Limitrofes</Link>
+              </li>
+              <li>
+                <Link to={"/regiones/transfronterizasI"}>Transfronterizas Inter Regionales</Link>
+              </li>
+            </ul>
+          </div>
+          <li className="Regiones" ref={dropdownRef}>
             <DropdownWrapper>
               <a onClick={handleDropdownClick}>Regiones</a>
               <DropdownContent open={dropdownOpen}>
-                <DropdownItem to={"/tandil"}>Cuyo</DropdownItem>
-                <DropdownItem to={"/region2"}>Patagonia</DropdownItem>
-                <DropdownItem to={"/metropolitana"}>Metropolitana</DropdownItem>
-                <DropdownItem to={"/region3"}>Noroeste</DropdownItem>
-                <DropdownItem to={"/region3"}>Noreste</DropdownItem>
-                <DropdownItem to={"/region3"}>Antartida</DropdownItem>
-                <DropdownItem to={"/region3"}>Transfronterizas</DropdownItem>
-                <DropdownItem to={"/region3"}>Transfronterizas Internas</DropdownItem>
+                <DropdownItem to={"/regiones/cuyo"}>Cuyo</DropdownItem>
+                <DropdownItem to={"/regiones/patagonia"}>
+                  Patagonia
+                </DropdownItem>
+                <DropdownItem to={"/regiones/metropolitana"}>
+                  Metropolitana
+                </DropdownItem>
+                <DropdownItem to={"regiones/pampeana"}>Pampeana</DropdownItem>
+                <DropdownItem to={"/regiones/noroeste"}>Noroeste</DropdownItem>
+                <DropdownItem to={"/regiones/noreste"}>Noreste</DropdownItem>
+                <DropdownItem to={"/regiones/transfronterizasP"}>
+                Transfronteriza con Países Limitrofes
+                </DropdownItem>
+                <DropdownItem to={"/regiones/transfronterizasI"}>
+                Transfronterizas Inter Regionales
+                </DropdownItem>
+                <DropdownItem to={"/regiones/antartida"}>
+                  Antártida
+                </DropdownItem>
               </DropdownContent>
             </DropdownWrapper>
           </li>
-          <li>
-            <Link to={"/post"}>Post</Link>
-          </li>
+          {isUser ? (
+            <li>
+              <Link to={"/post"}>Post</Link>
+            </li>
+          ) : (
+            ""
+          )}
           <li>
             <Link to={"/blog"}>Blog</Link>
           </li>
@@ -162,3 +145,138 @@ const Header = () => {
 };
 
 export default Header;
+
+const HeaderStyle = styled.header`
+  width: 100%;
+  background-color: #4e6247;
+  color: #fff;
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  padding: 1.8rem;
+  justify-content: space-between;
+  position: sticky;
+  z-index: 10;
+  top: 0;
+
+  .RegionMobile {
+    display: none;
+  }
+
+  .Burger-Menu {
+    display: none;
+  }
+
+  picture {
+    display: flex;
+    align-items: flex-end;
+
+    img {
+      max-width: 30px;
+    }
+
+    span {
+      margin-left: 10px;
+    }
+  }
+
+  nav {
+    ul {
+      display: flex;
+    }
+
+    li {
+      list-style: none;
+      margin-left: 5rem;
+      cursor: pointer;
+
+      a {
+        color: #fff;
+        text-decoration-line: none;
+      }
+    }
+  }
+
+  @media (max-width: 990px) {
+    padding: 1rem;
+    nav {
+      height: auto;
+      display: flex;
+      width: 100%;
+      justify-content: flex-start;
+
+      ul {
+        li {
+          margin-top: 1rem;
+          margin-left: 0;
+        }
+      }
+    }
+
+    .RegionMobile {
+      display: block;
+      margin-top: 1rem;
+      ul {
+        li {
+          margin-left: 1rem;
+        }
+      }
+    }
+
+    .Regiones {
+      display: none;
+    }
+
+    .show {
+      flex-direction: column;
+      display: flex;
+      width: 100%;
+    }
+    .hidden {
+      display: none;
+    }
+
+    .Burger-Menu {
+      margin-top: 1rem;
+      border: none;
+      background-color: transparent;
+      width: auto;
+      display: block;
+    }
+  }
+`;
+
+const DropdownWrapper = styled.div`
+  position: relative;
+  display: inline-block;
+`;
+
+const DropdownContent = styled.div`
+  display: none;
+  position: absolute;
+  background-color: #ffffff;
+  min-width: 160px;
+  border-left: solid 7px #b9b9b9;
+  border-bottom: solid 4px #b9b9b9;
+  border-right: solid 1px #b9b9b9;
+  border-bottom-left-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+  border-top-right-radius: 0.3rem;
+
+  ${(props) =>
+    props.open &&
+    `
+    display: block;
+  `}
+`;
+
+const DropdownItem = styled(Link)`
+  color: black !important;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+
+  &:hover {
+    background-color: #f1f1f1;
+  }
+`;
