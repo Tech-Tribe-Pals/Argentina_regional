@@ -34,16 +34,16 @@ const Contacto = () => {
         <h2>Contacto</h2>
         <form ref={form} onSubmit={sendEmail}>
           <div>
-            <h4>Name</h4>
+            <h4>Nombre:</h4>
             <input type="text" name="user_name" />
           </div>
 
           <div>
-            <h4>Email</h4>
+            <h4>Email:</h4>
             <input type="email" name="user_email" />
           </div>
           <div>
-            <h4>Mensaje</h4> <textarea name="message" />
+            <h4>Mensaje:</h4> <textarea name="message" />
             <BotonStyle info={"Enviar"} submit={true} />
           </div>
         </form>
@@ -99,9 +99,11 @@ const MainContacto = styled.main`
     button {
       margin-top: 0.5rem;
     }
+    form {
+      width: 95%;
+    }
 
     div {
-      width: 70%;
       margin-top: 1rem;
       input {
         border: solid 1px #d9d9d9;
@@ -189,6 +191,18 @@ const MainContacto = styled.main`
       align-self: start;
       margin-bottom: 2rem;
       margin-left: 1rem;
+    }
+  }
+
+  @media (width < 990px) {
+    article {
+      width: 80%;
+    }
+  }
+
+  @media (width < 425px) {
+    article {
+      width: 95%;
     }
   }
 `;

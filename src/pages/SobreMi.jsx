@@ -195,8 +195,8 @@ const Picture = styled.picture`
 
 const PictureProfe = styled.picture`
   margin-top: 4rem;
-  width: 300px;
-  height: 300px;
+  width: 200px;
+  height: 220px;
   background-color: #4e6247;
   border-radius: 50%;
   display: flex;
