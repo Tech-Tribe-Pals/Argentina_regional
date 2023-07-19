@@ -69,6 +69,9 @@ const Header = () => {
           <li>
             <Link to={"/sobremi"}>Presentación</Link>
           </li>
+          <li>
+            <Link to={"/contacto"}>Contacto</Link>
+          </li>
 
           <div className="RegionMobile">
             <a onClick={() => toggleRegiones(!setregiones)}>Regiones</a>

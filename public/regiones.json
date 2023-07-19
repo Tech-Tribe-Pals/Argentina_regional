@@ -104,7 +104,7 @@
   {
     "name": "patagonia",
     "docs": {
-      "fondo": "/Patagonia/patagonia_1.png",
+      "fondo": "/Patagonia/patagonia_1.jpg",
       "title": "Patagonia",
       "info": "Es la región de mayor superficie, generalizada como un espacio de clima frío, de grandes distancias, extensos parques nacionales, altos costos de vida y vacíos demográficas, donde no siempre el transporte terrestre es la mejor opción. En el siglo pasado fue un área receptora de las “grandes oportunidades”, en cuanto a laboral, de la mano de incentivos estatales (zona franca, apoyo a industrias, mejores sueldos y reconocimientos jubilatorios ventajosos), tanto como del sector privado (principalmente por la fruticultura, el turismo y el petróleo). Hoy esta realidad es relativa. A su vez, en la práctica la Patagonia no es tan homogénea (desde el Valle de Río Negro a Patagonia Austral; o desde la Patagonia Andina al paisaje de mesetas y de la costa Atlántica), está signada por su vínculo binacional con Chile, ya sea por la contigüidad o por compartir ambientes, culturas y vías de comunicación dependiendo los destinos de un lado y otro, al sortear los archipiélagos del Pacífico en el caso trasandino o tener que arribar a la Isla Grande de Tierra del Fuego por barcaza chilena.",
       "img": "/Patagonia/patagonia-banner.png",
@@ -310,6 +310,11 @@
               "src": "/Pampeana/pampeana_4.png",
               "alt": "pampeana4",
               "class": "pampeana4"
+            },
+            {
+              "src": "/Pampeana/pampeana_12.jpg",
+              "alt": "pampeana4",
+              "class": "pampeana"
             }
           ],
           "links": [
@@ -442,7 +447,7 @@
       "fondo": "/Noroeste/noroeste_1.png",
       "title": "Noroeste",
       "info": "Es una región de contrastes paisajísticos, ambientales y demográficos, y a la vez, cuna de las ciudades más antiguas del país, de gran importancia en el auge minero-colonial y aquella ruta afín, trazada entre el Alto Perú y el puerto de Buenos Aires. Entre los edificios coloniales también se desarrolló gran parte de la historia de la Independencia Nacional. Al oriente se distingue la Yunga o Selva Tucumano-Oranense, cuya disposición y extensión Norte-Sur alberga un sinfín de potencialidades productivas. En el pasado fue la actividad azucarera, la cual atrajo una mano de obra interprovincial y estacional, aunque hoy han surgido otras actividades primarias más mecanizadas y con una renta más concentrada, reportando adversidades que se materializan en ciudades como San Miguel del Tucumán, Salta y otras. También en el occidente, donde rige la aridez de la Puna, la Prepuna y los Valles Secos, actividades tradicionales como la extracción de sal, la industria textil artesanal y la cerámica ancestral tratan de combinarse con el turismo, aunque no siempre son congruentes con la minería metalífera y el litio, de alto perfil extractivista.",
-      "img": "/Noroeste/noroeste_banner.png",
+      "img": "/Noroeste/noroeste_banner.jpg",
       "sections": [
         {
           "title": "La Yunga y sus Relieves contiguos",
@@ -593,7 +598,7 @@
   {
     "name": "transfronterizasp",
     "docs": {
-      "fondo": "/TransfronterizasP/transfronterizasp_1.png",
+      "fondo": "/TransfronterizasP/transfronterizasp_1.jpg",
       "title": "Transfronteriza con países limitrofes",
       "info": "También llamadas regiones de transición o de frontera interregional, estas áreas representan lugares sujetos a doble vínculo regional o a casos más complejos que incentivan discusiones sobre su regionalización. Estos espacios fronterizos han están expuestos o son consecuencia de los cambios de los espacios regionales tradicionales. La pampeanización es uno de estos procesos de cambio, a partir de la deforestación del bosque nativo para dar lugar a la expansión del modelo agropecuario intensivo. Otros ejemplos están asociados a la atracción ejercidas por grandes metrópolis o ciudades, tales como Córdoba que vincula áreas contiguas de San Luis, La Rioja y Santiago del Estero, que en teoría forman parte de otras regiones.",
       "img": "/TransfronterizasP/banner-fronteriza.png",
@@ -603,7 +608,7 @@
           "info": "Administrativa o jurisdiccionalmente la Isla Martin García pertenece al Partido de La Plata, provincia de Buenos Aires, aunque geográficamente se localiza en aguas uruguayas. Esto sucede porque el límite medio del río de La Plata fue corrido hacia el oriente en esta parte ante la necesidad de establecer un nuevo criterio: el lecho de mayor profundidad. Así esta geografía insular hoy no puede convertirse más que en una reserva natural y un lugar de visita, sin posibilidad de ser un enclave comercial (puerto) y mucho menos militar. Sin embargo,  este afloramiento rocoso precámbrico (constitutivo del Cratón del río de La Plata)  se complementa de un área sedimentaria que cada vez crece más en superficie,  dada la cercanía al delta del Paraná. Por otro lado, en el lugar subyace una historia muy peculiar, ya que por muchos años fue un centro de retiro de enfermos por fiebre amarilla y otras pestes que adoraban el siglo XIX,  y más tarde, se convirtió en una cárcel, con algunas tareas que tuvieron epicentro en la base granítica de sus rocas. En la actividad,  esta isla junto con Apipe que está en aguas paraguayas,  pero también es Argentina,  se designan como (Arg.) en la Cartografía oficial para resaltar la soberanía por más que se localice más allá de los límites nacionales.",
           "imgs": [
             {
-              "src": "/TransfronterizasP/transfronterizasp_1.png",
+              "src": "/TransfronterizasP/transfronterizasp_1.jpg",
               "alt": "front_regional1",
               "class": "front_regional1"
             },
