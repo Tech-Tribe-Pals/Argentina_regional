@@ -156,7 +156,7 @@ export default function Footer() {
               <Link to={'/regiones/cuyo'}>Cuyo</Link>
             </li>
             <li>
-              <Link to={'/regiones/pampeana'}>La Pampa</Link>
+              <Link to={'/regiones/pampeana'}>Pampeana</Link>
             </li>
             <li>
               <Link to={'/regiones/metropolitana'}>Metropolitana</Link>
