@@ -3,7 +3,7 @@
     "name": "cuyo",
     "docs": {
       "fondo": "/Cuyo/cuyo_1.png",
-      "title": "Cuyo",
+      "title": "Cuyo Norte",
       "info": "Esta área Norte de la provincia de San Juan se encuentra jaqueada por la mega minería que se instaló en lo alto se la cordillera de Los Andes y por accidente o impericia expone al riesgo de contaminación aguas abajo del río Jachal (situación semejante a Famatina, en La Rioja), donde además de localizarse la ciudad homónima también se desarrolla un cordón ribereño caracterizado por la frutihorticultura. Fuera de esta franja productiva la inmensidad del desierto Sanjuanino no permite más que el desarrollo caprino de subsistencia, que también coexiste con otros proyectos mineros que la gobernación promueve ya hace décadas.",
       "img": "/Cuyo/cuyo_banner.png",
       "links": [
@@ -888,7 +888,7 @@
     "name": "antartida",
     "docs": {
       "fondo": "/Antartida/antartida_1.png",
-      "title": "Antartida",
+      "title": "Antártida",
       "info": "Referir a la Antártida Argentina amerita un análisis diferente a las islas australes, que también integran la provincia con capital en Ushuaia, entre ellas las que están usurpadas por el Reino Unido de Gran Bretaña e Irlanda del Norte. La porción del continente blanco reclamado por Argentina (porción triangular definida por los 60º y 90º de Latitud Sur; y de Este a Oeste por los 25º a 74º de Latitud Sur) forma parte de un espacio común global, sometido al Tratado Antártico (1959), motivo por el cual su espacio se superpone con superficie pretendida por Chile y el Reino Unido de Gran Bretaña e Irlanda del Norte, dado a la situación materializada en el Canal de Beagle desde 1984, y el conflicto de Malvinas y las demás islas del Atlántico Sur en el segundo caso. Así, por el momento, todas las naciones que tienen bases estables no pueden desarrollar actividades militares, comerciales y otras, sobre todo, aquellas que pongan en riesgo la paz mundial y la reserva de los campos de hielo y su fauna asociada. De hecho, menos del 1% constituyen áreas libres de hielo. Por ende, su visita al lugar, distante a unos 1.000 kilómetros de Sudamérica es muy difícil ante la inexistencia de un transporte público. Y sus pobladores lo hacen generalmente por campañas semestrales bien preparadas (el frío polar es extremo y solo en verano la temperatura supera los 10 grados en días excepcionales), con permisos afines a la investigación científica, el resguardo ambiental y el arraigo de la proclama territorial, más allá de que la consideremos parte de un territorio provincial. No obstante, en los años 90 , distintos cruceros internacionales ofrecen recorridos por esas frías aguas en verano, algunos con punto de salida en Ushuaia, aunque con riesgos asociados a los deshielos o el caso contrario, el difícil acceso a algunos lugares ante el congelamiento. ",
       "imgs": [
         {
@@ -906,15 +906,15 @@
       ],
       "links": [
         {
-          "name": "Oficial Antartida",
+          "name": "Oficial Antártida",
           "url": "https://cancilleria.gob.ar/es/iniciativas/dna/divulgacion/sobre-la-antartida"
         },
         {
-          "name": "Soberania de la Antartida",
+          "name": "Soberania de la Antártida",
           "url": "https://vocesenelfenix.economicas.uba.ar/soberania-argentina-en-la-antartida-un-recorrido-desde-comienzos-del-siglo-xx-hasta-la-firma-del-tratado-antartico/"
         },
         {
-          "name": "Desde Ushuaia hasta la peninsula de la Antartida",
+          "name": "Desde Ushuaia hasta la peninsula de la Antártida",
           "url": "https://viajes.nationalgeographic.com.es/a/ushuaia-hasta-peninsula-antartica_8997"
         }
       ]
