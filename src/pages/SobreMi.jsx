@@ -221,7 +221,7 @@ export default function SobreMi() {
                 Bienvenidos a todos/as, soy el profesor Jorge Lapena. Realizamos
                 ésta página con el fin de ofrecer información integral sobre
                 Argentina y sus regiones, abordando tanto los aspectos positivos
-                como las problemáticas que se subyacen. A continuación,
+                como las problemáticas que subyacen. A continuación,
                 encontrarán una compilación de mis estudios, contribuciones y
                 experiencias que respaldan estos conocimientos.
               </p>
