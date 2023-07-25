@@ -210,7 +210,7 @@ const Carouselin = () => {
       info: "Al referir a las regiones transfronterizas decimos que son áreas contiguas entre países separados por un límite jurisdiccional, pero que sus ambientes, culturas y vínculos socioterritoriales son comunes. Es decir, exceden las barreras normativas o burocráticas, y en algunos casos, sus habitantes forman parte de comunidades integradas en un pasado preexistente a la definición de la superficie de cada territorio administrativo. Por ello, subsisten costumbres, geolectos, parentescos, amistades y hasta vínculos económicos- laborales cotidianos. "
     },
     {
-      name: ["Ántartida", "Antartida"],
+      name: ["Antártida", "Antártida"],
       info: "Referir a la Antártida Argentina amerita un análisis diferente a las islas australes, que también integran la provincia con capital en Ushuaia, entre ellas las que están usurpadas por el Reino Unido de Gran Bretaña e Irlanda del Norte. La porción del continente blanco reclamado por Argentina (porción triangular definida por los 60º y 90º de Latitud Sur; y de Este a Oeste por los 25º a 74º de Latitud Sur) forma parte de un espacio común global, sometido al Tratado Antártico (1959), motivo por el cual su espacio se superpone con superficie pretendida por Chile y el Reino Unido de Gran Bretaña e Irlanda del Norte, dado a la situación materializada en el Canal de Beagle desde 1984."
     },
   ];
