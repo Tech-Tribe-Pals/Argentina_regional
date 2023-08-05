@@ -59,7 +59,7 @@ const Overflow = ({ item, clickOut }) => {
           className="Selector"
           src={`/${
             visibleItems[0].name[1]
-          }/${visibleItems[0].name[1].toLowerCase()}_1.png`}
+          }/${visibleItems[0].name[1].toLowerCase() + visibleItems[0].name[2]}`}
           alt="img"
         />
       </button>
